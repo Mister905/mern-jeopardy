@@ -1,0 +1,12 @@
+.player-stats-btn {
+  border: 1px solid #ff8300 !important;
+  &:hover {
+    color: #fff !important;
+    background: #546098 !important;
+    border: 1px solid #ff8300 !important;
+  }
+}
+
+.player-stats-heading {
+    border-bottom: 2px solid #ff8300;
+}

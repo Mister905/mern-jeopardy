@@ -1,0 +1,16 @@
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.btn-custom-photo {
+  color: #fff !important;
+  &:hover {
+    color: #ff8300 !important;
+  }
+}

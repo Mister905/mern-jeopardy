@@ -1,0 +1,109 @@
+.reveal-button-row {
+  margin-top: 40px;
+}
+
+.icon-margin {
+  margin-right: 10px !important;
+}
+
+.answer-row {
+  margin-top: 3rem;
+}
+
+.answer {
+  text-transform: capitalize;
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.current-winnings-heading {
+  color: #fff !important;
+  font-size: 1.5rem !important;
+  margin-top: 20px;
+}
+
+.daily-double-input {
+  color: #d6a980 !important;
+  font-size: 1.3rem !important;
+}
+
+.output-size {
+  font-size: 1.3rem;
+}
+
+.answer-output {
+  text-transform: capitalize;
+  border-bottom: 1px solid #ff8300;
+  padding-bottom: 3px;
+}
+
+.response-row {
+  margin-top: 3rem;
+}
+
+.determination-row {
+  margin-top: 1rem;
+}
+
+.clue-col {
+  min-height: 27rem !important;
+}
+
+.daily-double-col {
+  min-height: 28rem !important;
+}
+
+.daily-double-row {
+  margin-top: 5rem;
+}
+
+.clue-container {
+  margin-top: 50px;
+}
+
+.double-jeopardy-wager {
+  font-size: 1.5rem !important;
+  margin-top: 15px !important;
+  border-bottom: 1px solid #031467 !important;
+}
+
+.wager-label {
+  font-size: 1.2rem !important;
+  color: #031467 !important;
+}
+
+.clue-row {
+  margin-top: 7rem;
+}
+
+.wager-row {
+  margin-top: 2rem;
+}
+
+.btn-wager {
+  border: 1px solid #fff !important;
+}
+
+.btn-daily {
+  font-size: 1em !important;
+}
+
+#daily_double_wager:focus {
+  border-bottom: 1px solid #031467 !important;
+}
+
+#daily_double_wager:focus + label {
+  color: #031467 !important;
+}
+
+.btn-continue {
+  font-size: 16px !important;
+}
+
+.btn-reveal {
+  font-size: 1em !important;
+}

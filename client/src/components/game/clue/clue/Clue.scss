@@ -1,0 +1,18 @@
+.custom-card {
+    margin-bottom: 0.5rem !important;
+    min-height: 155px;
+    max-height: 155px;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.custom-card-content {
+    margin: 0 auto;
+}
+
+.clue-value {
+    text-transform: uppercase;
+    color: #E0AE69;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em !important;
+}

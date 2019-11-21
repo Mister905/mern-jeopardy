@@ -1,0 +1,104 @@
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import Loader from "../layout/loader/Loader";
+import { get_leaders } from "../../actions/leaderboard";
+import { clear_player_profile } from "../../actions/profile";
+import logo from "../../assets/img/jeopardy_logo_profile.png";
+
+class Leaderboard extends Component {
+  componentDidMount = () => {
+    this.props.get_leaders();
+  };
+
+  render_leaderboard = () => {
+    const { leaders } = this.props.leaderboard;
+    return (
+      <div>
+        <div className="row">
+          <div className="col m6 offset-m3">
+            <div className="row">
+              <table>
+                <thead>
+                  <tr className="tr-high-score bold-text jeopardy-blue-dark-text">
+                    <th className="center-align">Rank</th>
+                    <th className="center-align">Player</th>
+                    <th className="center-align">Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {leaders.map((high_score, index) => (
+                    <tr key={index} className="bold-text">
+                      <td className="center-align jeopardy-blue-dark-text">
+                        {index + 1}
+                      </td>
+                      <td className="center-align jeopardy-blue-dark-text">
+                        <Link
+                          className="jeopardy-blue-dark-text"
+                          to={`leaderboard/profile/${high_score.user_id}`}
+                        >
+                          {high_score.name}
+                        </Link>
+                      </td>
+                      <td className="center-align jeopardy-blue-dark-text">
+                        {high_score.score}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  render() {
+    const { loading_leaderboard } = this.props.leaderboard;
+    return (
+      <div className="container">
+        <div className="row mt-row">
+          <div className="card col m12 jeopardy-grey">
+            <div className="row mt-25">
+              <div className="col m2 center-align">
+                <Link
+                  to="/dashboard"
+                  className="btn btn-custom btn-text btn-back waves-effect waves-jeopardy-blue"
+                >
+                  <i className="material-icons  bold-text">arrow_back</i>
+                </Link>
+              </div>
+              <div className="col m4 offset-m2 center-align">
+                <img src={logo} className="responsive-img profile-logo" />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col m4 offset-m4 center-align">
+                <div className="jeopardy-blue-dark-text leaderboard-heading bold-text">
+                  Leaderboard
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              {loading_leaderboard ? <Loader /> : this.render_leaderboard()}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+Leaderboard.propTypes = {
+  leaderboard: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  leaderboard: state.leaderboard
+});
+
+export default connect(mapStateToProps, { get_leaders, clear_player_profile })(
+  Leaderboard
+);
