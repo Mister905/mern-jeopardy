@@ -17,7 +17,7 @@ class Leaderboard extends Component {
     return (
       <div>
         <div className="row">
-          <div className="col m6 offset-m3">
+          <div className="col m4 offset-m4">
             <div className="row">
               <table>
                 <thead>
