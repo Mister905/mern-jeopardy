@@ -18,6 +18,10 @@ class Game extends Component {
         document.body.classList.add('jeopardy-blue-dark');
     }
 
+    componentWillUnmount = () => {
+        document.body.classList.remove('jeopardy-blue-dark');
+    }
+
     componentDidMount = () => {
         const {
             is_second_round,
@@ -1093,39 +1097,15 @@ class Game extends Component {
 
         if (loading_round) {
             if (is_first_round) {
-                return (
-                    <div className="row loader-row">
-                        <div className="col m12 center-align">
-                            <Loader round={1}/>
-                        </div>
-                    </div>
-                )
+                return <Loader round={1}/>        
             } else if (is_second_round) {
-                return (
-                    <div className="row loader-row">
-                        <div className="col m12 center-align">
-                            <Loader round={2}/>
-                        </div>
-                    </div>
-                )
+                return <Loader round={2}/>
             } else if (is_final_jeopardy) {
-                return (
-                    <div className="row loader-row">
-                        <div className="col m12 center-align">
-                            <Loader round={3}/>
-                        </div>
-                    </div>
-                )
+                return <Loader round={3}/>
             }
         } 
         if (loading_game_over) {
-            return (
-                <div className="row loader-row">
-                    <div className="col m12 center-align">
-                        <Loader round={4}/>
-                    </div>
-                </div>
-            )
+            return <Loader round={4}/>
         }
         if (is_first_round) {
             return (

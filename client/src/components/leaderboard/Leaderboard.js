@@ -16,40 +16,36 @@ class Leaderboard extends Component {
     const { leaders } = this.props.leaderboard;
     return (
       <div>
-        <div className="row">
-          <div className="col m4 offset-m4">
-            <div className="row">
-              <table>
-                <thead>
-                  <tr className="tr-high-score bold-text jeopardy-blue-dark-text">
-                    <th className="center-align">Rank</th>
-                    <th className="center-align">Player</th>
-                    <th className="center-align">Score</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {leaders.map((high_score, index) => (
-                    <tr key={index} className="bold-text">
-                      <td className="center-align jeopardy-blue-dark-text">
-                        {index + 1}
-                      </td>
-                      <td className="center-align jeopardy-blue-dark-text">
-                        <Link
-                          className="jeopardy-blue-dark-text"
-                          to={`leaderboard/profile/${high_score.user_id}`}
-                        >
-                          {high_score.name}
-                        </Link>
-                      </td>
-                      <td className="center-align jeopardy-blue-dark-text">
-                        {high_score.score}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+        <div className="col m6 offset-m3">
+          <table>
+            <thead>
+              <tr className="tr-high-score bold-text jeopardy-blue-dark-text">
+                <th className="center-align">Rank</th>
+                <th className="center-align">Player</th>
+                <th className="center-align">Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              {leaders.map((high_score, index) => (
+                <tr key={index} className="bold-text">
+                  <td className="center-align jeopardy-blue-dark-text">
+                    {index + 1}
+                  </td>
+                  <td className="center-align jeopardy-blue-dark-text">
+                    <Link
+                      className="jeopardy-blue-dark-text"
+                      to={`leaderboard/profile/${high_score.user_id}`}
+                    >
+                      {high_score.name}
+                    </Link>
+                  </td>
+                  <td className="center-align jeopardy-blue-dark-text">
+                    {high_score.score}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     );

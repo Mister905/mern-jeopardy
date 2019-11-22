@@ -30,7 +30,7 @@ class Loader extends Component {
               )}
             </div>
           </div>
-          <div className="row mt-row">
+          <div className="row">
             <div className="col m12 center-align">
               <div className="preloader-wrapper big active">
                 <div className="spinner-layer custom-spinner-layer">
