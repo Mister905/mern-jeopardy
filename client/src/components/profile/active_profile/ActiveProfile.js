@@ -39,16 +39,14 @@ class ActiveProfile extends Component {
       let {
         biography,
         specialties,
-        experience
-      } = this.props.profile.active_profile;
-      const { first_name } = this.props.auth.user;
-      const { last_name } = this.props.auth.user;
-      const {
+        experience,
         profile_image_id,
         linkedin,
         twitter,
         facebook
       } = this.props.profile.active_profile;
+      const { first_name } = this.props.auth.user;
+      const { last_name } = this.props.auth.user;
       return (
         <div className="container">
           <div className="row mt-row">
@@ -243,69 +241,6 @@ class ActiveProfile extends Component {
                           </Link>
                         </div>
                       )}
-
-                      {/* <div className="row experience-row">
-                        <div className="col m12">
-                          {experience.length > 0 ? (
-                            <div>
-                              <ul className="collection">
-                                {experience.map((item, index) => {
-                                  return (
-                                    <li className="collection-item" key={index}>
-                                      <div className="bold-text view-company-output">
-                                        {item.company}
-                                      </div>
-                                      <div className="title-output">
-                                        {item.title}
-                                      </div>
-                                      <div className="location-output">
-                                        {item.location}
-                                      </div>
-                                      <div className="description-output">
-                                        {item.description}
-                                      </div>
-                                      <div className="date-outputs right-align">
-                                        <span className="from-date-output bold-text">
-                                          {
-                                            <Moment format="MMMM D, YYYY">
-                                              {item.from_date}
-                                            </Moment>
-                                          }
-                                        </span>
-                                        -
-                                        <span className="to-date-output bold-text">
-                                          {item.is_current ? (
-                                            "Present"
-                                          ) : (
-                                            <Moment format="MMMM DD, YYYY">
-                                              {item.to_date}
-                                            </Moment>
-                                          )}
-                                        </span>
-                                      </div>
-                                    </li>
-                                  );
-                                })}
-                              </ul>
-                            </div>
-                          ) : (
-                            <span className="jeopardy-blue-dark-text profile-output">
-                              You haven't defined any experience yet
-                            </span>
-                          )}
-                        </div>
-                      </div> */}
-                      {/* <div className="row">
-                        <div className="col m3">
-                          <Link
-                            className="btn waves-effect waves-jeopardy-blue bold-text btn-custom"
-                            to="/create-experience"
-                          >
-                            <i className="material-icons left bold-text">add</i>
-                            Create
-                          </Link>
-                        </div>
-                      </div> */}
                     </div>
                   </div>
                 </div>

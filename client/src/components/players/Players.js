@@ -20,7 +20,6 @@ class Players extends Component {
   render_output = () => {
     let active_profile_id = this.props.profile.active_profile._id;
     const { profiles } = this.props.profile;
-    console.log(profiles);
     return (
       <div className="container">
         <div className="row mt-row">
@@ -47,7 +46,7 @@ class Players extends Component {
             </div>
             <div className="row">
               <div className="col m4 offset-m4">
-                <ul class="collection players-collection center-align">
+                <ul className="collection players-collection center-align">
                   {profiles.map((item, index) => {
                     if (item.profile_id !== active_profile_id) {
                       return (

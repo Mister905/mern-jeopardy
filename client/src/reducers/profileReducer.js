@@ -15,8 +15,7 @@ const initial_state = {
   loading_player_name: true,
   loading_profile: true,
   loading_profiles: true,
-  loading_profile_image: true,
-  profile_image_url: ""
+  loading_profile_image: true
 };
 
 export default function(state = initial_state, action) {
@@ -41,10 +40,10 @@ export default function(state = initial_state, action) {
         loading_profile: false
       };
     case PLAYER_NAME_LOADED:
-      const { name } = payload;
+      const { first_name, last_name } = payload;
       return {
         ...state,
-        player_name: name,
+        player_name: `${first_name} ${last_name}`,
         loading_player_name: false
       };
     case PLAYER_PROFILE_LOADED:
