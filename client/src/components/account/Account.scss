@@ -1,12 +1,17 @@
-.account-settings-header {
-  font-size: 2rem;
-  border-bottom: 1px solid #ff8300;
+.btn-delete-profile {
+  font-size: 1em !important;
 }
 
-.account-btn-row {
-  margin-top: 50px;
+.btn-delete-account {
+  font-size: 1em !important;
 }
 
-.btn-cancel {
-  margin-right: 10px;
+.delete-account-icon {
+  display: inline-flex;
+  vertical-align: top;
+  margin-right: 10px !important;
+}
+
+.warning-text {
+  font-size: 1.2em;
 }

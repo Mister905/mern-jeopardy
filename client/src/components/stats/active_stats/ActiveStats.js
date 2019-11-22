@@ -7,7 +7,6 @@ import {
   get_active_statistics,
   clear_player_statistics
 } from "../../../actions/statistics";
-import Logo from "../../../assets/img/logo-secondary.png";
 import logo from "../../../assets/img/jeopardy_logo_profile.png";
 
 class ActiveStats extends Component {
@@ -85,32 +84,6 @@ class ActiveStats extends Component {
                           </tr>
                         </tbody>
                       </table>
-                      {/* <div className="collection stats-collection">
-                        <div className="collection-item stats-ci center-align">
-                          <span className="bold-text">Player: </span>
-                          <span>{`${first_name} ${last_name}`}</span>
-                        </div>
-                        <div className="collection-item stats-ci center-align">
-                          <span className="bold-text">Games Played: </span>
-                          <span>{games_played}</span>
-                        </div>
-                        <div className="collection-item stats-ci center-align">
-                          <span className="bold-text">Correct Responses: </span>
-                          <span>{correct_responses}</span>
-                        </div>
-                        <div className="collection-item stats-ci center-align">
-                          <span className="bold-text">
-                            Incorrect Responses:{" "}
-                          </span>
-                          <span>{incorrect_responses}</span>
-                        </div>
-                        <div className="collection-item stats-ci center-align">
-                          <span className="bold-text">Career Earnings: </span>
-                          <span>
-                            ${this.number_with_commas(career_earnings)}
-                          </span>
-                        </div>
-                      </div> */}
                     </div>
                   </div>
                 </div>
