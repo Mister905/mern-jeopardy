@@ -6,7 +6,8 @@ import {
   ALL_PROFILES_LOADED,
   PLAYER_NAME_LOADED,
   PLAYER_PROFILE_LOADED,
-  PLAYER_PROFILE_CLEARED
+  PLAYER_PROFILE_CLEARED,
+  EXPERIENCE_CLEARED
 } from "./types";
 
 // Get Active User's Profile
@@ -186,5 +187,8 @@ export const update_profile = (form_data, history) => async dispatch => {
 export const clear_player_profile = () => async dispatch => {
   dispatch({
     type: PLAYER_PROFILE_CLEARED
+  });
+  dispatch({
+    type: EXPERIENCE_CLEARED
   });
 };

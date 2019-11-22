@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { load_new_game } from "../../../actions/game";
+import { reset_game } from "../../../actions/game";
 
 class New_High_Score extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class New_High_Score extends Component {
   };
 
   handle_new_game = () => {
-    this.props.load_new_game();
+    this.props.reset_game();
   };
 
   render() {
@@ -103,6 +103,6 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {
-    load_new_game
+    reset_game
   }
 )(New_High_Score);

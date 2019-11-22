@@ -9,7 +9,7 @@ import {
   delete_account,
   clear_player_profile
 } from "../../actions/profile";
-import { load_new_game } from "../../actions/game";
+import { reset_game } from "../../actions/game";
 import mern_logo from "../../assets/img/mern_logo.png";
 import logo from "../../assets/img/jeopardy_logo.png";
 
@@ -19,8 +19,7 @@ class Dashboard extends Component {
     document.body.classList.remove("jeopardy-grey");
     document.body.classList.remove("jeopardy-blue-dark");
     document.body.classList.add("jeopardy-gradient");
-    this.props.load_new_game();
-    this.props.clear_player_profile();
+    this.props.reset_game();
   }
 
   componentDidMount = () => {
@@ -213,5 +212,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { load_user, get_profile, load_new_game, clear_player_profile }
+  { load_user, get_profile, reset_game, clear_player_profile }
 )(Dashboard);

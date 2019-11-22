@@ -9,7 +9,8 @@ import {
   PROCESS_FINAL,
   NEW_HIGH_SCORE,
   LOADING_NEW_GAME,
-  ACTIVATING_GAME
+  ACTIVATING_GAME,
+  RESET_GAME
 } from "../actions/types";
 
 const initial_state = {
@@ -19,23 +20,9 @@ const initial_state = {
   is_final_jeopardy: false,
   loading_round: true,
   first_round_categories: [],
-  first_round_questions: [
-      [],
-      [],
-      [],
-      [],
-      [],
-      []
-  ],
+  first_round_questions: [[], [], [], [], [], []],
   second_round_categories: [],
-  second_round_questions: [
-      [],
-      [],
-      [],
-      [],
-      [],
-      []
-  ],
+  second_round_questions: [[], [], [], [], [], []],
   daily_doubles: [],
   answered_questions: [],
   winnings: 0,
@@ -51,8 +38,7 @@ const initial_state = {
   is_new_high_score: false,
   high_scores: [],
   is_new_game: true
-}
-
+};
 
 export default function(state = initial_state, action) {
   const { type } = action;
@@ -465,7 +451,7 @@ export default function(state = initial_state, action) {
       return {
         ...state,
         is_game_active: true
-      }
+      };
     }
     case NEW_HIGH_SCORE: {
       const { high_scores } = action;
@@ -476,9 +462,9 @@ export default function(state = initial_state, action) {
         high_scores
       };
     }
-    case LOADING_NEW_GAME: {
+    case RESET_GAME: {
       return {
-        ...state,
+        is_game_active: false,
         is_first_round: true,
         is_second_round: false,
         is_final_jeopardy: false,

@@ -57,7 +57,8 @@ export default function(state = initial_state, action) {
             ...state,
             player_name: null,
             player_profile: null,
-            loading_profile: true
+            loading_profile: true,
+            loading_player_name: true
         }
     default:
       return state;

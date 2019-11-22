@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { load_new_game } from "../../../actions/game";
+import { reset_game } from "../../../actions/game";
 import Logo from "../../../assets/img/silver-logo.png";
 
 class Game_Over extends Component {
@@ -66,7 +66,7 @@ class Game_Over extends Component {
                     </div>
                     <div className="col m6 center-align">
                       <button
-                        onClick={this.handle_new_game}
+                        onClick={this.handle_reset}
                         className="btn  hoverable jeopardy-blue-dark jeopardy-white-text btn-white-border"
                       >
                         <div className="row">
@@ -119,7 +119,7 @@ class Game_Over extends Component {
   };
 
   handle_new_game = () => {
-    this.props.load_new_game();
+    this.props.reset_game();
   };
 
   render() {
@@ -139,6 +139,6 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {
-    load_new_game
+    reset_game
   }
 )(Game_Over);

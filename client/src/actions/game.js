@@ -10,7 +10,7 @@ import {
   DISPLAY_FINAL_JEOPARDY,
   PROCESS_FINAL,
   NEW_HIGH_SCORE,
-  LOADING_NEW_GAME,
+  RESET_GAME,
   ACTIVATING_GAME
 } from "./types";
 
@@ -863,8 +863,8 @@ export const load_game_over = payload => async dispatch => {
   }
 };
 
-export const load_new_game = () => async dispatch => {
+export const reset_game = () => async dispatch => {
   dispatch({
-    type: LOADING_NEW_GAME
+    type: RESET_GAME
   });
 };
