@@ -6,7 +6,7 @@ class Alert extends Component {
   componentDidUpdate = prevProps => {
     if (this.props.alerts.alert.id !== prevProps.alerts.alert.id) {
       const alert = this.props.alert;
-      alert.show(this.props.alerts.alert.msg, { type: 'error' });
+      alert.show(this.props.alerts.alert.msg, { type: this.props.alerts.alert.type });
     }
   };
 

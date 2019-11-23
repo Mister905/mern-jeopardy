@@ -36,45 +36,31 @@ import set_auth_token from "./utils/set_auth_token";
 // ACTIONS
 import { load_user } from "./actions/auth";
 
-// alert cofiguration
+// https://www.npmjs.com/package/react-alert
 const options = {
-  // you can also just use 'bottom center'
   position: positions.TOP_CENTER,
   timeout: 5000,
   offset: "30px",
-  // you can also just use 'scale'
   transition: transitions.SCALE
 };
 
 const AlertTemplate = props => {
- 
-
-  // width: auto;
-  // clear: both;
-  // margin-top: 10px;
-  // position: relative;
-  // max-width:100%;
-  // height: auto;
-  // min-height: $toast-height;
-  // line-height: 1.5em;
-  // word-break: keep-all;
-  // background-color: $toast-color;
-  // padding: 10px 25px;
-  // font-size: 1.1rem;
-  // font-weight: 300;
-  // color: $toast-text-color;
-
-  return (
-    <div
-      className="card custom-alert"
-    >
-      {/* {props.options.type === "info" && "!"}
-      {props.options.type === "success" && ":)"}
-      {props.options.type === "error" && ":("} */}
-      {props.message}
-      <button onClick={props.close}>X</button>
-    </div>
-  );
+  const { type } = props.options;
+  if (type === "error") {
+    return (
+      <div className="card custom-alert custom-error bold-text">
+        <i class="material-icons alert-icon">error_outline</i>
+        {props.message}
+      </div>
+    );
+  } else if (type === "success") {
+    return (
+      <div className="card custom-alert custom-success">
+        <i class="material-icons dp48">check_circle</i>
+        {props.message}
+      </div>
+    );
+  }
 };
 
 export class App extends Component {

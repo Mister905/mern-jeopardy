@@ -51,13 +51,12 @@ export const register = (
 
   try {
     await axios.post("/api/auth/register", body, config);
-    // dispatch(set_alert("success", "You have successfully registered"));
-    dispatch(show_alert("You have successfully registered"))
+    dispatch(show_alert("You have successfully registered", "success"))
     history.push("/login");
   } catch (error) {
     const errors = error.response.data.errors;
     if (errors) {
-      errors.forEach(error => dispatch(show_alert(error.msg)));
+      errors.forEach(error => dispatch(show_alert(error.msg, "error")));
     }
   }
 };
@@ -90,9 +89,7 @@ export const login = ({ email, password }, history) => async dispatch => {
     });
     const errors = error.response.data.errors;
     if (errors) {
-      errors.forEach(error => dispatch(set_alert("error", error.msg)));
-    } else {
-      dispatch(set_alert("error", "Login failed"));
+      errors.forEach(error => dispatch(show_alert(error.msg, "error")));
     }
   }
 };

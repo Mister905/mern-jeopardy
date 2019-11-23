@@ -31,22 +31,29 @@
 }
 
 .custom-alert {
-  padding: 10px 16px;
+  padding: 20px 30px;
   font-weight: 400;
   overflow: hidden;
   font-size: 16px;
-  color: white;
-  background: #323232 !important;
+  min-height: 48px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+}
 
-  &:before {
-    content: "\e000";
-    font-size: 24px;
-    color: white;
-    display: inline-block;
-    position: relative;
-    margin: 0 10px 0 0;
-    font-family: "Material Icons";
-  }
+.custom-error {
+  color: white;
+  background: #d50000 !important;
+}
+
+.custom-success {
+  color: white;
+  background: #00c853 !important;
+}
+
+.alert-icon {
+  padding-right: 10px;
 }
 
 .custom-icon {

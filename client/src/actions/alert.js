@@ -15,7 +15,7 @@ export const set_alert = (alert_type, message) => dispatch => {
   setTimeout(() => dispatch({ type: REMOVE_ALERT, payload: id }), 5000);
 };
 
-export const show_alert = (msg, type = "info") => dispatch => {
+export const show_alert = (msg, type) => dispatch => {
   const id = uuid.v4();
   dispatch({
     type: SHOW_ALERT_MESSAGE,
