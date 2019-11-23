@@ -1,22 +1,31 @@
-import React from 'react';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { withAlert } from "react-alert";
 
-const capitalize_string = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
+class Alert extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-const Alert = ({ alert }) => {
+  componentDidUpdate = () => {};
+
+  render() {
+    const alert = this.props.alert;
+    console.log(this.props)
     return (
-        <div className="row">
-            <div className="col m6 offset-m3">
-                <div className={`card card-${ alert.alert_type }`}>
-                    <div className="card-content white-text">
-                        <span className="card-title center-align">{ capitalize_string(alert.alert_type) }</span>
-                        <p className="center-align">{ alert.message }</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
+      <button
+        onClick={() => {
+          alert.show("Oh look, an alert!");
+        }}
+      >
+        Show Alert
+      </button>
+    );
+  }
 }
 
-export default Alert;
+const mapStateToProps = state => ({
+  alerts: state.alerts
+});
+
+export default withAlert()(connect(mapStateToProps)(Alert));

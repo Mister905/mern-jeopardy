@@ -1,5 +1,9 @@
 export const SET_ALERT = 'SET_ALERT';
 export const REMOVE_ALERT = 'REMOVE_ALERT';
+
+export const SHOW_ALERT_MESSAGE = 'SHOW_ALERT_MESSAGE';
+export const HIDE_ALERT_MESSAGE = 'HIDE_ALERT_MESSAGE';
+
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const USER_LOADED = 'USER_LOADED';
