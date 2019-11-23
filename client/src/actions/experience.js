@@ -15,7 +15,7 @@ export const create_experience = (form_data, history) => async dispatch => {
     };
 
     const res = await axios.post(
-      "http://localhost:5000/api/experience/create",
+      "/api/experience/create",
       form_data,
       config
     );
@@ -44,7 +44,7 @@ export const update_experience = (experience, history) => async dispatch => {
     const exp_id = experience.exp_id;
 
     const res = await axios.put(
-      `http://localhost:5000/api/experience/${exp_id}/update`,
+      `/api/experience/${exp_id}/update`,
       experience,
       config
     );
@@ -60,11 +60,11 @@ export const update_experience = (experience, history) => async dispatch => {
 export const delete_experience = experience_id => async dispatch => {
   try {
     var res = await axios.delete(
-      `http://localhost:5000/api/experience/${experience_id}/delete`
+      `/api/experience/${experience_id}/delete`
     );
 
     res = await axios.get(
-      "http://localhost:5000/api/experience/get-experience"
+      "/api/experience/get-experience"
     );
 
     dispatch({
@@ -81,7 +81,7 @@ export const delete_experience = experience_id => async dispatch => {
 export const get_active_experience = () => async dispatch => {
   try {
     let res = await axios.get(
-      "http://localhost:5000/api/experience/get-experience"
+      "/api/experience/get-experience"
     );
     dispatch({
       type: EXPERIENCE_LOADED,
@@ -96,7 +96,7 @@ export const get_active_experience = () => async dispatch => {
 export const get_player_experience = profile_id => async dispatch => {
   try {
     let res = await axios.get(
-      `http://localhost:5000/api/experience/get-experience/${profile_id}`
+      `/api/experience/get-experience/${profile_id}`
     );
     dispatch({
       type: EXPERIENCE_LOADED,
@@ -111,7 +111,7 @@ export const get_player_experience = profile_id => async dispatch => {
 export const get_experience_item = exp_id => async dispatch => {
   try {
     const res = await axios.get(
-      `http://localhost:5000/api/experience/get-experience-item/${exp_id}`
+      `/api/experience/get-experience-item/${exp_id}`
     );
     dispatch({
       type: EXPERIENCE_ITEM_LOADED,

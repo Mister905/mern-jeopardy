@@ -44,34 +44,24 @@ class Dashboard extends Component {
           <div className="card card-padding jeopardy-grey">
             <Link
               to="/profile"
-              className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom mb-13"
+              className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom mb-13 btn-dashboard"
             >
-              <span className="btn-icon">
-                <i className="material-icons btn-icon">
-                  account_circle
-                </i>
-              </span>
-              <span className="btn-text bold-text">View Profile</span>
+              <i class="material-icons custom-icon">account_circle</i>
+              View Profile
             </Link>
             <Link
               to="/players"
-              className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom mb-13"
+              className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom mb-13 btn-dashboard"
             >
-              <span className="btn-icon">
-                <i className="material-icons btn-icon">group</i>
-              </span>
-              <span className="btn-text bold-text">Players</span>
+              <i class="material-icons custom-icon">group</i>
+              Players
             </Link>
             <Link
               to="/account"
-              className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom"
+              className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom btn-dashboard"
             >
-              <span className="btn-icon">
-                <i className="material-icons btn-icon">
-                  settings_applications
-                </i>
-              </span>
-              <span className="btn-text bold-text">Account</span>
+              <i class="material-icons custom-icon">settings_applications</i>
+              Account
             </Link>
           </div>
         </div>
@@ -82,14 +72,10 @@ class Dashboard extends Component {
           <div className="card card-padding jeopardy-grey">
             <Link
               to="/create-profile"
-              className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom mb-13"
+              className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom mb-13 btn-dashboard"
             >
-              <span className="btn-icon">
-                <i className="material-icons btn-icon">
-                  person_add
-                </i>
-              </span>
-              <span className="btn-text bold-text">Create Profile</span>
+              <i class="material-icons custom-icon">person_add</i>
+              Create Profile
             </Link>
             <Link
               to="/players"
@@ -102,14 +88,10 @@ class Dashboard extends Component {
             </Link>
             <Link
               to="/account"
-              className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom"
+              className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom btn-dashboard"
             >
-              <span className="btn-icon">
-                <i className="material-icons btn-icon">
-                  settings_applications
-                </i>
-              </span>
-              <span className="btn-text bold-text">Account</span>
+              <i class="material-icons custom-icon">settings_applications</i>
+              Account
             </Link>
           </div>
         </div>
@@ -157,36 +139,24 @@ class Dashboard extends Component {
                 <div className="card card-padding jeopardy-grey">
                   <Link
                     to="/game"
-                    className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom mb-13"
+                    className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom mb-13 btn-dashboard"
                   >
-                    <span className="btn-icon">
-                      <i className="material-icons btn-icon">
-                        attach_money
-                      </i>
-                    </span>
-                    <span className="btn-text bold-text">New Game</span>
+                    <i class="material-icons custom-icon">attach_money</i>
+                    New Game
                   </Link>
                   <Link
                     to="/stats"
-                    className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom mb-13"
+                    className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom mb-13 btn-dashboard"
                   >
-                    <span className="btn-icon">
-                      <i className="material-icons btn-icon">
-                        star_border
-                      </i>
-                    </span>
-                    <span className="btn-text bold-text">Statistics</span>
+                    <i class="material-icons custom-icon">star_border</i>
+                    Statistics
                   </Link>
                   <Link
                     to="/leaderboard"
-                    className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom"
+                    className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom btn-dashboard"
                   >
-                    <span className="btn-icon">
-                      <i className="material-icons btn-icon ">
-                        view_list
-                      </i>
-                    </span>
-                    <span className="btn-text bold-text">Leaderboard</span>
+                    <i class="material-icons custom-icon">view_list</i>
+                    Leaderboard
                   </Link>
                 </div>
               </div>
@@ -210,7 +180,9 @@ const mapStateToProps = state => ({
   profile: state.profile
 });
 
-export default connect(
-  mapStateToProps,
-  { load_user, get_profile, reset_game, clear_player_profile }
-)(Dashboard);
+export default connect(mapStateToProps, {
+  load_user,
+  get_profile,
+  reset_game,
+  clear_player_profile
+})(Dashboard);

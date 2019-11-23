@@ -21,3 +21,7 @@
 .update-experience-heading {
   font-size: 2rem;
 }
+
+.react-datepicker-popper {
+  z-index: 9999 !important;
+}

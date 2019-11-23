@@ -154,7 +154,7 @@ class EditProfile extends Component {
                         <label>Current Profile Image</label>
                         <img
                           className="responsive-img"
-                          src={`http://localhost:5000/api/profile/profile-image/${profile_image_id}`}
+                          src={`/api/profile/profile-image/${profile_image_id}`}
                         />
                       </div>
                     </div>

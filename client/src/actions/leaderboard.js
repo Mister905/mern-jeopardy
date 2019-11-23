@@ -4,7 +4,7 @@ import { LEADERBOARD_LOADED } from "./types";
 export const get_leaders = () => async dispatch => {
   try {
     let res = await axios.get(
-      "http://localhost:5000/api/score/get-high-scores"
+      "/api/score/get-high-scores"
     );
 
     const high_scores = res.data;
@@ -16,7 +16,7 @@ export const get_leaders = () => async dispatch => {
         leaderboard_obj.user_id = high_score.user_id;
         leaderboard_obj.score = high_score.score;
         let res = await axios.get(
-          `http://localhost:5000/api/auth/${high_score.user_id}`
+          `/api/auth/${high_score.user_id}`
         );
         leaderboard_obj.name = `${res.data.first_name} ${res.data.last_name}`;
         leaderboard.push(leaderboard_obj);

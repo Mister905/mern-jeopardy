@@ -58,7 +58,7 @@ class ActiveProfile extends Component {
                           <div className="card-image">
                             <img
                               className="responsive-img"
-                              src={`http://localhost:5000/api/profile/profile-image/${profile_image_id}`}
+                              src={`/api/profile/profile-image/${profile_image_id}`}
                             />
                           </div>
                         </div>
@@ -105,7 +105,7 @@ class ActiveProfile extends Component {
                               to="/dashboard"
                               className="btn waves-effect waves-jeopardy-blue bold-text btn-custom"
                             >
-                              <i className="material-icons left  bold-text">
+                              <i className="material-icons custom-icon bold-text">
                                 home
                               </i>
                               Home
@@ -116,7 +116,7 @@ class ActiveProfile extends Component {
                               to="/update-profile"
                               className="btn waves-effect waves-jeopardy-blue bold-text btn-custom"
                             >
-                              <i className="material-icons left  bold-text">
+                              <i className="material-icons custom-icon bold-text">
                                 edit
                               </i>
                               Edit
@@ -221,8 +221,8 @@ class ActiveProfile extends Component {
                             className="btn waves-effect waves-jeopardy-blue bold-text btn-custom btn-create-experience "
                             to="/create-experience"
                           >
-                            <i className="material-icons left bold-text">add</i>
-                            <span className="new-experience">Create</span>
+                            <i className="material-icons custom-icon bold-text">add</i>
+                            Create
                           </Link>
                         </div>
                       ) : (

@@ -78,7 +78,7 @@ class ViewProfile extends Component {
                           <div className="card-image">
                             <img
                               className="responsive-img"
-                              src={`http://localhost:5000/api/profile/profile-image/${profile_image_id}`}
+                              src={`/api/profile/profile-image/${profile_image_id}`}
                             />
                           </div>
                         </div>
@@ -125,7 +125,7 @@ class ViewProfile extends Component {
                               to="/dashboard"
                               className="btn waves-effect waves-jeopardy-blue bold-text btn-custom"
                             >
-                              <i className="material-icons left  bold-text">
+                              <i className="material-icons custom-icon bold-text">
                                 home
                               </i>
                               Home
@@ -136,7 +136,7 @@ class ViewProfile extends Component {
                               to={`/profile/${profile_id}/stats/${user_id}`}
                               className="btn waves-effect waves-jeopardy-blue bold-text btn-custom"
                             >
-                              <i className="material-icons left  bold-text">
+                              <i className="material-icons custom-icon bold-text">
                                 star_border
                               </i>
                               Stats

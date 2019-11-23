@@ -3,7 +3,7 @@ import { ACTIVE_STATISTICS_LOADED, PLAYER_STATISTICS_LOADED, STATISTICS_CLEARED 
 
 export const get_active_statistics = () => async dispatch => {
   try {
-    const res = await axios.get("http://localhost:5000/api/statistics/active");
+    const res = await axios.get("/api/statistics/active");
     dispatch({
       type: ACTIVE_STATISTICS_LOADED,
       payload: res.data
@@ -15,7 +15,7 @@ export const get_active_statistics = () => async dispatch => {
 
 export const get_player_statistics = (user_id) => async dispatch => {
   try {
-    const res = await axios.get(`http://localhost:5000/api/statistics/player/${user_id}`);
+    const res = await axios.get(`/api/statistics/player/${user_id}`);
 
     dispatch({
       type: PLAYER_STATISTICS_LOADED,

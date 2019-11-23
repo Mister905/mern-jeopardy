@@ -13,7 +13,7 @@ import {
 // Get Active User's Profile
 export const get_profile = () => async dispatch => {
   try {
-    const res = await axios.get("http://localhost:5000/api/profile/active");
+    const res = await axios.get("/api/profile/active");
     dispatch({
       type: ACTIVE_PROFILE_LOADED,
       payload: res.data
@@ -25,7 +25,7 @@ export const get_profile = () => async dispatch => {
 
 export const get_profiles = () => async dispatch => {
   try {
-    const res = await axios.get("http://localhost:5000/api/profile/all");
+    const res = await axios.get("/api/profile/all");
 
     const profiles = res.data;
 
@@ -35,7 +35,7 @@ export const get_profiles = () => async dispatch => {
         let user_obj = {};
         user_obj.profile_id = profile._id;
         let res = await axios.get(
-          `http://localhost:5000/api/auth/${profile.user._id}`
+          `/api/auth/${profile.user._id}`
         );
         user_obj.name = `${res.data.first_name} ${res.data.last_name}`;
         users.push(user_obj);
@@ -57,7 +57,7 @@ export const get_profiles = () => async dispatch => {
 export const get_profile_by_profile_id = profile_id => async dispatch => {
   try {
     const res = await axios.get(
-      `http://localhost:5000/api/profile/get_profile_by_profile_id/${profile_id}`
+      `/api/profile/get_profile_by_profile_id/${profile_id}`
     );
     dispatch({
       type: PLAYER_PROFILE_LOADED,
@@ -71,7 +71,7 @@ export const get_profile_by_profile_id = profile_id => async dispatch => {
 export const get_profile_by_user_id = user_id => async dispatch => {
   try {
     const res = await axios.get(
-      `http://localhost:5000/api/profile/get_profile_by_user_id/${user_id}`
+      `/api/profile/get_profile_by_user_id/${user_id}`
     );
     dispatch({
       type: PLAYER_PROFILE_LOADED,
@@ -84,7 +84,7 @@ export const get_profile_by_user_id = user_id => async dispatch => {
 
 export const get_player_name = user_id => async dispatch => {
   try {
-    const res = await axios.get(`http://localhost:5000/api/auth/${user_id}`);
+    const res = await axios.get(`/api/auth/${user_id}`);
     dispatch({
       type: PLAYER_NAME_LOADED,
       payload: res.data
@@ -114,7 +114,7 @@ export const create_profile = (form_data, history) => async dispatch => {
       }, new FormData());
 
       const res = await axios.post(
-        "http://localhost:5000/api/profile/create",
+        "/api/profile/create",
         form_data_object
       );
 
@@ -160,7 +160,7 @@ export const update_profile = (form_data, history) => async dispatch => {
       }, new FormData());
 
       const res = await axios.post(
-        "http://localhost:5000/api/profile/update",
+        "/api/profile/update",
         form_data_object
       );
 

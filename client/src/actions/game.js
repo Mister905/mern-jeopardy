@@ -34,7 +34,7 @@ export const load_round = game_data => async dispatch => {
       try {
         // console.log("getting_unique_categories");
         let res = await axios.get(
-          "http://localhost:5000/api/game/get-random-questions"
+          "/api/game/get-random-questions"
         );
 
         res = JSON.parse(res.data);
@@ -54,7 +54,7 @@ export const load_round = game_data => async dispatch => {
             try {
               res_200 = await axios({
                 method: "get",
-                url: "http://localhost:5000/api/game/get-question",
+                url: "/api/game/get-question",
                 params: {
                   value: 200,
                   category_id: category_id
@@ -75,7 +75,7 @@ export const load_round = game_data => async dispatch => {
             try {
               res_400 = await axios({
                 method: "get",
-                url: "http://localhost:5000/api/game/get-question",
+                url: "/api/game/get-question",
                 params: {
                   value: 400,
                   category_id: category_id
@@ -96,7 +96,7 @@ export const load_round = game_data => async dispatch => {
             try {
               res_600 = await axios({
                 method: "get",
-                url: "http://localhost:5000/api/game/get-question",
+                url: "/api/game/get-question",
                 params: {
                   value: 600,
                   category_id: category_id
@@ -117,7 +117,7 @@ export const load_round = game_data => async dispatch => {
             try {
               res_800 = await axios({
                 method: "get",
-                url: "http://localhost:5000/api/game/get-question",
+                url: "/api/game/get-question",
                 params: {
                   value: 800,
                   category_id: category_id
@@ -138,7 +138,7 @@ export const load_round = game_data => async dispatch => {
             try {
               res_1000 = await axios({
                 method: "get",
-                url: "http://localhost:5000/api/game/get-question",
+                url: "/api/game/get-question",
                 params: {
                   value: 1000,
                   category_id: category_id
@@ -335,7 +335,7 @@ export const load_round = game_data => async dispatch => {
         const { first_round_categories } = game_data;
 
         let res = await axios.get(
-          "http://localhost:5000/api/game/get-random-questions"
+          "/api/game/get-random-questions"
         );
 
         res = JSON.parse(res.data);
@@ -359,7 +359,7 @@ export const load_round = game_data => async dispatch => {
             try {
               res_400 = await axios({
                 method: "get",
-                url: "http://localhost:5000/api/game/get-question",
+                url: "/api/game/get-question",
                 params: {
                   value: 200,
                   category_id: category_id
@@ -385,7 +385,7 @@ export const load_round = game_data => async dispatch => {
             try {
               res_800 = await axios({
                 method: "get",
-                url: "http://localhost:5000/api/game/get-question",
+                url: "/api/game/get-question",
                 params: {
                   value: 400,
                   category_id: category_id
@@ -411,7 +411,7 @@ export const load_round = game_data => async dispatch => {
             try {
               res_1200 = await axios({
                 method: "get",
-                url: "http://localhost:5000/api/game/get-question",
+                url: "/api/game/get-question",
                 params: {
                   value: 600,
                   category_id: category_id
@@ -437,7 +437,7 @@ export const load_round = game_data => async dispatch => {
             try {
               res_1600 = await axios({
                 method: "get",
-                url: "http://localhost:5000/api/game/get-question",
+                url: "/api/game/get-question",
                 params: {
                   value: 800,
                   category_id: category_id
@@ -463,7 +463,7 @@ export const load_round = game_data => async dispatch => {
             try {
               res_2000 = await axios({
                 method: "get",
-                url: "http://localhost:5000/api/game/get-question",
+                url: "/api/game/get-question",
                 params: {
                   value: 1000,
                   category_id: category_id
@@ -690,7 +690,7 @@ export const load_round = game_data => async dispatch => {
       const { second_round_categories } = game_data;
 
       let res = await axios.get(
-        "http://localhost:5000/api/game/get-random-questions"
+        "/api/game/get-random-questions"
       );
 
       res = JSON.parse(res.data);
@@ -708,7 +708,7 @@ export const load_round = game_data => async dispatch => {
 
         let res_final = await axios({
           method: "get",
-          url: "http://localhost:5000/api/game/get-question",
+          url: "/api/game/get-question",
           params: {
             value: 1000,
             category_id: category_id
@@ -748,7 +748,7 @@ export const load_round = game_data => async dispatch => {
 
 export const answer_response = (response, history) => async dispatch => {
   const res = await axios.post(
-    "http://localhost:5000/api/statistics/response",
+    "/api/statistics/response",
     response
   );
 
@@ -834,15 +834,15 @@ export const final_jeopardy_response = (
 };
 
 export const load_game_over = payload => async dispatch => {
-  await axios.post("http://localhost:5000/api/statistics/game-over", payload);
+  await axios.post("/api/statistics/game-over", payload);
   var new_score = await axios.post(
-    "http://localhost:5000/api/score/new-score",
+    "/api/score/new-score",
     payload
   );
   new_score = new_score.data;
   const score_id = new_score._id;
   let high_scores = await axios.get(
-    "http://localhost:5000/api/score/get-high-scores"
+    "/api/score/get-high-scores"
   );
   high_scores = high_scores.data;
   let new_high_score_flag = false;
