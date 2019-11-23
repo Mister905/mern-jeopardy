@@ -40,7 +40,7 @@ class Navbar extends Component {
             </li>
             <li className="li-nav li-nav-logout">
               <a
-                className="a-nav nav-link btn btn-small amber darken-4"
+                className="btn btn-small amber darken-4"
                 onClick={this.handle_logout}
               >
                 logout
