@@ -7,10 +7,10 @@ const path = require('path');
 
 // MIDDLEWARE
 app.use(express.json({ extended: false }));
-// var corsOptions = {
-//     origin: 'http://localhost:3000'
-// }
-// app.use(cors(corsOptions));
+var corsOptions = {
+    origin: 'http://localhost:3000'
+}
+app.use(cors(corsOptions));
 
 // DB Config
 const mongo_URI = config.get('mongo_URI')
