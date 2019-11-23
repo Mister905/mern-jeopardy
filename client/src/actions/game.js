@@ -1,5 +1,5 @@
 import axios from "axios";
-import { set_alert } from "../actions/alert";
+import { show_alert } from "../actions/alert";
 import {
   LOADING_QUESTIONS,
   RESPONSE_PROCESSED,
@@ -33,9 +33,7 @@ export const load_round = game_data => async dispatch => {
     while (getting_unique_categories) {
       try {
         // console.log("getting_unique_categories");
-        let res = await axios.get(
-          "/api/game/get-random-questions"
-        );
+        let res = await axios.get("/api/game/get-random-questions");
 
         res = JSON.parse(res.data);
 
@@ -334,9 +332,7 @@ export const load_round = game_data => async dispatch => {
       try {
         const { first_round_categories } = game_data;
 
-        let res = await axios.get(
-          "/api/game/get-random-questions"
-        );
+        let res = await axios.get("/api/game/get-random-questions");
 
         res = JSON.parse(res.data);
 
@@ -351,7 +347,9 @@ export const load_round = game_data => async dispatch => {
             const category_id = categories[i];
 
             /* 
-                jService API does not have questions with values that correspond to second round values - therefore the first round values are substituted e.g. 400 value question comes from 200 value request
+                jService API does not have questions with values that correspond to 
+                second round values - therefore the first round values are substituted 
+                e.g. 400 value question comes from 200 value request
             */
 
             let res_400 = null;
@@ -689,9 +687,7 @@ export const load_round = game_data => async dispatch => {
 
       const { second_round_categories } = game_data;
 
-      let res = await axios.get(
-        "/api/game/get-random-questions"
-      );
+      let res = await axios.get("/api/game/get-random-questions");
 
       res = JSON.parse(res.data);
 
@@ -747,10 +743,7 @@ export const load_round = game_data => async dispatch => {
 };
 
 export const answer_response = (response, history) => async dispatch => {
-  const res = await axios.post(
-    "/api/statistics/response",
-    response
-  );
+  const res = await axios.post("/api/statistics/response", response);
 
   const payload = {
     question_id: response.question_id,
@@ -776,16 +769,29 @@ export const display_wager_form = () => async dispatch => {
   });
 };
 
+const number_with_commas = x => {
+  var parts = x.toString().split(".");
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return parts.join(".");
+};
+
 export const handle_daily_double_wager = (
   daily_double_wager,
   winnings
 ) => async dispatch => {
   if (daily_double_wager < 5) {
-    dispatch(set_alert("error", `The minimum Daily Double wager is $5`));
+    dispatch(show_alert("The minimum Daily Double wager is $5", "error"));
   } else if (winnings > 1000 && daily_double_wager > winnings) {
-    dispatch(set_alert("error", `You may wager up to $${winnings}`));
+    dispatch(
+      show_alert(
+        `Invalid wager - You may wager up to $${this.number_with_commas(
+          winnings
+        )}`,
+        "error"
+      )
+    );
   } else if (winnings < 1000 && daily_double_wager > 1000) {
-    dispatch(set_alert("error", `You may wager up to $1000`));
+    dispatch(show_alert("Invalid wager - You may wager up to $1,000", "error"));
   } else {
     dispatch({
       type: DISPLAY_DAILY_DOUBLE
@@ -795,7 +801,7 @@ export const handle_daily_double_wager = (
 
 export const handle_true_daily_double = true_daily_double => async dispatch => {
   if (true_daily_double < 5) {
-    dispatch(set_alert("error", `The minimum Daily Double wager is $5`));
+    dispatch(show_alert("The minimum Daily Double wager is $5", "error"))
   } else {
     dispatch({
       type: DISPLAY_TRUE_DAILY_DOUBLE
@@ -808,7 +814,8 @@ export const handle_final_jeopardy_wager = (
   winnings
 ) => async dispatch => {
   if (final_jeopardy_wager > winnings) {
-    dispatch(set_alert("error", `You may wager up to $${winnings}`));
+
+    dispatch(show_alert(`You may wager up to $${this.number_with_commas(winnings)}`, "error"));
   } else {
     dispatch({
       type: DISPLAY_FINAL_JEOPARDY
@@ -835,15 +842,10 @@ export const final_jeopardy_response = (
 
 export const load_game_over = payload => async dispatch => {
   await axios.post("/api/statistics/game-over", payload);
-  var new_score = await axios.post(
-    "/api/score/new-score",
-    payload
-  );
+  var new_score = await axios.post("/api/score/new-score", payload);
   new_score = new_score.data;
   const score_id = new_score._id;
-  let high_scores = await axios.get(
-    "/api/score/get-high-scores"
-  );
+  let high_scores = await axios.get("/api/score/get-high-scores");
   high_scores = high_scores.data;
   let new_high_score_flag = false;
   for (let i = 0; i < high_scores.length; i++) {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { set_alert } from "../actions/alert";
+import { show_alert } from "../actions/alert";
 import {
   ACTIVE_PROFILE_LOADED,
   ACTIVE_PROFILE_CLEARED,
@@ -34,9 +34,7 @@ export const get_profiles = () => async dispatch => {
       for await (const profile of profiles) {
         let user_obj = {};
         user_obj.profile_id = profile._id;
-        let res = await axios.get(
-          `/api/auth/${profile.user._id}`
-        );
+        let res = await axios.get(`/api/auth/${profile.user._id}`);
         user_obj.name = `${res.data.first_name} ${res.data.last_name}`;
         users.push(user_obj);
       }
@@ -104,7 +102,7 @@ export const create_profile = (form_data, history) => async dispatch => {
         const { profile_image } = form_data;
         const file_size = profile_image.size / 1024 / 1024; // in MB
         if (file_size > 2) {
-          dispatch(set_alert("error", "File size exceeds 2 MB"));
+          dispatch(show_alert("File size exceeds 2 MB", "error"));
         }
       }
 
@@ -113,29 +111,25 @@ export const create_profile = (form_data, history) => async dispatch => {
         return f;
       }, new FormData());
 
-      const res = await axios.post(
-        "/api/profile/create",
-        form_data_object
-      );
+      const res = await axios.post("/api/profile/create", form_data_object);
 
       dispatch({
         type: ACTIVE_PROFILE_LOADED,
         payload: res.data
       });
 
-      dispatch(set_alert("success", "Profile creation successful"));
+      dispatch(show_alert("Profile creation successful", "success"));
 
       history.push("/dashboard");
     } else {
-      dispatch(set_alert("error", "Biography is a required field"));
+      dispatch(show_alert("Biography is a required field", "error"));
     }
   } catch (error) {
-    console.log(error);
     const errors = error.response.data.errors;
     if (errors) {
-      errors.forEach(error => dispatch(set_alert("error", error.msg)));
+      errors.forEach(error => dispatch(show_alert(error.msg, "error")));
     } else {
-      dispatch(set_alert("error", "Login failed"));
+      dispatch(show_alert("Login error", "error"));
     }
   }
 };
@@ -150,7 +144,7 @@ export const update_profile = (form_data, history) => async dispatch => {
         const { profile_image } = form_data;
         const file_size = profile_image.size / 1024 / 1024; // in MB
         if (file_size > 2) {
-          dispatch(set_alert("error", "File size exceeds 2 MB"));
+          dispatch(show_alert("File size exceeds 2 MB", "error"));
         }
       }
 
@@ -159,27 +153,25 @@ export const update_profile = (form_data, history) => async dispatch => {
         return f;
       }, new FormData());
 
-      const res = await axios.post(
-        "/api/profile/update",
-        form_data_object
-      );
+      const res = await axios.post("/api/profile/update", form_data_object);
 
       dispatch({
         type: ACTIVE_PROFILE_LOADED,
         payload: res.data
       });
 
-      dispatch(set_alert("success", "Profile update successful"));
+      dispatch(show_alert("Profile successfully updated", "success"));
+
       history.push("/profile");
     } else {
-      dispatch(set_alert("error", "Biography is a required field"));
+      dispatch(show_alert("Biography is a required field", "error"));
     }
   } catch (error) {
     const errors = error.response.data.errors;
     if (errors) {
-      errors.forEach(error => dispatch(set_alert("error", error.msg)));
+      errors.forEach(error => dispatch(show_alert(error.msg, "error")));
     } else {
-      dispatch(set_alert("error", "Profile update failed"));
+      dispatch(show_alert("Profile update failed", "error"));
     }
   }
 };

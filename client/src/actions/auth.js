@@ -1,5 +1,5 @@
 import axios from "axios";
-import { set_alert, show_alert } from "./alert";
+import { show_alert } from "./alert";
 import set_auth_token from "../utils/set_auth_token";
 import {
   LOGIN_SUCCESS,

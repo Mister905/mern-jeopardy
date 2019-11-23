@@ -1,5 +1,5 @@
 import axios from "axios";
-import { set_alert } from "../actions/alert";
+import { show_alert } from "../actions/alert";
 import {
   EXPERIENCE_ITEM_LOADED,
   EXPERIENCE_LOADED,
@@ -14,21 +14,17 @@ export const create_experience = (form_data, history) => async dispatch => {
       }
     };
 
-    const res = await axios.post(
-      "/api/experience/create",
-      form_data,
-      config
-    );
+    const res = await axios.post("/api/experience/create", form_data, config);
 
-    dispatch(set_alert("success", "New experience record created"));
+    dispatch(show_alert("New experience record created", "success"));
 
     history.push("/profile");
   } catch (error) {
     const errors = error.response.data.errors;
     if (errors) {
-      errors.forEach(error => dispatch(set_alert("error", error.msg)));
+      errors.forEach(error => dispatch(show_alert(error.msg, "error")));
     } else {
-      dispatch(set_alert("error", "Failed to create new exerience record"));
+      dispatch(show_alert("Failed to create new exerience record", "error"));
     }
   }
 };
@@ -49,62 +45,52 @@ export const update_experience = (experience, history) => async dispatch => {
       config
     );
 
-    dispatch(set_alert("success", "Experience record updated"));
+    dispatch(show_alert("Experience record updated", "success"));
 
     history.push("/update-profile");
   } catch (error) {
-    dispatch(set_alert("error", "Failed to update item"));
+    dispatch(show_alert("Failed to update experience record", "error"));
   }
 };
 
 export const delete_experience = experience_id => async dispatch => {
   try {
-    var res = await axios.delete(
-      `/api/experience/${experience_id}/delete`
-    );
+    var res = await axios.delete(`/api/experience/${experience_id}/delete`);
 
-    res = await axios.get(
-      "/api/experience/get-experience"
-    );
+    res = await axios.get("/api/experience/get-experience");
 
     dispatch({
       type: EXPERIENCE_DELETED,
       payload: res.data
     });
 
-    dispatch(set_alert("success", "Experience record deleted"));
+    dispatch(show_alert("Experience record deleted", "success"));
   } catch (error) {
-    dispatch(set_alert("error", "Failed to delete experience"));
+    dispatch(show_alert("Failed to delete experience record", "error"));
   }
 };
 
 export const get_active_experience = () => async dispatch => {
   try {
-    let res = await axios.get(
-      "/api/experience/get-experience"
-    );
+    let res = await axios.get("/api/experience/get-experience");
     dispatch({
       type: EXPERIENCE_LOADED,
       payload: res.data
     });
   } catch (error) {
-    console.log(error.message);
-    dispatch(set_alert("error", "Failed to get profile experience"));
+    dispatch(show_alert("Failed to get experience records", "error"));
   }
 };
 
 export const get_player_experience = profile_id => async dispatch => {
   try {
-    let res = await axios.get(
-      `/api/experience/get-experience/${profile_id}`
-    );
+    let res = await axios.get(`/api/experience/get-experience/${profile_id}`);
     dispatch({
       type: EXPERIENCE_LOADED,
       payload: res.data
     });
   } catch (error) {
-    console.log(error.message);
-    dispatch(set_alert("error", "Failed to get player experience"));
+    dispatch(show_alert("Failed to get experience records", "error"));
   }
 };
 
@@ -118,6 +104,6 @@ export const get_experience_item = exp_id => async dispatch => {
       payload: res.data
     });
   } catch (error) {
-    dispatch(set_alert("error", "Failed to delete item"));
+    dispatch(show_alert("Failed to delete experience record", "error"));
   }
 };
