@@ -15,13 +15,15 @@ export const set_alert = (alert_type, message) => dispatch => {
   setTimeout(() => dispatch({ type: REMOVE_ALERT, payload: id }), 5000);
 };
 
-export const show_alert = (msg, type = "info") => {
-  return {
+export const show_alert = (msg, type = "info") => dispatch => {
+  const id = uuid.v4();
+  dispatch({
     type: SHOW_ALERT_MESSAGE,
     payload: {
+      id,
       show: true,
       msg,
       type
     }
-  };
-}
+  });
+};

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { set_alert } from "./alert";
+import { set_alert, show_alert } from "./alert";
 import set_auth_token from "../utils/set_auth_token";
 import {
   LOGIN_SUCCESS,
@@ -51,12 +51,13 @@ export const register = (
 
   try {
     await axios.post("http://localhost:5000/api/auth/register", body, config);
-    dispatch(set_alert("success", "You have successfully registered"));
+    // dispatch(set_alert("success", "You have successfully registered"));
+    dispatch(show_alert("You have successfully registered"))
     history.push("/login");
   } catch (error) {
     const errors = error.response.data.errors;
     if (errors) {
-      errors.forEach(error => dispatch(set_alert("error", error.msg)));
+      errors.forEach(error => dispatch(show_alert(error.msg)));
     }
   }
 };

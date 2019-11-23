@@ -3,11 +3,10 @@ import "./assets/scss/index.scss";
 import "materialize-css/dist/css/materialize.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
-import AlertTemplate from "react-alert-template-basic";
 
 // COMPONENTS
 import Navbar from "./components/layout/navbar/Navbar";
-import Alert from './components/layout/alert/Alert';
+import Alert from "./components/layout/alert/Alert";
 import Landing from "./components/layout/landing/Landing";
 import Register from "./components/auth/register/Register";
 import Login from "./components/auth/login/Login";
@@ -40,11 +39,42 @@ import { load_user } from "./actions/auth";
 // alert cofiguration
 const options = {
   // you can also just use 'bottom center'
-  position: positions.BOTTOM_CENTER,
+  position: positions.TOP_CENTER,
   timeout: 5000,
   offset: "30px",
   // you can also just use 'scale'
   transition: transitions.SCALE
+};
+
+const AlertTemplate = props => {
+ 
+
+  // width: auto;
+  // clear: both;
+  // margin-top: 10px;
+  // position: relative;
+  // max-width:100%;
+  // height: auto;
+  // min-height: $toast-height;
+  // line-height: 1.5em;
+  // word-break: keep-all;
+  // background-color: $toast-color;
+  // padding: 10px 25px;
+  // font-size: 1.1rem;
+  // font-weight: 300;
+  // color: $toast-text-color;
+
+  return (
+    <div
+      className="card custom-alert"
+    >
+      {/* {props.options.type === "info" && "!"}
+      {props.options.type === "success" && ":)"}
+      {props.options.type === "error" && ":("} */}
+      {props.message}
+      <button onClick={props.close}>X</button>
+    </div>
+  );
 };
 
 export class App extends Component {
@@ -64,7 +94,6 @@ export class App extends Component {
             <Router>
               <div className="App">
                 <Navbar />
-                {/* <Alerts /> */}
                 <Alert />
                 <Switch>
                   <Route exact path="/" component={Landing} />

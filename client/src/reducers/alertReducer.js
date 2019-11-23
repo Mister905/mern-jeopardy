@@ -1,11 +1,8 @@
-import {
-  SET_ALERT,
-  REMOVE_ALERT,
-  SHOW_ALERT_MESSAGE
-} from "../actions/types";
+import { SET_ALERT, REMOVE_ALERT, SHOW_ALERT_MESSAGE } from "../actions/types";
 
 const initial_state = {
   alert: {
+      id: "",
     show: false,
     msg: "",
     type: "info"
@@ -20,9 +17,10 @@ export default function(state = initial_state, action) {
       return {
         ...state,
         alert: {
+          id: payload.id,
           show: true,
-          msg: action.payload.msg,
-          type: action.payload.type
+          msg: payload.msg,
+          type: payload.type
         }
       };
 

@@ -3,24 +3,15 @@ import { connect } from "react-redux";
 import { withAlert } from "react-alert";
 
 class Alert extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  componentDidUpdate = () => {};
+  componentDidUpdate = prevProps => {
+    if (this.props.alerts.alert.id !== prevProps.alerts.alert.id) {
+      const alert = this.props.alert;
+      alert.show(this.props.alerts.alert.msg, { type: 'error' });
+    }
+  };
 
   render() {
-    const alert = this.props.alert;
-    console.log(this.props)
-    return (
-      <button
-        onClick={() => {
-          alert.show("Oh look, an alert!");
-        }}
-      >
-        Show Alert
-      </button>
-    );
+    return null;
   }
 }
 

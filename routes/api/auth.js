@@ -45,10 +45,10 @@ router.get("/:user_id", auth, async (req, res) => {
 router.post(
   "/register",
   [
-    check("first_name", "Name is required")
+    check("first_name", "First name is required")
       .not()
       .isEmpty(),
-    check("last_name", "Name is required")
+    check("last_name", "Last name is required")
       .not()
       .isEmpty(),
     check("email", "A valid email is required").isEmail(),
