@@ -6,7 +6,6 @@ import Loader from "../layout/loader/Loader";
 import { load_user } from "../../actions/auth";
 import {
   get_profile,
-  delete_account,
   clear_player_profile
 } from "../../actions/profile";
 import { reset_game } from "../../actions/game";
@@ -46,21 +45,21 @@ class Dashboard extends Component {
               to="/profile"
               className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom mb-13 btn-dashboard"
             >
-              <i class="material-icons custom-icon">account_circle</i>
+              <i className="material-icons custom-icon">account_circle</i>
               View Profile
             </Link>
             <Link
               to="/players"
               className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom mb-13 btn-dashboard"
             >
-              <i class="material-icons custom-icon">group</i>
+              <i className="material-icons custom-icon">group</i>
               Players
             </Link>
             <Link
               to="/account"
               className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom btn-dashboard"
             >
-              <i class="material-icons custom-icon">settings_applications</i>
+              <i className="material-icons custom-icon">settings_applications</i>
               Account
             </Link>
           </div>
@@ -74,7 +73,7 @@ class Dashboard extends Component {
               to="/create-profile"
               className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom mb-13 btn-dashboard"
             >
-              <i class="material-icons custom-icon">person_add</i>
+              <i className="material-icons custom-icon">person_add</i>
               Create Profile
             </Link>
             <Link
@@ -90,7 +89,7 @@ class Dashboard extends Component {
               to="/account"
               className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom btn-dashboard"
             >
-              <i class="material-icons custom-icon">settings_applications</i>
+              <i className="material-icons custom-icon">settings_applications</i>
               Account
             </Link>
           </div>
@@ -141,21 +140,21 @@ class Dashboard extends Component {
                     to="/game"
                     className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom mb-13 btn-dashboard"
                   >
-                    <i class="material-icons custom-icon">attach_money</i>
+                    <i className="material-icons custom-icon">attach_money</i>
                     New Game
                   </Link>
                   <Link
                     to="/stats"
                     className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom mb-13 btn-dashboard"
                   >
-                    <i class="material-icons custom-icon">star_border</i>
+                    <i className="material-icons custom-icon">star_border</i>
                     Statistics
                   </Link>
                   <Link
                     to="/leaderboard"
                     className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom btn-dashboard"
                   >
-                    <i class="material-icons custom-icon">view_list</i>
+                    <i className="material-icons custom-icon">view_list</i>
                     Leaderboard
                   </Link>
                 </div>
