@@ -8,7 +8,6 @@ import {
   DISPLAY_FINAL_JEOPARDY,
   PROCESS_FINAL,
   NEW_HIGH_SCORE,
-  LOADING_NEW_GAME,
   ACTIVATING_GAME,
   RESET_GAME
 } from "../actions/types";

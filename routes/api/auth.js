@@ -91,7 +91,7 @@ router.post(
         });
 
         // Salt and encrypt password before saving in database
-        bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.genSalt(13, (err, salt) => {
           bcrypt.hash(new_user.password, salt, (err, hash) => {
             if (err) throw err;
             new_user.password = hash;
