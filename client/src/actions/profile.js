@@ -167,6 +167,7 @@ export const update_profile = (form_data, history) => async dispatch => {
       dispatch(show_alert("Biography is a required field", "error"));
     }
   } catch (error) {
+    console.log(error)
     const errors = error.response.data.errors;
     if (errors) {
       errors.forEach(error => dispatch(show_alert(error.msg, "error")));

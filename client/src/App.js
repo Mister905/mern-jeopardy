@@ -49,14 +49,14 @@ const AlertTemplate = props => {
   if (type === "error") {
     return (
       <div className="card custom-alert custom-error bold-text">
-        <i class="material-icons alert-icon">error_outline</i>
+        <i className="material-icons alert-icon">error_outline</i>
         {props.message}
       </div>
     );
   } else if (type === "success") {
     return (
       <div className="card custom-alert custom-success">
-        <i class="material-icons dp48">check_circle</i>
+        <i className="material-icons dp48">check_circle</i>
         {props.message}
       </div>
     );
