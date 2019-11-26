@@ -56,7 +56,7 @@ const AlertTemplate = props => {
   } else if (type === "success") {
     return (
       <div className="card custom-alert custom-success">
-        <i className="material-icons dp48">check_circle</i>
+        <i className="material-icons alert-icon">check_circle</i>
         {props.message}
       </div>
     );
