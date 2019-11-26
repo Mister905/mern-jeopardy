@@ -13,8 +13,7 @@ import CurrencyInput from "react-currency-input";
 class Focus extends Component {
   constructor(props) {
     super(props);
-    document.body.classList.remove("jeopardy-gradient");
-    document.body.classList.add("jeopardy-blue-dark");
+    
     const { is_first_round, is_second_round } = this.props.game;
     if (is_first_round) {
       const { id } = this.props.location.state;
