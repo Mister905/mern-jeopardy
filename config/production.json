@@ -1,4 +1,4 @@
 {
     "mongo_URI": "mongodb+srv://Mister_905:Cx3vEgb1KkKLDvRq@cluster0-g0ah2.mongodb.net/mern-jeopardy?retryWrites=true",
-    "jwt_secret": "secret"
+    "jwt_secret": "slowqueen22"
 }

@@ -173,7 +173,7 @@ router.post(
             payload,
             config.get("jwt_secret"),
             {
-              expiresIn: 31556926 // 1 year in seconds
+              expiresIn: 3600 // 1 hour in seconds
             },
             (err, token) => {
               if (err) throw err;
@@ -184,12 +184,6 @@ router.post(
           return res.status(400).json({ msg: "Login failed" });
         }
       });
-
-      const payload = {
-        user: {
-          id: user.id
-        }
-      };
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Server Error");
