@@ -18,10 +18,6 @@ class Game extends Component {
         document.body.classList.add('jeopardy-blue-dark');
     }
 
-    // componentWillUnmount = () => {
-    //     document.body.classList.remove('jeopardy-blue-dark');
-    // }
-
     componentDidMount = () => {
         const {
             is_second_round,

@@ -13,7 +13,7 @@ import CurrencyInput from "react-currency-input";
 class Focus extends Component {
   constructor(props) {
     super(props);
-    
+
     const { is_first_round, is_second_round } = this.props.game;
     if (is_first_round) {
       const { id } = this.props.location.state;
@@ -115,7 +115,7 @@ class Focus extends Component {
           this.setState(prevState => {
             return {
               ...prevState,
-              display_question: true
+              display_question: false
             };
           });
         } else {
@@ -125,7 +125,7 @@ class Focus extends Component {
           this.setState(prevState => {
             return {
               ...prevState,
-              display_question: true
+              display_question: false
             };
           });
         }
@@ -137,7 +137,7 @@ class Focus extends Component {
           this.setState(prevState => {
             return {
               ...prevState,
-              display_question: true
+              display_question: false
             };
           });
         } else {
@@ -147,12 +147,13 @@ class Focus extends Component {
           this.setState(prevState => {
             return {
               ...prevState,
-              display_question: true
+              display_question: false
             };
           });
         }
       }
     }
+    
     this.props.answer_response(response, this.props.history);
   };
 
@@ -336,7 +337,10 @@ class Focus extends Component {
                 <div className="row wager-row">
                   <div className="col m12">
                     <div className="current-winnings-heading center-align jeopardy-blue-dark-text bold-text">
-                      Current Winnings: <span className="wager-span">${this.number_with_commas(winnings)}</span>
+                      Current Winnings:{" "}
+                      <span className="wager-span">
+                        ${this.number_with_commas(winnings)}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -344,7 +348,8 @@ class Focus extends Component {
                   <div className="row">
                     <div className="col m12">
                       <div className="current-winnings-heading center-align jeopardy-blue-dark-text bold-text">
-                        You may wager up to <span className="wager-span">$1,000</span>
+                        You may wager up to{" "}
+                        <span className="wager-span">$1,000</span>
                       </div>
                     </div>
                   </div>
@@ -353,7 +358,10 @@ class Focus extends Component {
                   <div className="row">
                     <div className="col m12">
                       <div className="current-winnings-heading center-align jeopardy-blue-dark-text bold-text">
-                        You may wager up to <span className="wager-span">${this.number_with_commas(winnings)}</span>
+                        You may wager up to{" "}
+                        <span className="wager-span">
+                          ${this.number_with_commas(winnings)}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -379,7 +387,7 @@ class Focus extends Component {
                           </div>
                           <div className="row">
                             <div className="input-field col m6">
-                            {/* Before the clue is revealed, the contestant who selects the Daily Double must declare a wager, from a minimum of $5 to a maximum of his/her entire score (known as a "true Daily Double") */}
+                              {/* Before the clue is revealed, the contestant who selects the Daily Double must declare a wager, from a minimum of $5 to a maximum of his/her entire score (known as a "true Daily Double") */}
                               {winnings < 5 ? (
                                 <button
                                   onClick={this.handle_true_daily_double}
@@ -586,12 +594,9 @@ const mapStateToProps = state => ({
   game: state.game
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    answer_response,
-    display_wager_form,
-    handle_daily_double_wager,
-    handle_true_daily_double
-  }
-)(withRouter(Focus));
+export default connect(mapStateToProps, {
+  answer_response,
+  display_wager_form,
+  handle_daily_double_wager,
+  handle_true_daily_double
+})(withRouter(Focus));
