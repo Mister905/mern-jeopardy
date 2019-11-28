@@ -5,8 +5,7 @@ import { connect } from "react-redux";
 import Loader from "../layout/loader/Loader";
 import { load_user } from "../../actions/auth";
 import {
-  get_profile,
-  clear_player_profile
+  get_active_profile
 } from "../../actions/profile";
 import { reset_game } from "../../actions/game";
 import mern_logo from "../../assets/img/mern_logo.png";
@@ -18,18 +17,15 @@ class Dashboard extends Component {
     document.body.classList.remove("jeopardy-grey");
     document.body.classList.remove("jeopardy-blue-dark");
     document.body.classList.add("jeopardy-gradient");
-    // this.props.reset_game();
-  }
-
-  componentDidMount = () => {
+    this.props.reset_game();
     this.props.load_user();
-  };
+  }
 
   componentDidUpdate = prevProps => {
     if (prevProps.auth.user !== this.props.auth.user) {
       const { has_profile } = this.props.auth.user;
       if (has_profile) {
-        this.props.get_profile();
+        this.props.get_active_profile();
       }
     }
   };
@@ -169,7 +165,6 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
   load_user: PropTypes.func.isRequired,
-  get_profile: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired
 };
@@ -181,7 +176,6 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, {
   load_user,
-  get_profile,
-  reset_game,
-  clear_player_profile
+  get_active_profile,
+  reset_game
 })(Dashboard);

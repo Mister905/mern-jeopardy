@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { get_profile } from "../../../actions/profile";
+import { get_active_profile } from "../../../actions/profile";
 import { get_active_experience } from "../../../actions/experience";
 import Loader from "../../layout/loader/Loader";
 import Moment from "react-moment";
@@ -16,12 +16,9 @@ class ActiveProfile extends Component {
   constructor(props) {
     super(props);
     document.body.classList.add("jeopardy-gradient");
-  }
-
-  componentDidMount = () => {
-    this.props.get_profile();
+    this.props.get_active_profile();
     this.props.get_active_experience();
-  };
+  }
 
   render() {
     let { loading_profile } = this.props.profile;
@@ -252,7 +249,6 @@ class ActiveProfile extends Component {
 }
 
 ActiveProfile.propTypes = {
-  get_profile: PropTypes.func.isRequired,
   get_active_experience: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired
 };
@@ -265,5 +261,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { get_profile, get_active_experience }
+  { get_active_profile, get_active_experience }
 )(ActiveProfile);

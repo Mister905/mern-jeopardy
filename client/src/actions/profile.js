@@ -7,11 +7,12 @@ import {
   PLAYER_NAME_LOADED,
   PLAYER_PROFILE_LOADED,
   PLAYER_PROFILE_CLEARED,
-  EXPERIENCE_CLEARED
+  ACTIVE_EXPERIENCE_CLEARED,
+  PLAYER_EXPERIENCE_CLEARED
 } from "./types";
 
 // Get Active User's Profile
-export const get_profile = () => async dispatch => {
+export const get_active_profile = () => async dispatch => {
   try {
     const res = await axios.get("/api/profile/active");
     dispatch({
@@ -182,6 +183,6 @@ export const clear_player_profile = () => async dispatch => {
     type: PLAYER_PROFILE_CLEARED
   });
   dispatch({
-    type: EXPERIENCE_CLEARED
+    type: PLAYER_EXPERIENCE_CLEARED
   });
 };

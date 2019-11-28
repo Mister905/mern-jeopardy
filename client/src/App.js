@@ -69,7 +69,6 @@ export class App extends Component {
     if (localStorage.token) {
       set_auth_token(localStorage.token);
     }
-    store.dispatch(load_user());
   }
 
   render() {

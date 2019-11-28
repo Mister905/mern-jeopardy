@@ -3,21 +3,24 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import M from "materialize-css";
-import { get_profile, update_profile } from "../../../actions/profile";
+import { get_active_profile, update_profile } from "../../../actions/profile";
 import {
   delete_experience,
-  get_active_experience
+  get_active_experience,
+  clear_experience_item
 } from "../../../actions/experience";
 import Loader from "../../layout/loader/Loader";
 import Moment from "react-moment";
 import { Modal, Button } from "react-materialize";
 import modal_logo from "../../../assets/img/nav_jeopardy_logo.png";
 
-class EditProfile extends Component {
+class UpdateProfile extends Component {
   constructor(props) {
     super(props);
     document.body.classList.add("jeopardy-gradient");
     this.bio_textarea = React.createRef();
+    this.props.get_active_profile();
+    this.props.get_active_experience();
   }
 
   state = {
@@ -26,13 +29,15 @@ class EditProfile extends Component {
     linkedin: "",
     facebook: "",
     twitter: "",
-    experience: [],
+    active_experience: [],
     loading_profile: true
   };
 
+  componentWillUnmount = () => {
+    this.props.clear_experience_item();
+  };
+
   componentDidMount = () => {
-    this.props.get_profile();
-    this.props.get_active_experience();
     const { active_profile } = this.props.profile;
     const {
       biography,
@@ -41,7 +46,7 @@ class EditProfile extends Component {
       twitter,
       facebook
     } = active_profile;
-    const { experience } = this.props.experience;
+    const { active_experience } = this.props.experience;
 
     if (specialties.length > 0) {
       this.setState({
@@ -60,18 +65,18 @@ class EditProfile extends Component {
       facebook
     });
 
-    if (experience.length > 0) {
+    if (active_experience.length > 0) {
       this.setState({
-        experience
+        active_experience
       });
     }
   };
 
   componentDidUpdate = (prevProps, prevState) => {
-    if (prevProps.experience !== this.props.experience) {
-      const { experience } = this.props.experience;
+    if (prevProps.active_experience !== this.props.active_experience) {
+      const { active_experience } = this.props.experience;
       this.setState({
-        experience
+        active_experience
       });
     }
 
@@ -110,6 +115,7 @@ class EditProfile extends Component {
 
   render() {
     let { loading_profile } = this.props.profile;
+    let { loading_experience_item } = this.props.experience;
     if (loading_profile) {
       return <Loader />;
     } else {
@@ -117,7 +123,7 @@ class EditProfile extends Component {
         name,
         biography,
         specialties,
-        experience,
+        active_experience,
         loading_profile
       } = this.state;
       const { active_profile } = this.props.profile;
@@ -278,15 +284,15 @@ class EditProfile extends Component {
                   </form>
                   <div className="row">
                     <div className="col m10 offset-m1">
-                      {experience.length > 0 ? (
+                      <label
+                        className="jeopardy-blue-dark-text bold-text"
+                        htmlFor="biography"
+                      >
+                        Experience
+                      </label>
+                      {active_experience.length > 0 ? (
                         <div>
-                          <label
-                            className="jeopardy-blue-dark-text bold-text"
-                            htmlFor="biography"
-                          >
-                            Experience
-                          </label>
-                          {experience.map((item, index) => {
+                          {active_experience.map((item, index) => {
                             return (
                               <div
                                 className="card experience-card"
@@ -421,9 +427,8 @@ class EditProfile extends Component {
   }
 }
 
-EditProfile.propTypes = {
+UpdateProfile.propTypes = {
   profile: PropTypes.object.isRequired,
-  get_profile: PropTypes.func.isRequired,
   update_profile: PropTypes.func.isRequired
 };
 
@@ -433,8 +438,9 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, {
-  get_profile,
+  get_active_profile,
   update_profile,
   get_active_experience,
-  delete_experience
-})(withRouter(EditProfile));
+  delete_experience,
+  clear_experience_item
+})(withRouter(UpdateProfile));

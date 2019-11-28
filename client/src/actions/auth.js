@@ -8,7 +8,8 @@ import {
   USER_LOADED,
   AUTH_ERROR,
   ACTIVE_PROFILE_CLEARED,
-  EXPERIENCE_CLEARED,
+  ACTIVE_EXPERIENCE_CLEARED,
+  PLAYER_EXPERIENCE_CLEARED,
   RESET_GAME
 } from "./types";
 
@@ -97,7 +98,8 @@ export const login = ({ email, password }, history) => async dispatch => {
 // Logout User
 export const logout = () => dispatch => {
   dispatch({ type: ACTIVE_PROFILE_CLEARED });
-  dispatch({ type: EXPERIENCE_CLEARED });
+  dispatch({ type: ACTIVE_EXPERIENCE_CLEARED });
+  dispatch({ type: PLAYER_EXPERIENCE_CLEARED });
   dispatch({ type: LOGOUT });
   dispatch({ type: RESET_GAME });
 };

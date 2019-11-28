@@ -1,9 +1,11 @@
 import axios from "axios";
 import { show_alert } from "../actions/alert";
 import {
+  ACTIVE_EXPERIENCE_LOADED,
+  PLAYER_EXPERIENCE_LOADED,
   EXPERIENCE_ITEM_LOADED,
-  EXPERIENCE_LOADED,
-  EXPERIENCE_DELETED
+  EXPERIENCE_ITEM_DELETED,
+  EXPERIENCE_ITEM_CLEARED
 } from "./types";
 
 export const create_experience = (form_data, history) => async dispatch => {
@@ -60,7 +62,7 @@ export const delete_experience = experience_id => async dispatch => {
     res = await axios.get("/api/experience/get-experience");
 
     dispatch({
-      type: EXPERIENCE_DELETED,
+      type: EXPERIENCE_ITEM_DELETED,
       payload: res.data
     });
 
@@ -74,7 +76,7 @@ export const get_active_experience = () => async dispatch => {
   try {
     let res = await axios.get("/api/experience/get-experience");
     dispatch({
-      type: EXPERIENCE_LOADED,
+      type: ACTIVE_EXPERIENCE_LOADED,
       payload: res.data
     });
   } catch (error) {
@@ -86,7 +88,7 @@ export const get_player_experience = profile_id => async dispatch => {
   try {
     let res = await axios.get(`/api/experience/get-experience/${profile_id}`);
     dispatch({
-      type: EXPERIENCE_LOADED,
+      type: PLAYER_EXPERIENCE_LOADED,
       payload: res.data
     });
   } catch (error) {
@@ -107,3 +109,9 @@ export const get_experience_item = exp_id => async dispatch => {
     dispatch(show_alert("Failed to delete experience record", "error"));
   }
 };
+
+export const clear_experience_item = () => async dispatch => {
+  dispatch({
+    type: EXPERIENCE_ITEM_CLEARED
+  });
+}
