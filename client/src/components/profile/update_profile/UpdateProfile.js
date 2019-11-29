@@ -28,51 +28,48 @@ class UpdateProfile extends Component {
     linkedin: "",
     facebook: "",
     twitter: "",
-    experience: [],
-    form_loading: true
-  };
-
-  componentDidMount = () => {
-    const { active_profile } = this.props.profile;
-    const {
-      biography,
-      specialties,
-      linkedin,
-      twitter,
-      facebook
-    } = active_profile;
-
-    this.setState({
-      biography,
-      linkedin,
-      twitter,
-      facebook
-    });
-
-    if (specialties.length > 0) {
-      this.setState({
-        specialties: specialties.join(", ")
-      });
-    } else {
-      this.setState({
-        specialties: "N/A"
-      });
-    }
-
-    const { active_experience } = this.props.experience;
-    this.setState({
-      experience: active_experience,
-      form_loading: false
-    });
+    experience: []
   };
 
   componentDidUpdate = (prevProps, prevState) => {
     if (prevState.biography !== this.state.bio_textarea) {
-      try {
-        M.textareaAutoResize(this.bio_textarea.current);
-      } catch (error) {
-        console.log(error);
+      if (this.bio_textarea.current) {
+        try {
+          M.textareaAutoResize(this.bio_textarea.current);
+        } catch (error) {
+          console.log(error);
+        }
       }
+    }
+    if (
+      prevProps.experience.active_experience !=
+      this.props.experience.active_experience
+    ) {
+      // console.log('derp')
+      const { active_experience } = this.props.experience;
+      this.setState({
+        experience: active_experience,
+        experience_loading: false
+      });
+    }
+
+    if (prevProps.profile.active_profile != this.props.profile.active_profile) {
+      const { active_profile } = this.props.profile;
+      const {
+        biography,
+        specialties,
+        linkedin,
+        twitter,
+        facebook
+      } = active_profile;
+      this.setState({
+        biography,
+        linkedin,
+        twitter,
+        facebook,
+        specialties,
+        profile_loading: false
+      });
     }
   };
 
@@ -108,6 +105,7 @@ class UpdateProfile extends Component {
     const { active_profile } = this.props.profile;
     const { experience } = this.state;
     const { profile_image_id } = this.props.profile.active_profile;
+    const { specialties } = this.props.profile.active_profile;
     return (
       <div className="container">
         <div className="row mt-row">
@@ -239,7 +237,11 @@ class UpdateProfile extends Component {
                           id="specialties"
                           type="text"
                           name="specialties"
-                          value={this.state.specialties}
+                          value={
+                            specialties.length > 0
+                              ? specialties.join(", ")
+                              : "N/A"
+                          }
                           onChange={this.on_change}
                         />
                         <label className="active" htmlFor="specialties">
@@ -406,9 +408,16 @@ class UpdateProfile extends Component {
   };
 
   render() {
-    const { form_loading } = this.state;
-    if (form_loading) {
-      return <Loader />;
+    let { loading_active_profile } = this.props.profile;
+    let { loading_active_experience } = this.props.experience;
+    console.log(loading_active_profile);
+    console.log(loading_active_experience);
+    if (loading_active_profile || loading_active_experience) {
+      return (
+        <div className="container">
+          <Loader />;
+        </div>
+      );
     } else {
       return this.output_active_profile();
     }

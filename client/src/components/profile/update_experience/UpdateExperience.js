@@ -9,7 +9,7 @@ import {
   clear_experience_item,
   clear_active_experience
 } from "../../../actions/experience";
-import { clear_active_profile } from '../../../actions/profile';
+import { clear_active_profile } from "../../../actions/profile";
 import Loader from "../../layout/loader/Loader";
 import Moment from "react-moment";
 import Script from "react-load-script";
@@ -38,11 +38,10 @@ class UpdateExperience extends Component {
     places_script_loading: true
   };
 
-
   componentWillUnmount = () => {
     this.props.clear_active_profile();
-    this.props.clear_experience_item();
-  }
+    this.props.clear_active_experience();
+  };
 
   componentDidUpdate = (prevProps, prevState) => {
     if (prevState.description !== this.state.description) {
@@ -63,7 +62,7 @@ class UpdateExperience extends Component {
       this.setState(prevState => {
         return {
           ...prevState,
-          exp_id: experience_item.id,
+          exp_id: experience_item._id,
           company: experience_item.company,
           title: experience_item.title,
           location: experience_item.location,
@@ -608,5 +607,6 @@ export default connect(mapStateToProps, {
   get_experience_item,
   update_experience,
   clear_experience_item,
-  clear_active_profile
+  clear_active_profile,
+  clear_active_experience
 })(withRouter(UpdateExperience));

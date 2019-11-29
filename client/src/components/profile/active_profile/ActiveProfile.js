@@ -21,9 +21,8 @@ class ActiveProfile extends Component {
   }
 
   render() {
-    let { loading_active_profile } = this.props.profile;
     let { loading_active_experience } = this.props.experience;
-    if (loading_active_profile || loading_active_experience) {
+    if (loading_active_experience) {
       return (
         <div className="container">
           <Loader />;
