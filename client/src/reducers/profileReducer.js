@@ -8,12 +8,13 @@ import {
 } from "../actions/types";
 
 const initial_state = {
-  active_profile: null,
+  active_profile: {},
   profiles: [],
-  player_name: null,
-  player_profile: null,
+  player_name: "",
+  player_profile: {},
   loading_player_name: true,
-  loading_profile: true,
+  loading_active_profile: true,
+  loading_player_profile: true,
   loading_profiles: true,
   loading_profile_image: true
 };
@@ -25,8 +26,9 @@ export default function(state = initial_state, action) {
       return {
         ...state,
         active_profile: payload,
-        loading_profile: false
+        loading_active_profile: false
       };
+
     case ALL_PROFILES_LOADED:
       return {
         ...state,
@@ -36,8 +38,8 @@ export default function(state = initial_state, action) {
     case ACTIVE_PROFILE_CLEARED:
       return {
         ...state,
-        active_profile: null,
-        loading_profile: false
+        active_profile: {},
+        loading_active_profile: true
       };
     case PLAYER_NAME_LOADED:
       const { first_name, last_name } = payload;
@@ -53,13 +55,13 @@ export default function(state = initial_state, action) {
         loading_profile: false
       };
     case PLAYER_PROFILE_CLEARED:
-        return {
-            ...state,
-            player_name: null,
-            player_profile: null,
-            loading_profile: true,
-            loading_player_name: true
-        }
+      return {
+        ...state,
+        player_name: "",
+        player_profile: {},
+        loading_profile: true,
+        loading_player_name: true
+      };
     default:
       return state;
   }

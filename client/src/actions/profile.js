@@ -8,7 +8,8 @@ import {
   PLAYER_PROFILE_LOADED,
   PLAYER_PROFILE_CLEARED,
   ACTIVE_EXPERIENCE_CLEARED,
-  PLAYER_EXPERIENCE_CLEARED
+  PLAYER_EXPERIENCE_CLEARED,
+  UPDATE_FORM_LOADED
 } from "./types";
 
 // Get Active User's Profile
@@ -168,7 +169,7 @@ export const update_profile = (form_data, history) => async dispatch => {
       dispatch(show_alert("Biography is a required field", "error"));
     }
   } catch (error) {
-    console.log(error)
+    console.log(error);
     const errors = error.response.data.errors;
     if (errors) {
       errors.forEach(error => dispatch(show_alert(error.msg, "error")));
@@ -184,5 +185,17 @@ export const clear_player_profile = () => async dispatch => {
   });
   dispatch({
     type: PLAYER_EXPERIENCE_CLEARED
+  });
+};
+
+export const load_update_form = () => async dispatch => {
+  dispatch({
+    type: UPDATE_FORM_LOADED
+  });
+};
+
+export const clear_active_profile = () => async dispatch => {
+  dispatch({
+    type: ACTIVE_PROFILE_CLEARED
   });
 };

@@ -21,13 +21,12 @@ class ActiveProfile extends Component {
   }
 
   render() {
-    let { loading_profile } = this.props.profile;
-    if (loading_profile) {
+    let { loading_active_profile } = this.props.profile;
+    let { loading_active_experience } = this.props.experience;
+    if (loading_active_profile || loading_active_experience) {
       return (
-        <div className="row">
-          <div className="col m2 offset-m5 center-align">
-            <Loader />
-          </div>
+        <div className="container">
+          <Loader />;
         </div>
       );
     } else {
@@ -218,7 +217,9 @@ class ActiveProfile extends Component {
                             className="btn waves-effect waves-jeopardy-blue bold-text btn-custom btn-create-experience "
                             to="/create-experience"
                           >
-                            <i className="material-icons custom-icon bold-text">add</i>
+                            <i className="material-icons custom-icon bold-text">
+                              add
+                            </i>
                             Create
                           </Link>
                         </div>
@@ -259,7 +260,7 @@ const mapStateToProps = state => ({
   experience: state.experience
 });
 
-export default connect(
-  mapStateToProps,
-  { get_active_profile, get_active_experience }
-)(ActiveProfile);
+export default connect(mapStateToProps, {
+  get_active_profile,
+  get_active_experience
+})(ActiveProfile);

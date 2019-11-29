@@ -5,7 +5,9 @@ import {
   PLAYER_EXPERIENCE_LOADED,
   EXPERIENCE_ITEM_LOADED,
   EXPERIENCE_ITEM_DELETED,
-  EXPERIENCE_ITEM_CLEARED
+  EXPERIENCE_ITEM_CLEARED,
+  EXPERIENCE_CLEARED,
+  ACTIVE_EXPERIENCE_CLEARED
 } from "./types";
 
 export const create_experience = (form_data, history) => async dispatch => {
@@ -109,6 +111,12 @@ export const get_experience_item = exp_id => async dispatch => {
     dispatch(show_alert("Failed to delete experience record", "error"));
   }
 };
+
+export const clear_active_experience = () => async dispatch => {
+  dispatch({
+    type: ACTIVE_EXPERIENCE_CLEARED
+  });
+}
 
 export const clear_experience_item = () => async dispatch => {
   dispatch({
