@@ -7,7 +7,8 @@ const config = require("config");
 const auth = require("../../middleware/auth");
 // EXPRESS-VALIDATOR
 const { check, validationResult } = require("express-validator");
-const { body } = require('express-validator');
+const { body } = require("express-validator");
+var sanitize = require("mongo-sanitize");
 
 const User = require("../../models/User");
 const Statistics = require("../../models/Statistics");
@@ -52,13 +53,12 @@ router.post(
       .not()
       .isEmpty(),
     check("email", "A valid email is required").isEmail(),
-    check("password", "Password must contain 6 or more characters")
-      .isLength({
+    check("password", "Password must contain 6 or more characters").isLength({
       min: 6
-      }),
-    body('password2').custom((value, { req }) => {
+    }),
+    body("password2").custom((value, { req }) => {
       if (value !== req.body.password) {
-        throw new Error('Password confirmation does not match password');
+        throw new Error("Password confirmation does not match password");
       }
       // Indicates the success of this synchronous custom validator
       return true;
@@ -81,10 +81,15 @@ router.post(
           .status(400)
           .json({ errors: [{ msg: "Account with email already exists" }] });
       } else {
+        // The sanitize function will strip out any keys that start with '$' in the input,
+        // so you can pass it to MongoDB without worrying about malicious users overwriting
+        // query selectors.
+        var first_name_clean = sanitize(first_name);
+        var last_name_clean = sanitize(last_name);
 
         const new_user = new User({
-          first_name,
-          last_name,
+          first_name_clean,
+          last_name_clean,
           email,
           password,
           has_profile: false

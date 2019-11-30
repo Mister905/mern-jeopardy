@@ -67,10 +67,8 @@ class Game extends Component {
         } = this.props.game;
         if (loading_game_over) {
             const { user } = this.props.auth;
-            const { name } = this.props.auth.user;
             const payload = {
                 user_id: user._id,
-                username: name,
                 final_earnings
             }
             this.props.load_game_over(payload);       

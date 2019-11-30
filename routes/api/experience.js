@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../../middleware/auth");
 const { check, validationResult } = require("express-validator");
+var sanitize = require("mongo-sanitize");
 
 const Profile = require("../../models/Profile");
 
@@ -38,14 +39,22 @@ router.post(
       description
     } = req.body;
 
+    // The sanitize function will strip out any keys that start with '$' in the input,
+    // so you can pass it to MongoDB without worrying about malicious users overwriting
+    // query selectors.
+    var title_clean = sanitize(title);
+    var company_clean = sanitize(company);
+    var location_clean = sanitize(location);
+    var description_clean = sanitize(description);
+
     const new_experience = {
-      title,
-      company,
-      location,
+      title_clean,
+      company_clean,
+      location_clean,
       from_date,
       to_date,
       is_current,
-      description
+      description_clean
     };
 
     try {
@@ -96,14 +105,19 @@ router.put(
       description
     } = req.body;
 
+    var company_clean = sanitize(company);
+    var title_clean = sanitize(title);
+    var location_clean = sanitize(location);
+    var description_clean = sanitize(description);
+
     // Build experience object
     const experience_build = {};
 
-    experience_build.company = company;
+    experience_build.company = company_clean;
 
-    experience_build.title = title;
+    experience_build.title = title_clean;
 
-    experience_build.location = location;
+    experience_build.location = location_clean;
 
     experience_build.from_date = from_date;
 
@@ -111,7 +125,7 @@ router.put(
 
     experience_build.is_current = is_current;
 
-    if (description) experience_build.description = description;
+    if (description) experience_build.description = description_clean;
 
     try {
       const profile = await Profile.findOne({ user: req.user.id });

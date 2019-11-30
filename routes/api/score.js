@@ -8,13 +8,11 @@ const Score = require('../../models/Score');
 // @access Private
 router.post('/new-score', auth, async (req, res) => {
 
-    const { user_id, username, final_earnings } = req.body;
+    const { user_id, final_earnings } = req.body;
 
     const score_build = {};
 
     score_build.user_id = user_id;
-
-    score_build.username = username;
 
     score_build.score = final_earnings;
 
