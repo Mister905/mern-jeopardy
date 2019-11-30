@@ -39,7 +39,6 @@ class Game extends Component {
         }
 
         if (answered_questions.length === 30) {
-            // console.log('answered_questions.length === 30')
             if (is_second_round) {
                 const game_data = {
                     round: 2,

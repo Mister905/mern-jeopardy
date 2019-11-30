@@ -76,7 +76,7 @@ class Leaderboard extends Component {
             </div>
             <div className="row">
               <div className="col m4 offset-m4 center-align">
-                <div className="jeopardy-blue-dark-text leaderboard-heading bold-text">
+                <div className="jeopardy-blue-dark-text custom-heading bold-text">
                   Leaderboard
                 </div>
               </div>
