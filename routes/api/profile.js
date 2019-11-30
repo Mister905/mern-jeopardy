@@ -8,7 +8,6 @@ const mongoose = require("mongoose");
 const multer = require("multer");
 const GridFsStorage = require("multer-gridfs-storage");
 const config = require("config");
-var sanitize = require("mongo-sanitize");
 
 // MODELS
 const Profile = require("../../models/Profile");

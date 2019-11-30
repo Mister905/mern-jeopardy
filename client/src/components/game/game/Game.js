@@ -6,6 +6,7 @@ import Category from '../category/Category';
 import Clue from '../clue/clue/Clue';
 import Score from '../score/Score';
 import { activate_game, load_round, load_game_over } from '../../../actions/game';
+import { get_leaderboard, clear_leaderboard } from '../../../actions/leaderboard';
 import Loader from '../../layout/loader/Loader';
 import Final_Jeopardy from '../final_jeopardy/Final_Jeopardy';
 import Game_Over from '../game_over/Game_Over';
@@ -38,7 +39,7 @@ class Game extends Component {
         }
 
         if (answered_questions.length === 30) {
-            console.log('answered_questions.length === 30')
+            // console.log('answered_questions.length === 30')
             if (is_second_round) {
                 const game_data = {
                     round: 2,
@@ -1068,6 +1069,7 @@ class Game extends Component {
     }
 
     render_new_high_score = () => {
+        this.props.get_leaderboard();
         return (
             <div>
                 <New_High_Score />
@@ -1134,29 +1136,11 @@ class Game extends Component {
                 </div>
             );
         } else if (is_final_jeopardy) {
-            return (
-                <div>
-                    <div className="row">
-                        {this.render_final_jeopardy()}
-                    </div>
-                </div>
-            )
+            return this.render_final_jeopardy();
         } else if (is_game_over) {
-            return (
-                <div>
-                    <div className="row end-row">
-                        {this.render_game_over()}
-                    </div>
-                </div>
-            )
+            return this.render_game_over();
         } else if (is_new_high_score) {
-            return (
-                <div>
-                    <div className="row end-row">
-                        {this.render_new_high_score()}
-                    </div>
-                </div>
-            )
+            return this.render_new_high_score()     
         } 
     }
 }
@@ -1175,6 +1159,8 @@ export default connect(
     { 
         activate_game,
         load_round,
-        load_game_over 
+        load_game_over,
+        get_leaderboard,
+        clear_leaderboard 
     }
 )(Game);

@@ -17,7 +17,7 @@ class Dashboard extends Component {
     document.body.classList.remove("jeopardy-grey");
     document.body.classList.remove("jeopardy-blue-dark");
     document.body.classList.add("jeopardy-gradient");
-    this.props.reset_game();
+    // this.props.reset_game();
     this.props.load_user();
   }
 

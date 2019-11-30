@@ -3,19 +3,23 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Loader from "../layout/loader/Loader";
-import { get_leaders } from "../../actions/leaderboard";
+import { get_leaderboard, clear_leaderboard } from "../../actions/leaderboard";
 import { clear_player_profile } from "../../actions/profile";
 import logo from "../../assets/img/jeopardy_logo_profile.png";
 
 class Leaderboard extends Component {
   componentDidMount = () => {
-    this.props.get_leaders();
+    this.props.get_leaderboard();
+  };
+
+  componentWillUnmount = () => {
+    this.props.clear_leaderboard();
   };
 
   render_leaderboard = () => {
-    const { leaders } = this.props.leaderboard;
+    const { leaderboard } = this.props.leaderboard;
     return (
-      <div>
+      <div className="row">
         <div className="col m6 offset-m3">
           <table>
             <thead>
@@ -26,7 +30,7 @@ class Leaderboard extends Component {
               </tr>
             </thead>
             <tbody>
-              {leaders.map((high_score, index) => (
+              {leaderboard.map((high_score, index) => (
                 <tr key={index} className="bold-text">
                   <td className="center-align jeopardy-blue-dark-text">
                     {index + 1}
@@ -77,9 +81,7 @@ class Leaderboard extends Component {
                 </div>
               </div>
             </div>
-            <div className="row">
-              {loading_leaderboard ? <Loader /> : this.render_leaderboard()}
-            </div>
+            {loading_leaderboard ? <Loader /> : this.render_leaderboard()}
           </div>
         </div>
       </div>
@@ -95,6 +97,8 @@ const mapStateToProps = state => ({
   leaderboard: state.leaderboard
 });
 
-export default connect(mapStateToProps, { get_leaders, clear_player_profile })(
-  Leaderboard
-);
+export default connect(mapStateToProps, {
+  get_leaderboard,
+  clear_player_profile,
+  clear_leaderboard
+})(Leaderboard);

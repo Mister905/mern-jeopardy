@@ -11,7 +11,8 @@ import {
   PROCESS_FINAL,
   NEW_HIGH_SCORE,
   RESET_GAME,
-  ACTIVATING_GAME
+  ACTIVATING_GAME,
+  NEW_HIGH_SCORE_ID_SET
 } from "./types";
 
 export const activate_game = () => async dispatch => {
@@ -801,7 +802,7 @@ export const handle_daily_double_wager = (
 
 export const handle_true_daily_double = true_daily_double => async dispatch => {
   if (true_daily_double < 5) {
-    dispatch(show_alert("The minimum Daily Double wager is $5", "error"))
+    dispatch(show_alert("The minimum Daily Double wager is $5", "error"));
   } else {
     dispatch({
       type: DISPLAY_TRUE_DAILY_DOUBLE
@@ -814,8 +815,12 @@ export const handle_final_jeopardy_wager = (
   winnings
 ) => async dispatch => {
   if (final_jeopardy_wager > winnings) {
-
-    dispatch(show_alert(`You may wager up to $${this.number_with_commas(winnings)}`, "error"));
+    dispatch(
+      show_alert(
+        `You may wager up to $${this.number_with_commas(winnings)}`,
+        "error"
+      )
+    );
   } else {
     dispatch({
       type: DISPLAY_FINAL_JEOPARDY
@@ -844,21 +849,24 @@ export const load_game_over = payload => async dispatch => {
   await axios.post("/api/statistics/game-over", payload);
   var new_score = await axios.post("/api/score/new-score", payload);
   new_score = new_score.data;
-  const score_id = new_score._id;
-  let high_scores = await axios.get("/api/score/get-high-scores");
-  high_scores = high_scores.data;
+  const new_score_id = new_score._id;
+  let leaderboard = await axios.get("/api/score/get-leaderboard");
+  leaderboard = leaderboard.data;
   let new_high_score_flag = false;
-  for (let i = 0; i < high_scores.length; i++) {
-    const score = high_scores[i];
-    if (score._id === score_id) {
+  for (let i = 0; i < leaderboard.length; i++) {
+    const score = leaderboard[i];
+    if (score._id === new_score_id) {
       new_high_score_flag = true;
       dispatch({
-        type: NEW_HIGH_SCORE,
-        high_scores
+        type: NEW_HIGH_SCORE
+      });
+      dispatch({
+        type: NEW_HIGH_SCORE_ID_SET,
+        payload: new_score_id
       });
     }
   }
-  if (new_high_score_flag == false) {
+  if (!new_high_score_flag) {
     dispatch({
       type: GAME_OVER
     });

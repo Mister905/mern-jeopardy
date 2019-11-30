@@ -14,7 +14,6 @@ class Final_Jeopardy extends Component {
     super(props);
     this.state = {
       display_final_jeopardy: true,
-      display_final_jeopardy_category: false,
       display_final_jeopardy_wager_form: false,
       final_jeopardy_wager: 0,
       display_final_jeopardy_answer: false,
@@ -75,22 +74,12 @@ class Final_Jeopardy extends Component {
     this.props.handle_final_jeopardy_wager(final_jeopardy_wager, winnings);
   };
 
-  display_final_jeopardy_category = () => {
-    this.setState(prevState => {
-      return {
-        ...prevState,
-        display_final_jeopardy: false,
-        display_final_jeopardy_category: true
-      };
-    });
-  };
-
   display_wager_form = () => {
     this.setState(prevState => {
       return {
         ...prevState,
-        display_final_jeopardy_category: false,
-        display_final_jeopardy_wager_form: true
+        display_final_jeopardy_wager_form: true,
+        display_final_jeopardy: false
       };
     });
   };
@@ -151,7 +140,6 @@ class Final_Jeopardy extends Component {
   render() {
     const {
       display_final_jeopardy,
-      display_final_jeopardy_category,
       display_final_jeopardy_wager_form,
       display_final_jeopardy_answer,
       final_jeopardy_wager
@@ -170,36 +158,6 @@ class Final_Jeopardy extends Component {
         {display_final_jeopardy && (
           <div className="final-container">
             <div className="row">
-              <div className="col m8 offset-m2 jeopardy-blue">
-                <div className="row final-jeopardy-row">
-                  <div className="col m12">
-                    <img
-                      src={FinalJeopardy}
-                      className="final-jeopardy-img"
-                      alt="Final Jeopardy"
-                    />
-                    <h2 className="jeopardy-white-text center-align bold-text">
-                      Final Jeopardy
-                    </h2>
-                  </div>
-                </div>
-                <div className="row final-jeopardy-continue-row">
-                  <div className="col m6 offset-m3">
-                    <button
-                      onClick={this.display_final_jeopardy_category}
-                      className="btn btn-large btn-wide jeopardy-white jeopardy-blue-text bold-text"
-                    >
-                      Continue
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-        {display_final_jeopardy_category && (
-          <div className="final-container">
-            <div className="row">
               <div className="col m8 offset-m2 clue-col jeopardy-blue final-col">
                 <div className="row final-jeopardy-category-row">
                   <div className="col m12 center-align">
@@ -208,9 +166,12 @@ class Final_Jeopardy extends Component {
                       className="final-jeopardy-img"
                       alt="Final Jeopardy"
                     />
-                    <h2 className="jeopardy-white-text bold-text uppercase final-jeopardy-heading">
+                    <div className="jeopardy-white-text bold-text mt-25 category-is">
+                      The category is...
+                    </div>
+                    <div className="jeopardy-white-text bold-text uppercase mt-25 category-output">
                       {category.title}
-                    </h2>
+                    </div>
                   </div>
                 </div>
                 <div className="row continue-row">
@@ -303,7 +264,7 @@ class Final_Jeopardy extends Component {
         {display_final_jeopardy_question && (
           <div className="final-container">
             <div className="row">
-              <div className="col m10 offset-m1 jeopardy-blue clue-col">
+              <div className="col m8 offset-m2 jeopardy-blue clue-col">
                 <div className="row clue-row">
                   <div className="col m12 center-align">
                     <div className="jeopardy-white-text output-size">
@@ -311,6 +272,7 @@ class Final_Jeopardy extends Component {
                     </div>
                   </div>
                 </div>
+
                 {display_final_jeopardy_answer == false && (
                   <div className="row reveal-button-row">
                     <div className="col m12 center-align">
@@ -344,8 +306,8 @@ class Final_Jeopardy extends Component {
                     </div>
                     <div className="row">
                       <div className="col m4 offset-m4">
-                        <div className="row determination-row">
-                          <div className="col m6 center-align">
+                        <div className="row mt-row">
+                          <div className="col m3 offset-m2 center-align">
                             <a
                               onClick={() =>
                                 this.final_jeopardy_response(
@@ -353,12 +315,14 @@ class Final_Jeopardy extends Component {
                                   final_jeopardy_wager
                                 )
                               }
-                              className="btn jeopardy-white jeopardy-red-text"
+                              className="btn btn-wide jeopardy-white jeopardy-red-text"
                             >
-                              <i className="material-icons">highlight_off</i>
+                              <i className="material-icons highlight_off">
+                                highlight_off
+                              </i>
                             </a>
                           </div>
-                          <div className="col m6 center-align">
+                          <div className="col m3 offset-m2 center-align">
                             <a
                               onClick={() =>
                                 this.final_jeopardy_response(
@@ -366,9 +330,11 @@ class Final_Jeopardy extends Component {
                                   final_jeopardy_wager
                                 )
                               }
-                              className="btn jeopardy-white jeopardy-green-text"
+                              className="btn btn-wide jeopardy-white jeopardy-green-text"
                             >
-                              <i className="material-icons">check</i>
+                              <i className="material-icons response-icon">
+                                check
+                              </i>
                             </a>
                           </div>
                         </div>

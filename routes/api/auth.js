@@ -8,7 +8,7 @@ const auth = require("../../middleware/auth");
 // EXPRESS-VALIDATOR
 const { check, validationResult } = require("express-validator");
 const { body } = require("express-validator");
-var sanitize = require("mongo-sanitize");
+var mongoSanitize = require('express-mongo-sanitize');
 
 const User = require("../../models/User");
 const Statistics = require("../../models/Statistics");
@@ -81,15 +81,10 @@ router.post(
           .status(400)
           .json({ errors: [{ msg: "Account with email already exists" }] });
       } else {
-        // The sanitize function will strip out any keys that start with '$' in the input,
-        // so you can pass it to MongoDB without worrying about malicious users overwriting
-        // query selectors.
-        var first_name_clean = sanitize(first_name);
-        var last_name_clean = sanitize(last_name);
 
         const new_user = new User({
-          first_name_clean,
-          last_name_clean,
+          first_name,
+          last_name,
           email,
           password,
           has_profile: false
@@ -155,8 +150,10 @@ router.post(
 
     const { email, password } = req.body;
 
+    const email_clean = mongoSanitize(email);
+
     try {
-      let user = await User.findOne({ email });
+      let user = await User.findOne({ email_clean });
 
       if (!user) {
         return res.status(400).json({ errors: [{ msg: "Login Failed" }] });

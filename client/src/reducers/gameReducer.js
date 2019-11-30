@@ -15,1293 +15,1291 @@ import {
 const initial_state = {
   is_game_active: true,
   is_first_round: false,
-  is_second_round: true,
-  is_final_jeopardy: false,
+  is_second_round: false,
+  is_final_jeopardy: true,
   loading_round: false,
   first_round_categories: [
     {
-      id: 67,
-      title: "television"
+      id: 2576,
+      title: 'places'
     },
     {
-      id: 1466,
-      title: "exodus"
+      id: 1672,
+      title: 'phobias'
     },
     {
-      id: 780,
-      title: "american history"
+      id: 1950,
+      title: 'national forests'
     },
     {
-      id: 3,
-      title: "odd jobs"
+      id: 777,
+      title: 'fruits & vegetables'
     },
     {
-      id: 1476,
-      title: "the 1880s"
+      id: 105,
+      title: '3-letter words'
     },
     {
-      id: 1477,
-      title: "incredible edibles"
+      id: 176,
+      title: 'business & industry'
     }
   ],
   first_round_questions: [
     [
       {
-        id: 370,
-        answer: "Lou Grant",
-        question: "Editor Billie Newman & Joe Rossi worked for",
+        id: 23862,
+        answer: 'shrine',
+        question: 'A building for religious veneration, or the L.A. auditorium that hosted 1997\'s Academy Awards',
         value: 200,
-        airdate: "1984-11-27T12:00:00.000Z",
-        created_at: "2014-02-11T22:47:28.162Z",
-        updated_at: "2014-02-11T22:47:28.162Z",
-        category_id: 67,
+        airdate: '1998-02-24T12:00:00.000Z',
+        created_at: '2014-02-11T23:00:10.271Z',
+        updated_at: '2014-02-11T23:00:10.271Z',
+        category_id: 2576,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 67,
-          title: "television",
-          created_at: "2014-02-11T22:47:28.034Z",
-          updated_at: "2014-02-11T22:47:28.034Z",
-          clues_count: 235
+          id: 2576,
+          title: 'places',
+          created_at: '2014-02-11T23:00:10.048Z',
+          updated_at: '2014-02-11T23:00:10.048Z',
+          clues_count: 15
         }
       },
       {
-        id: 382,
-        answer: "Betty White",
-        question: 'Played WJM\'s man-hunting "happy homemaker" Sue Ann Nivens',
+        id: 23874,
+        answer: 'a ford',
+        question: 'A place where a river is shallow enough to cross on foot, alone or with an "escort"',
         value: 400,
-        airdate: "1984-11-27T12:00:00.000Z",
-        created_at: "2014-02-11T22:47:28.295Z",
-        updated_at: "2014-02-11T22:47:28.295Z",
-        category_id: 67,
+        airdate: '1998-02-24T12:00:00.000Z',
+        created_at: '2014-02-11T23:00:10.490Z',
+        updated_at: '2014-02-11T23:00:10.490Z',
+        category_id: 2576,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 67,
-          title: "television",
-          created_at: "2014-02-11T22:47:28.034Z",
-          updated_at: "2014-02-11T22:47:28.034Z",
-          clues_count: 235
+          id: 2576,
+          title: 'places',
+          created_at: '2014-02-11T23:00:10.048Z',
+          updated_at: '2014-02-11T23:00:10.048Z',
+          clues_count: 15
         }
       },
       {
-        id: 83537,
-        answer: "<i>Battlestar Galactica</i>",
-        question:
-          "Starbuck is a woman on the Sci-Fi Channel's version of this series",
+        id: 127834,
+        answer: 'the Sea of Galilee',
+        question: 'In biblical times, caravans stopped at Capernaum, Israel to stock up on fish from this nearby lake',
         value: 600,
-        airdate: "2008-07-16T12:00:00.000Z",
-        created_at: "2014-02-11T23:41:38.870Z",
-        updated_at: "2014-02-11T23:41:38.870Z",
-        category_id: 67,
+        airdate: '2013-11-18T12:00:00.000Z',
+        created_at: '2015-01-18T18:14:38.720Z',
+        updated_at: '2015-01-18T18:14:38.720Z',
+        category_id: 2576,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 67,
-          title: "television",
-          created_at: "2014-02-11T22:47:28.034Z",
-          updated_at: "2014-02-11T22:47:28.034Z",
-          clues_count: 235
+          id: 2576,
+          title: 'places',
+          created_at: '2014-02-11T23:00:10.048Z',
+          updated_at: '2014-02-11T23:00:10.048Z',
+          clues_count: 15
         }
       },
       {
-        id: 83543,
-        answer: "Kristin Chenoweth",
-        question:
-          'This perky actress plays Olive Snook, a waitress at the Pie Hole on "Pushing Daisies"',
+        id: 127840,
+        answer: 'the Crimean Peninsula',
+        question: 'Most of this peninsula is an autonomous republic of Ukraine',
         value: 800,
-        airdate: "2008-07-16T12:00:00.000Z",
-        created_at: "2014-02-11T23:41:39.036Z",
-        updated_at: "2014-02-11T23:41:39.036Z",
-        category_id: 67,
+        airdate: '2013-11-18T12:00:00.000Z',
+        created_at: '2015-01-18T18:14:38.960Z',
+        updated_at: '2015-01-18T18:14:38.960Z',
+        category_id: 2576,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 67,
-          title: "television",
-          created_at: "2014-02-11T22:47:28.034Z",
-          updated_at: "2014-02-11T22:47:28.034Z",
-          clues_count: 235
+          id: 2576,
+          title: 'places',
+          created_at: '2014-02-11T23:00:10.048Z',
+          updated_at: '2014-02-11T23:00:10.048Z',
+          clues_count: 15
         }
       },
       {
-        id: 83549,
-        answer: "<i>Moonlight</i>",
-        question:
-          "Mick St. John is a P.I. who sucks--blood, that is--on this vampirific CBS show",
+        id: 127846,
+        answer: 'Caracas',
+        question: 'It\'s the capital city that\'s home to Simon Bolivar\'s tomb',
         value: 1000,
-        airdate: "2008-07-16T12:00:00.000Z",
-        created_at: "2014-02-11T23:41:39.210Z",
-        updated_at: "2014-02-11T23:41:39.210Z",
-        category_id: 67,
+        airdate: '2013-11-18T12:00:00.000Z',
+        created_at: '2015-01-18T18:14:39.198Z',
+        updated_at: '2015-01-18T18:14:39.198Z',
+        category_id: 2576,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 67,
-          title: "television",
-          created_at: "2014-02-11T22:47:28.034Z",
-          updated_at: "2014-02-11T22:47:28.034Z",
-          clues_count: 235
+          id: 2576,
+          title: 'places',
+          created_at: '2014-02-11T23:00:10.048Z',
+          updated_at: '2014-02-11T23:00:10.048Z',
+          clues_count: 15
         }
       }
     ],
     [
       {
-        id: 13481,
-        answer: "manna",
-        question:
-          'This "bread" that appeared every morning in the desert usually couldn\'t be kept overnight; it melted',
+        id: 15945,
+        answer: 'Ghosts',
+        question: 'If you have phasmophobia, fear of these, stay out of haunted houses',
         value: 200,
-        airdate: "1996-05-27T12:00:00.000Z",
-        created_at: "2014-02-11T22:54:11.297Z",
-        updated_at: "2014-02-11T22:54:11.297Z",
-        category_id: 1466,
+        airdate: '1997-06-05T12:00:00.000Z',
+        created_at: '2014-02-11T22:55:26.939Z',
+        updated_at: '2014-02-11T22:55:26.939Z',
+        category_id: 1672,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 1466,
-          title: "exodus",
-          created_at: "2014-02-11T22:54:11.149Z",
-          updated_at: "2014-02-11T22:54:11.149Z",
-          clues_count: 10
+          id: 1672,
+          title: 'phobias',
+          created_at: '2014-02-11T22:55:26.773Z',
+          updated_at: '2014-02-11T22:55:26.773Z',
+          clues_count: 20
         }
       },
       {
-        id: 13493,
-        answer: "12",
-        question:
-          "The Breastplate of Judgment had this many stones set in it, one for each tribe",
+        id: 15957,
+        answer: 'Feathers',
+        question: 'Because pteronophobics fear these, they should avoid chicken coops & fan dancers',
         value: 400,
-        airdate: "1996-05-27T12:00:00.000Z",
-        created_at: "2014-02-11T22:54:11.488Z",
-        updated_at: "2014-02-11T22:54:11.488Z",
-        category_id: 1466,
+        airdate: '1997-06-05T12:00:00.000Z',
+        created_at: '2014-02-11T22:55:27.135Z',
+        updated_at: '2014-02-11T22:55:27.135Z',
+        category_id: 1672,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 1466,
-          title: "exodus",
-          created_at: "2014-02-11T22:54:11.149Z",
-          updated_at: "2014-02-11T22:54:11.149Z",
-          clues_count: 10
+          id: 1672,
+          title: 'phobias',
+          created_at: '2014-02-11T22:55:26.773Z',
+          updated_at: '2014-02-11T22:55:26.773Z',
+          clues_count: 20
         }
       },
       {
-        id: 91430,
-        answer: "the Red Sea",
-        question:
-          '14: 16 says, "And the children of Israel shall go on dry ground through the midst of the sea" --this one',
+        id: 53900,
+        answer: 'acrophobia',
+        question: 'Whoa, don\'t look down!  This is the fear of heights',
         value: 600,
-        airdate: "2009-01-29T12:00:00.000Z",
-        created_at: "2014-02-14T01:57:05.798Z",
-        updated_at: "2014-02-14T01:57:05.798Z",
-        category_id: 1466,
+        airdate: '2003-03-11T12:00:00.000Z',
+        created_at: '2014-02-11T23:19:08.079Z',
+        updated_at: '2014-02-11T23:19:08.079Z',
+        category_id: 1672,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 1466,
-          title: "exodus",
-          created_at: "2014-02-11T22:54:11.149Z",
-          updated_at: "2014-02-11T22:54:11.149Z",
-          clues_count: 10
+          id: 1672,
+          title: 'phobias',
+          created_at: '2014-02-11T22:55:26.773Z',
+          updated_at: '2014-02-11T22:55:26.773Z',
+          clues_count: 20
         }
       },
       {
-        id: 91436,
-        answer: "a snake",
-        question:
-          "In chapter 4 Moses casts a rod to the ground, & it turns into this",
+        id: 53906,
+        answer: 'riding in cars',
+        question: 'If Drew Barrymore were amaxophobic, she\'d avoid doing this, with or without boys',
         value: 800,
-        airdate: "2009-01-29T12:00:00.000Z",
-        created_at: "2014-02-14T01:57:06.060Z",
-        updated_at: "2014-02-14T01:57:06.060Z",
-        category_id: 1466,
+        airdate: '2003-03-11T12:00:00.000Z',
+        created_at: '2014-02-11T23:19:08.218Z',
+        updated_at: '2014-02-11T23:19:08.218Z',
+        category_id: 1672,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 1466,
-          title: "exodus",
-          created_at: "2014-02-11T22:54:11.149Z",
-          updated_at: "2014-02-11T22:54:11.149Z",
-          clues_count: 10
+          id: 1672,
+          title: 'phobias',
+          created_at: '2014-02-11T22:55:26.773Z',
+          updated_at: '2014-02-11T22:55:26.773Z',
+          clues_count: 20
         }
       },
       {
-        id: 91442,
-        answer: '"Thou shalt not kill" & "Thou shalt not steal"',
-        question:
-          "Chapter 20 has the 10 Commandments; these 2 are each 4 words long in the King James Version",
+        id: 53912,
+        answer: 'triskaidekaphobia',
+        question: 'It\'s the 17-letter term for fear of the number 13',
         value: 1000,
-        airdate: "2009-01-29T12:00:00.000Z",
-        created_at: "2014-02-14T01:57:06.286Z",
-        updated_at: "2014-02-14T01:57:06.286Z",
-        category_id: 1466,
+        airdate: '2003-03-11T12:00:00.000Z',
+        created_at: '2014-02-11T23:19:08.353Z',
+        updated_at: '2014-02-11T23:19:08.353Z',
+        category_id: 1672,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 1466,
-          title: "exodus",
-          created_at: "2014-02-11T22:54:11.149Z",
-          updated_at: "2014-02-11T22:54:11.149Z",
-          clues_count: 10
+          id: 1672,
+          title: 'phobias',
+          created_at: '2014-02-11T22:55:26.773Z',
+          updated_at: '2014-02-11T22:55:26.773Z',
+          clues_count: 20
         }
       }
     ],
     [
       {
-        id: 5732,
-        answer: "Alexander Hamilton",
-        question: "He died in 1804 the day after his duel with Aaron Burr",
+        id: 19005,
+        answer: 'Idaho',
+        question: 'Much of this state is covered by 10 national forests including Salmon, Boise & Nez Perce',
         value: 200,
-        airdate: "1990-05-04T12:00:00.000Z",
-        created_at: "2014-02-11T22:50:14.741Z",
-        updated_at: "2014-02-11T22:50:14.741Z",
-        category_id: 780,
+        airdate: '1997-01-06T12:00:00.000Z',
+        created_at: '2014-02-11T22:57:11.753Z',
+        updated_at: '2014-02-11T22:57:11.753Z',
+        category_id: 1950,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 780,
-          title: "american history",
-          created_at: "2014-02-11T22:50:14.591Z",
-          updated_at: "2014-02-11T22:50:14.591Z",
-          clues_count: 265
+          id: 1950,
+          title: 'national forests',
+          created_at: '2014-02-11T22:57:11.520Z',
+          updated_at: '2014-02-11T22:57:11.520Z',
+          clues_count: 15
         }
       },
       {
-        id: 5744,
-        answer: "U.S. Senate",
-        question:
-          "In 1932 Hattie Caraway of Arkansas became the first woman elected to this body",
+        id: 19017,
+        answer: 'the Ozarks',
+        question: 'The northernmost of Arkansas\' national forests shares its name with these mountains in the area',
         value: 400,
-        airdate: "1990-05-04T12:00:00.000Z",
-        created_at: "2014-02-11T22:50:14.895Z",
-        updated_at: "2014-02-11T22:50:14.895Z",
-        category_id: 780,
+        airdate: '1997-01-06T12:00:00.000Z',
+        created_at: '2014-02-11T22:57:11.965Z',
+        updated_at: '2014-02-11T22:57:11.965Z',
+        category_id: 1950,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 780,
-          title: "american history",
-          created_at: "2014-02-11T22:50:14.591Z",
-          updated_at: "2014-02-11T22:50:14.591Z",
-          clues_count: 265
+          id: 1950,
+          title: 'national forests',
+          created_at: '2014-02-11T22:57:11.520Z',
+          updated_at: '2014-02-11T22:57:11.520Z',
+          clues_count: 15
         }
       },
       {
-        id: 49307,
-        answer: "(Peter) Stuyvesant",
-        question:
-          "In September 1664 this governor of New Amsterdam surrendered to the British, ending Dutch power in the New World",
+        id: 67186,
+        answer: 'Davy Crockett',
+        question: 'A replica of the 1st Spanish mission in Eastern Texas stands in the natl. forest named for this "King of the Wild Frontier"',
         value: 600,
-        airdate: "2002-02-25T12:00:00.000Z",
-        created_at: "2014-02-11T23:15:55.104Z",
-        updated_at: "2014-02-11T23:15:55.104Z",
-        category_id: 780,
+        airdate: '2004-12-22T12:00:00.000Z',
+        created_at: '2014-02-11T23:29:21.145Z',
+        updated_at: '2014-02-11T23:29:21.145Z',
+        category_id: 1950,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 780,
-          title: "american history",
-          created_at: "2014-02-11T22:50:14.591Z",
-          updated_at: "2014-02-11T22:50:14.591Z",
-          clues_count: 265
+          id: 1950,
+          title: 'national forests',
+          created_at: '2014-02-11T22:57:11.520Z',
+          updated_at: '2014-02-11T22:57:11.520Z',
+          clues_count: 15
         }
       },
       {
-        id: 54623,
-        answer: "William Henry Harrison",
-        question:
-          "In 1813 this hero of Tippecanoe defeated Tecumseh at the Thames River in Canada",
+        id: 67192,
+        answer: 'Alaska',
+        question: 'Trees in this state\'s Tongass National Forest include western hemlock, cedar, & sitka spruce',
         value: 800,
-        airdate: "2003-02-05T12:00:00.000Z",
-        created_at: "2014-02-11T23:19:36.461Z",
-        updated_at: "2014-02-11T23:19:36.461Z",
-        category_id: 780,
+        airdate: '2004-12-22T12:00:00.000Z',
+        created_at: '2014-02-11T23:29:21.287Z',
+        updated_at: '2014-02-11T23:29:21.287Z',
+        category_id: 1950,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 780,
-          title: "american history",
-          created_at: "2014-02-11T22:50:14.591Z",
-          updated_at: "2014-02-11T22:50:14.591Z",
-          clues_count: 265
+          id: 1950,
+          title: 'national forests',
+          created_at: '2014-02-11T22:57:11.520Z',
+          updated_at: '2014-02-11T22:57:11.520Z',
+          clues_count: 15
         }
       },
       {
-        id: 49319,
-        answer: "El Paso",
-        question:
-          "A 1963 treaty with Mexico settled a boundary dispute between Ciudad Juarez & this Texas city",
+        id: 67198,
+        answer: 'the Sierra Nevada',
+        question: 'Sequoia & Tahoe National Forests lie in this mountain range',
         value: 1000,
-        airdate: "2002-02-25T12:00:00.000Z",
-        created_at: "2014-02-11T23:15:55.389Z",
-        updated_at: "2014-02-11T23:15:55.389Z",
-        category_id: 780,
+        airdate: '2004-12-22T12:00:00.000Z',
+        created_at: '2014-02-11T23:29:21.437Z',
+        updated_at: '2014-02-11T23:29:21.437Z',
+        category_id: 1950,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 780,
-          title: "american history",
-          created_at: "2014-02-11T22:50:14.591Z",
-          updated_at: "2014-02-11T22:50:14.591Z",
-          clues_count: 265
+          id: 1950,
+          title: 'national forests',
+          created_at: '2014-02-11T22:57:11.520Z',
+          updated_at: '2014-02-11T22:57:11.520Z',
+          clues_count: 15
         }
       }
     ],
     [
       {
-        id: 9,
-        answer: "wranglers",
-        question:
-          "In the Old West they were in charge of horses, on a movie set in charge of chickens",
+        id: 5705,
+        answer: 'Strawberries',
+        question: 'These red "berries" grown on the ground aren\'t true berries because the seeds are on the outside',
         value: 200,
-        airdate: "1985-02-08T12:00:00.000Z",
-        created_at: "2014-02-11T22:47:18.912Z",
-        updated_at: "2014-02-11T22:47:18.912Z",
-        category_id: 3,
+        airdate: '1990-05-08T12:00:00.000Z',
+        created_at: '2014-02-11T22:50:13.815Z',
+        updated_at: '2014-02-11T22:50:13.815Z',
+        category_id: 777,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 3,
-          title: "odd jobs",
-          created_at: "2014-02-11T22:47:18.718Z",
-          updated_at: "2014-02-11T22:47:18.718Z",
-          clues_count: 35
+          id: 777,
+          title: 'fruits & vegetables',
+          created_at: '2014-02-11T22:50:13.630Z',
+          updated_at: '2014-02-11T22:50:13.630Z',
+          clues_count: 140
         }
       },
       {
-        id: 21,
-        answer: "cartoonists (or animators)",
-        question:
-          "Ub Iwerks, Friz Freleng & Tex Avery drew the line at this job",
+        id: 5717,
+        answer: 'Eggplant',
+        question: 'Thos. Jefferson is credited with introducing this vegetable, named for its ovoid shape, to the U.S.',
         value: 400,
-        airdate: "1985-02-08T12:00:00.000Z",
-        created_at: "2014-02-11T22:47:19.049Z",
-        updated_at: "2014-02-11T22:47:19.049Z",
-        category_id: 3,
+        airdate: '1990-05-08T12:00:00.000Z',
+        created_at: '2014-02-11T22:50:13.963Z',
+        updated_at: '2014-02-11T22:50:13.963Z',
+        category_id: 777,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 3,
-          title: "odd jobs",
-          created_at: "2014-02-11T22:47:18.718Z",
-          updated_at: "2014-02-11T22:47:18.718Z",
-          clues_count: 35
+          id: 777,
+          title: 'fruits & vegetables',
+          created_at: '2014-02-11T22:50:13.630Z',
+          updated_at: '2014-02-11T22:50:13.630Z',
+          clues_count: 140
         }
       },
       {
-        id: 70070,
-        answer: "a lathe",
-        question:
-          "By definition, in the woodshop a turner fashions objects on one of these",
+        id: 52609,
+        answer: 'spinach',
+        question: 'What the French call epinard we call this',
         value: 600,
-        airdate: "2006-07-04T12:00:00.000Z",
-        created_at: "2014-02-11T23:31:24.354Z",
-        updated_at: "2014-02-11T23:31:24.354Z",
-        category_id: 3,
+        airdate: '2003-05-14T12:00:00.000Z',
+        created_at: '2014-02-11T23:18:13.848Z',
+        updated_at: '2014-02-11T23:18:13.848Z',
+        category_id: 777,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 3,
-          title: "odd jobs",
-          created_at: "2014-02-11T22:47:18.718Z",
-          updated_at: "2014-02-11T22:47:18.718Z",
-          clues_count: 35
+          id: 777,
+          title: 'fruits & vegetables',
+          created_at: '2014-02-11T22:50:13.630Z',
+          updated_at: '2014-02-11T22:50:13.630Z',
+          clues_count: 140
         }
       },
       {
-        id: 112017,
-        answer: "rodeo clowns",
-        question:
-          "Besides entertaining the crowds, these performers serve a vital purpose, protecting a bull rider from the bull",
+        id: 52615,
+        answer: 'apples',
+        question: 'For cooking, popular ones of these include the Gravenstein & the Greening',
         value: 800,
-        airdate: "2012-02-14T12:00:00.000Z",
-        created_at: "2014-02-14T02:42:02.593Z",
-        updated_at: "2014-02-14T02:42:02.593Z",
-        category_id: 3,
+        airdate: '2003-05-14T12:00:00.000Z',
+        created_at: '2014-02-11T23:18:14.009Z',
+        updated_at: '2014-02-11T23:18:14.009Z',
+        category_id: 777,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 3,
-          title: "odd jobs",
-          created_at: "2014-02-11T22:47:18.718Z",
-          updated_at: "2014-02-11T22:47:18.718Z",
-          clues_count: 35
+          id: 777,
+          title: 'fruits & vegetables',
+          created_at: '2014-02-11T22:50:13.630Z',
+          updated_at: '2014-02-11T22:50:13.630Z',
+          clues_count: 140
         }
       },
       {
-        id: 70082,
-        answer: "staves",
-        question:
-          "(Cheryl of the Clue Crew reports from a barrel-making shop in Strawberry Banke Museum, Portsmouth, NH.)  From planks of wood, a cooper makes these curved pieces that form the sides of a barrel",
+        id: 52621,
+        answer: 'jicama',
+        question: 'Also called a Mexican potato, this crunchy vegetable can be baked, boiled or fried, or served raw in salads',
         value: 1000,
-        airdate: "2006-07-04T12:00:00.000Z",
-        created_at: "2014-02-11T23:31:24.652Z",
-        updated_at: "2014-02-11T23:31:24.652Z",
-        category_id: 3,
+        airdate: '2003-05-14T12:00:00.000Z',
+        created_at: '2014-02-11T23:18:14.143Z',
+        updated_at: '2014-02-11T23:18:14.143Z',
+        category_id: 777,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 3,
-          title: "odd jobs",
-          created_at: "2014-02-11T22:47:18.718Z",
-          updated_at: "2014-02-11T22:47:18.718Z",
-          clues_count: 35
+          id: 777,
+          title: 'fruits & vegetables',
+          created_at: '2014-02-11T22:50:13.630Z',
+          updated_at: '2014-02-11T22:50:13.630Z',
+          clues_count: 140
         }
       }
     ],
     [
       {
-        id: 13543,
-        answer: "Lord Stanley",
-        question:
-          "This baron for whom a hockey trophy is named became governor-general of Canada in 1888",
+        id: 668,
+        answer: 'a Don',
+        question: 'Quixote or Drysdale',
         value: 200,
-        airdate: "1996-04-15T12:00:00.000Z",
-        created_at: "2014-02-11T22:54:13.299Z",
-        updated_at: "2014-02-11T22:54:13.299Z",
-        category_id: 1476,
+        airdate: '1984-09-12T12:00:00.000Z',
+        created_at: '2014-02-11T22:47:36.210Z',
+        updated_at: '2014-02-11T22:47:36.210Z',
+        category_id: 105,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 1476,
-          title: "the 1880s",
-          created_at: "2014-02-11T22:54:13.115Z",
-          updated_at: "2014-02-11T22:54:13.115Z",
-          clues_count: 30
+          id: 105,
+          title: '3-letter words',
+          created_at: '2014-02-11T22:47:36.079Z',
+          updated_at: '2014-02-11T22:47:36.079Z',
+          clues_count: 255
         }
       },
       {
-        id: 13555,
-        answer: "Aluminum",
-        question:
-          "In 1886 Charles M. Hall developed the electrolytic method for getting this metal from bauxite",
+        id: 680,
+        answer: 'bud',
+        question: 'Where things are nipped in, or Lou\'s partner',
         value: 400,
-        airdate: "1996-04-15T12:00:00.000Z",
-        created_at: "2014-02-11T22:54:13.473Z",
-        updated_at: "2014-02-11T22:54:13.473Z",
-        category_id: 1476,
+        airdate: '1984-09-12T12:00:00.000Z',
+        created_at: '2014-02-11T22:47:36.356Z',
+        updated_at: '2014-02-11T22:47:36.356Z',
+        category_id: 105,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 1476,
-          title: "the 1880s",
-          created_at: "2014-02-11T22:54:13.115Z",
-          updated_at: "2014-02-11T22:54:13.115Z",
-          clues_count: 30
+          id: 105,
+          title: '3-letter words',
+          created_at: '2014-02-11T22:47:36.079Z',
+          updated_at: '2014-02-11T22:47:36.079Z',
+          clues_count: 255
         }
       },
       {
-        id: 91366,
-        answer: "the Great Seal",
-        question:
-          "In 1885 Tiffany's revised the design of this: it's still seen on the reverse of the U.S. $1 bill",
+        id: 105231,
+        answer: 'sob',
+        question: 'Weep aloud, or cry uncontrollably',
         value: 600,
-        airdate: "2009-02-02T12:00:00.000Z",
-        created_at: "2014-02-14T01:57:02.294Z",
-        updated_at: "2014-02-14T01:57:02.294Z",
-        category_id: 1476,
+        airdate: '2011-02-02T12:00:00.000Z',
+        created_at: '2014-02-14T02:12:00.182Z',
+        updated_at: '2014-02-14T02:12:00.182Z',
+        category_id: 105,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 1476,
-          title: "the 1880s",
-          created_at: "2014-02-11T22:54:13.115Z",
-          updated_at: "2014-02-11T22:54:13.115Z",
-          clues_count: 30
+          id: 105,
+          title: '3-letter words',
+          created_at: '2014-02-11T22:47:36.079Z',
+          updated_at: '2014-02-11T22:47:36.079Z',
+          clues_count: 255
         }
       },
       {
-        id: 91372,
-        answer: "ink",
-        question:
-          "In 1884 Louis E. Waterman came up with a practical handheld device that could store this",
+        id: 55227,
+        answer: 'a fax',
+        question: 'Type of machine you can use to send & receive letters or photos over the telephone line',
         value: 800,
-        airdate: "2009-02-02T12:00:00.000Z",
-        created_at: "2014-02-14T01:57:02.504Z",
-        updated_at: "2014-02-14T01:57:02.504Z",
-        category_id: 1476,
+        airdate: '2003-01-08T12:00:00.000Z',
+        created_at: '2014-02-11T23:20:04.135Z',
+        updated_at: '2014-02-11T23:20:04.135Z',
+        category_id: 105,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 1476,
-          title: "the 1880s",
-          created_at: "2014-02-11T22:54:13.115Z",
-          updated_at: "2014-02-11T22:54:13.115Z",
-          clues_count: 30
+          id: 105,
+          title: '3-letter words',
+          created_at: '2014-02-11T22:47:36.079Z',
+          updated_at: '2014-02-11T22:47:36.079Z',
+          clues_count: 255
         }
       },
       {
-        id: 91378,
-        answer: "Sinclair Lewis",
-        question:
-          'This writer was born on Feb. 7, 1885 in Sauk Center, Minn.--perhaps on the town\'s "Main Street"',
+        id: 54274,
+        answer: 'the rub',
+        question: 'Hamlet spotting the Bengay at the drug store would exclaim, "Ay, there\'s" this',
         value: 1000,
-        airdate: "2009-02-02T12:00:00.000Z",
-        created_at: "2014-02-14T01:57:02.718Z",
-        updated_at: "2014-02-14T01:57:02.718Z",
-        category_id: 1476,
+        airdate: '2003-02-21T12:00:00.000Z',
+        created_at: '2014-02-11T23:19:22.329Z',
+        updated_at: '2014-02-11T23:19:22.329Z',
+        category_id: 105,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 1476,
-          title: "the 1880s",
-          created_at: "2014-02-11T22:54:13.115Z",
-          updated_at: "2014-02-11T22:54:13.115Z",
-          clues_count: 30
+          id: 105,
+          title: '3-letter words',
+          created_at: '2014-02-11T22:47:36.079Z',
+          updated_at: '2014-02-11T22:47:36.079Z',
+          clues_count: 255
         }
       }
     ],
     [
       {
-        id: 13544,
-        answer: "Pigs\\' Feet/Knuckles",
-        question:
-          "Joy of Cooking suggests jellying these pig extremities & serving them cold with remoulade sauce",
+        id: 1097,
+        answer: 'Woolworths',
+        question: 'Former 5 & 10¢ store which now also owns Kinney Shoes & The Foot Locker',
         value: 200,
-        airdate: "1996-04-15T12:00:00.000Z",
-        created_at: "2014-02-11T22:54:13.317Z",
-        updated_at: "2014-02-11T22:54:13.317Z",
-        category_id: 1477,
+        airdate: '1986-01-14T12:00:00.000Z',
+        created_at: '2014-02-11T22:47:49.320Z',
+        updated_at: '2014-02-11T22:47:49.320Z',
+        category_id: 176,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 1477,
-          title: "incredible edibles",
-          created_at: "2014-02-11T22:54:13.126Z",
-          updated_at: "2014-02-11T22:54:13.126Z",
-          clues_count: 35
+          id: 176,
+          title: 'business & industry',
+          created_at: '2014-02-11T22:47:49.151Z',
+          updated_at: '2014-02-11T22:47:49.151Z',
+          clues_count: 225
         }
       },
       {
-        id: 13556,
-        answer: "Skunk Cabbage",
-        question:
-          'Despite its skunklike odor, this "skunk" plant may be cooked & eaten',
+        id: 1109,
+        answer: 'MacArthur',
+        question: 'On July 31, 1952, this former commander of U.N. forces in Korea became chairman of Remington Rand',
         value: 400,
-        airdate: "1996-04-15T12:00:00.000Z",
-        created_at: "2014-02-11T22:54:13.488Z",
-        updated_at: "2014-02-11T22:54:13.488Z",
-        category_id: 1477,
+        airdate: '1986-01-14T12:00:00.000Z',
+        created_at: '2014-02-11T22:47:49.458Z',
+        updated_at: '2014-02-11T22:47:49.458Z',
+        category_id: 176,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 1477,
-          title: "incredible edibles",
-          created_at: "2014-02-11T22:54:13.126Z",
-          updated_at: "2014-02-11T22:54:13.126Z",
-          clues_count: 35
+          id: 176,
+          title: 'business & industry',
+          created_at: '2014-02-11T22:47:49.151Z',
+          updated_at: '2014-02-11T22:47:49.151Z',
+          clues_count: 225
         }
       },
       {
-        id: 78079,
-        answer: "eel",
-        question:
-          "World Book says that the Pilgrims served this snakelike fish at the first Thanksgiving; I'll stick to turkey",
+        id: 48711,
+        answer: 'Nike',
+        question: 'This athletic wear company best known for its shoes began in Oregon as Blue Ribbon Sports',
         value: 600,
-        airdate: "2007-05-11T12:00:00.000Z",
-        created_at: "2014-02-11T23:37:26.268Z",
-        updated_at: "2014-02-11T23:37:26.268Z",
-        category_id: 1477,
+        airdate: '2002-05-14T12:00:00.000Z',
+        created_at: '2014-02-11T23:15:27.758Z',
+        updated_at: '2014-02-11T23:15:27.758Z',
+        category_id: 176,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 1477,
-          title: "incredible edibles",
-          created_at: "2014-02-11T22:54:13.126Z",
-          updated_at: "2014-02-11T22:54:13.126Z",
-          clues_count: 35
+          id: 176,
+          title: 'business & industry',
+          created_at: '2014-02-11T22:47:49.151Z',
+          updated_at: '2014-02-11T22:47:49.151Z',
+          clues_count: 225
         }
       },
       {
-        id: 78085,
-        answer: "swans",
-        question:
-          'These birds whose young are called cygnets were a "cygnet"ure dish at medieval banquets',
+        id: 48717,
+        answer: 'Pepsi (or Pepsi-Cola)',
+        question: 'A New Bern, North Carolina pharmacist invented this drink in 1898, claiming it cured dyspepsia',
         value: 800,
-        airdate: "2007-05-11T12:00:00.000Z",
-        created_at: "2014-02-11T23:37:26.435Z",
-        updated_at: "2014-02-11T23:37:26.435Z",
-        category_id: 1477,
+        airdate: '2002-05-14T12:00:00.000Z',
+        created_at: '2014-02-11T23:15:27.883Z',
+        updated_at: '2014-02-11T23:15:27.883Z',
+        category_id: 176,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 1477,
-          title: "incredible edibles",
-          created_at: "2014-02-11T22:54:13.126Z",
-          updated_at: "2014-02-11T22:54:13.126Z",
-          clues_count: 35
+          id: 176,
+          title: 'business & industry',
+          created_at: '2014-02-11T22:47:49.151Z',
+          updated_at: '2014-02-11T22:47:49.151Z',
+          clues_count: 225
         }
       },
       {
-        id: 78091,
-        answer: "the head",
-        question:
-          "Warning: if you see tete de veau on a French menu, it's this part of a calf",
+        id: 48723,
+        answer: 'ConEdison',
+        question: 'This longest-listed company on the NYSE was first listed in 1824 as the New York Gas Light Company',
         value: 1000,
-        airdate: "2007-05-11T12:00:00.000Z",
-        created_at: "2014-02-11T23:37:26.628Z",
-        updated_at: "2014-02-11T23:37:26.628Z",
-        category_id: 1477,
+        airdate: '2002-05-14T12:00:00.000Z',
+        created_at: '2014-02-11T23:15:28.009Z',
+        updated_at: '2014-02-11T23:15:28.009Z',
+        category_id: 176,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 1477,
-          title: "incredible edibles",
-          created_at: "2014-02-11T22:54:13.126Z",
-          updated_at: "2014-02-11T22:54:13.126Z",
-          clues_count: 35
+          id: 176,
+          title: 'business & industry',
+          created_at: '2014-02-11T22:47:49.151Z',
+          updated_at: '2014-02-11T22:47:49.151Z',
+          clues_count: 225
         }
       }
     ]
   ],
   second_round_categories: [
     {
-      id: 14704,
-      title: "anagrammed 21st century leaders"
+      id: 3603,
+      title: 'college sports'
     },
     {
-      id: 14701,
-      title: "space firsts"
+      id: 10671,
+      title: 'pulitzer-winning biographies & autobiographies'
     },
     {
-      id: 10024,
-      title: "what are you afraid of?"
+      id: 1129,
+      title: 'adjectives'
     },
     {
-      id: 13342,
-      title: "double-letter words"
+      id: 10673,
+      title: 'structures'
     },
     {
-      id: 14703,
-      title: "baby names"
+      id: 10674,
+      title: '3-letter men'
     },
     {
-      id: 469,
-      title: "the queen's english"
+      id: 10675,
+      title: 'unusual animals'
     }
   ],
   second_round_questions: [
     [
       {
-        id: 108549,
-        answer: "Angela Merkel",
-        question: "Germany: Meaner Gal Elk",
+        id: 31362,
+        answer: 'Iowa',
+        question: 'Between 1975 & 1996 this midwestern school\'s Hawkeyes won 16 NCAA wrestling titles',
         value: 200,
-        airdate: "2012-07-24T12:00:00.000Z",
-        created_at: "2014-02-14T02:38:59.732Z",
-        updated_at: "2014-02-14T02:38:59.732Z",
-        category_id: 14704,
+        airdate: '1999-01-29T12:00:00.000Z',
+        created_at: '2014-02-11T23:04:23.867Z',
+        updated_at: '2014-02-11T23:04:23.867Z',
+        category_id: 3603,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 14704,
-          title: "anagrammed 21st century leaders",
-          created_at: "2014-02-14T02:38:59.534Z",
-          updated_at: "2014-02-14T02:38:59.534Z",
-          clues_count: 10
-        }
-      },
-      {
-        id: 108555,
-        answer: "Hugo Chavez",
-        question: "Venezuela: Ez Havoc Hug",
-        value: 400,
-        airdate: "2012-07-24T12:00:00.000Z",
-        created_at: "2014-02-14T02:38:59.927Z",
-        updated_at: "2014-02-14T02:38:59.927Z",
-        category_id: 14704,
-        game_id: null,
-        invalid_count: null,
-        category: {
-          id: 14704,
-          title: "anagrammed 21st century leaders",
-          created_at: "2014-02-14T02:38:59.534Z",
-          updated_at: "2014-02-14T02:38:59.534Z",
-          clues_count: 10
-        }
-      },
-      {
-        id: 108561,
-        answer: "Silvio Berlusconi",
-        question: "Italy:Billion Sour Vices",
-        value: 600,
-        airdate: "2012-07-24T12:00:00.000Z",
-        created_at: "2014-02-14T02:39:00.200Z",
-        updated_at: "2014-02-14T02:39:00.200Z",
-        category_id: 14704,
-        game_id: null,
-        invalid_count: null,
-        category: {
-          id: 14704,
-          title: "anagrammed 21st century leaders",
-          created_at: "2014-02-14T02:38:59.534Z",
-          updated_at: "2014-02-14T02:38:59.534Z",
-          clues_count: 10
-        }
-      },
-      {
-        id: 132134,
-        answer: "Gordon Brown",
-        question: "The United Kingdom:Wrong Orb Nod",
-        value: 800,
-        airdate: "2012-07-24T12:00:00.000Z",
-        created_at: "2015-01-22T02:18:51.032Z",
-        updated_at: "2015-01-22T02:18:51.032Z",
-        category_id: 14704,
-        game_id: 3959,
-        invalid_count: null,
-        category: {
-          id: 14704,
-          title: "anagrammed 21st century leaders",
-          created_at: "2014-02-14T02:38:59.534Z",
-          updated_at: "2014-02-14T02:38:59.534Z",
-          clues_count: 10
-        }
-      },
-      {
-        id: 108573,
-        answer: "Stephen Harper",
-        question: "Canada:Sharpen The Rep",
-        value: 1000,
-        airdate: "2012-07-24T12:00:00.000Z",
-        created_at: "2014-02-14T02:39:00.594Z",
-        updated_at: "2014-02-14T02:39:00.594Z",
-        category_id: 14704,
-        game_id: null,
-        invalid_count: null,
-        category: {
-          id: 14704,
-          title: "anagrammed 21st century leaders",
-          created_at: "2014-02-14T02:38:59.534Z",
-          updated_at: "2014-02-14T02:38:59.534Z",
-          clues_count: 10
-        }
-      }
-    ],
-    [
-      {
-        id: 108544,
-        answer: "the Hubble telescope",
-        question:
-          "On May 20, 1990 its first image, a star cluster in the constellation Carina, was received from space",
-        value: 200,
-        airdate: "2012-07-24T12:00:00.000Z",
-        created_at: "2014-02-14T02:38:59.566Z",
-        updated_at: "2014-02-14T02:38:59.566Z",
-        category_id: 14701,
-        game_id: null,
-        invalid_count: null,
-        category: {
-          id: 14701,
-          title: "space firsts",
-          created_at: "2014-02-14T02:38:59.502Z",
-          updated_at: "2014-02-14T02:38:59.502Z",
-          clues_count: 10
-        }
-      },
-      {
-        id: 108550,
-        answer: "a spacewalk",
-        question:
-          "In June 1965 Edward White on Gemini 4 became the first American to do this: it lasted 23 minutes",
-        value: 400,
-        airdate: "2012-07-24T12:00:00.000Z",
-        created_at: "2014-02-14T02:38:59.764Z",
-        updated_at: "2014-02-14T02:38:59.764Z",
-        category_id: 14701,
-        game_id: null,
-        invalid_count: null,
-        category: {
-          id: 14701,
-          title: "space firsts",
-          created_at: "2014-02-14T02:38:59.502Z",
-          updated_at: "2014-02-14T02:38:59.502Z",
-          clues_count: 10
-        }
-      },
-      {
-        id: 108556,
-        answer: "Mars",
-        question:
-          "On Nov. 14, 1971 Mariner 9 became the first spacecraft to go into orbit around another planet, this one",
-        value: 600,
-        airdate: "2012-07-24T12:00:00.000Z",
-        created_at: "2014-02-14T02:39:00.001Z",
-        updated_at: "2014-02-14T02:39:00.001Z",
-        category_id: 14701,
-        game_id: null,
-        invalid_count: null,
-        category: {
-          id: 14701,
-          title: "space firsts",
-          created_at: "2014-02-14T02:38:59.502Z",
-          updated_at: "2014-02-14T02:38:59.502Z",
-          clues_count: 10
-        }
-      },
-      {
-        id: 108562,
-        answer: "the <i>Columbia</i>",
-        question:
-          "Launched on April 12, 1981, this Space Shuttle was the first reusable manned spacecraft",
-        value: 800,
-        airdate: "2012-07-24T12:00:00.000Z",
-        created_at: "2014-02-14T02:39:00.232Z",
-        updated_at: "2014-02-14T02:39:00.232Z",
-        category_id: 14701,
-        game_id: null,
-        invalid_count: null,
-        category: {
-          id: 14701,
-          title: "space firsts",
-          created_at: "2014-02-14T02:38:59.502Z",
-          updated_at: "2014-02-14T02:38:59.502Z",
-          clues_count: 10
-        }
-      },
-      {
-        id: 108568,
-        answer: "Gagarin",
-        question:
-          'On April 12, 1961 this Russian, the first man in space, said the earth had a "beautiful blue halo"',
-        value: 1000,
-        airdate: "2012-07-24T12:00:00.000Z",
-        created_at: "2014-02-14T02:39:00.426Z",
-        updated_at: "2014-02-14T02:39:00.426Z",
-        category_id: 14701,
-        game_id: null,
-        invalid_count: null,
-        category: {
-          id: 14701,
-          title: "space firsts",
-          created_at: "2014-02-14T02:38:59.502Z",
-          updated_at: "2014-02-14T02:38:59.502Z",
-          clues_count: 10
-        }
-      }
-    ],
-    [
-      {
-        id: 76419,
-        answer: "books",
-        question:
-          "Bibliophobia, a fear of these, might hurt you if you want to continue your studies",
-        value: 200,
-        airdate: "2007-07-27T12:00:00.000Z",
-        created_at: "2014-02-11T23:36:09.059Z",
-        updated_at: "2014-02-11T23:36:09.059Z",
-        category_id: 10024,
-        game_id: null,
-        invalid_count: null,
-        category: {
-          id: 10024,
-          title: "what are you afraid of?",
-          created_at: "2014-02-11T23:36:08.851Z",
-          updated_at: "2014-02-11T23:36:08.851Z",
-          clues_count: 30
-        }
-      },
-      {
-        id: 89383,
-        answer: "China",
-        question:
-          "It's the country someone with sinophobia would be least apt to visit",
-        value: 400,
-        airdate: "2009-05-05T12:00:00.000Z",
-        created_at: "2014-02-14T01:55:00.928Z",
-        updated_at: "2014-02-14T01:55:00.928Z",
-        category_id: 10024,
-        game_id: null,
-        invalid_count: null,
-        category: {
-          id: 10024,
-          title: "what are you afraid of?",
-          created_at: "2014-02-11T23:36:08.851Z",
-          updated_at: "2014-02-11T23:36:08.851Z",
-          clues_count: 30
-        }
-      },
-      {
-        id: 76431,
-        answer: "rain",
-        question:
-          "If you have pluviophobia, the fear of this weather condition, we probably won't find you \"singin' in\" it",
-        value: 600,
-        airdate: "2007-07-27T12:00:00.000Z",
-        created_at: "2014-02-11T23:36:09.509Z",
-        updated_at: "2014-02-11T23:36:09.509Z",
-        category_id: 10024,
-        game_id: null,
-        invalid_count: null,
-        category: {
-          id: 10024,
-          title: "what are you afraid of?",
-          created_at: "2014-02-11T23:36:08.851Z",
-          updated_at: "2014-02-11T23:36:08.851Z",
-          clues_count: 30
-        }
-      },
-      {
-        id: 76437,
-        answer: "trees",
-        question:
-          "If you've got dendrophobia, a fear of these, we suggest not climbing any",
-        value: 800,
-        airdate: "2007-07-27T12:00:00.000Z",
-        created_at: "2014-02-11T23:36:09.707Z",
-        updated_at: "2014-02-11T23:36:09.707Z",
-        category_id: 10024,
-        game_id: null,
-        invalid_count: null,
-        category: {
-          id: 10024,
-          title: "what are you afraid of?",
-          created_at: "2014-02-11T23:36:08.851Z",
-          updated_at: "2014-02-11T23:36:08.851Z",
-          clues_count: 30
-        }
-      },
-      {
-        id: 76443,
-        answer: "hell",
-        question:
-          "If you have stygiophobia, derived from the River Styx, you have a fear of this place, so act right!",
-        value: 1000,
-        airdate: "2007-07-27T12:00:00.000Z",
-        created_at: "2014-02-11T23:36:09.916Z",
-        updated_at: "2014-02-11T23:36:09.916Z",
-        category_id: 10024,
-        game_id: null,
-        invalid_count: null,
-        category: {
-          id: 10024,
-          title: "what are you afraid of?",
-          created_at: "2014-02-11T23:36:08.851Z",
-          updated_at: "2014-02-11T23:36:08.851Z",
-          clues_count: 30
-        }
-      }
-    ],
-    [
-      {
-        id: 99665,
-        answer: "Allah",
-        question: "In Islam, the supreme being",
-        value: 200,
-        airdate: "2009-12-03T12:00:00.000Z",
-        created_at: "2014-02-14T02:05:40.009Z",
-        updated_at: "2014-02-14T02:05:40.009Z",
-        category_id: 13342,
-        game_id: null,
-        invalid_count: null,
-        category: {
-          id: 13342,
-          title: "double-letter words",
-          created_at: "2014-02-14T02:05:39.828Z",
-          updated_at: "2014-02-14T02:05:39.828Z",
+          id: 3603,
+          title: 'college sports',
+          created_at: '2014-02-11T23:04:23.673Z',
+          updated_at: '2014-02-11T23:04:23.673Z',
           clues_count: 15
         }
       },
       {
-        id: 99671,
-        answer: "a pickoff",
-        question:
-          "In baseball, it's a play in which a runner is caught off base & thrown out by the pitcher or catcher",
+        id: 31374,
+        answer: 'Grant Hill',
+        question: 'This Duke & Detroit Pistons star won 1995\'s Espy Award from ESPN as Best College Hoops Performer',
         value: 400,
-        airdate: "2009-12-03T12:00:00.000Z",
-        created_at: "2014-02-14T02:05:40.294Z",
-        updated_at: "2014-02-14T02:05:40.294Z",
-        category_id: 13342,
+        airdate: '1999-01-29T12:00:00.000Z',
+        created_at: '2014-02-11T23:04:24.097Z',
+        updated_at: '2014-02-11T23:04:24.097Z',
+        category_id: 3603,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 13342,
-          title: "double-letter words",
-          created_at: "2014-02-14T02:05:39.828Z",
-          updated_at: "2014-02-14T02:05:39.828Z",
+          id: 3603,
+          title: 'college sports',
+          created_at: '2014-02-11T23:04:23.673Z',
+          updated_at: '2014-02-11T23:04:23.673Z',
           clues_count: 15
         }
       },
       {
-        id: 99677,
-        answer: "to coddle",
-        question:
-          "To baby, or to cook eggs in water just below the boiling point",
+        id: 69647,
+        answer: 'Stanford',
+        question: 'In 1971 UCLA\'s Jimmy Connors won the NCAA tennis title; in 1978 John McEnroe won for this Pac-10 "Cardinal" school',
         value: 600,
-        airdate: "2009-12-03T12:00:00.000Z",
-        created_at: "2014-02-14T02:05:40.597Z",
-        updated_at: "2014-02-14T02:05:40.597Z",
-        category_id: 13342,
+        airdate: '2006-07-24T12:00:00.000Z',
+        created_at: '2014-02-11T23:31:06.973Z',
+        updated_at: '2014-02-11T23:31:06.973Z',
+        category_id: 3603,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 13342,
-          title: "double-letter words",
-          created_at: "2014-02-14T02:05:39.828Z",
-          updated_at: "2014-02-14T02:05:39.828Z",
+          id: 3603,
+          title: 'college sports',
+          created_at: '2014-02-11T23:04:23.673Z',
+          updated_at: '2014-02-11T23:04:23.673Z',
           clues_count: 15
         }
       },
       {
-        id: 99683,
-        answer: "to whittle",
-        question:
-          'From the Middle English for "knife", it means to cut small shavings from a piece of wood',
+        id: 69653,
+        answer: 'the Eagles',
+        question: 'The athletic teams from Morehead State & Boston College share this nickname',
         value: 800,
-        airdate: "2009-12-03T12:00:00.000Z",
-        created_at: "2014-02-14T02:05:40.872Z",
-        updated_at: "2014-02-14T02:05:40.872Z",
-        category_id: 13342,
+        airdate: '2006-07-24T12:00:00.000Z',
+        created_at: '2014-02-11T23:31:07.125Z',
+        updated_at: '2014-02-11T23:31:07.125Z',
+        category_id: 3603,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 13342,
-          title: "double-letter words",
-          created_at: "2014-02-14T02:05:39.828Z",
-          updated_at: "2014-02-14T02:05:39.828Z",
+          id: 3603,
+          title: 'college sports',
+          created_at: '2014-02-11T23:04:23.673Z',
+          updated_at: '2014-02-11T23:04:23.673Z',
           clues_count: 15
         }
       },
       {
-        id: 99689,
-        answer: "rubber",
-        question:
-          'A sophisticated debating technique is to point out that "I\'m" this, "you\'re glue"',
+        id: 69659,
+        answer: 'Bobby Knight',
+        question: 'This volatile Indiana basketball coach was fired in September 2000; in 2001 he returned to coaching with Texas Tech',
         value: 1000,
-        airdate: "2009-12-03T12:00:00.000Z",
-        created_at: "2014-02-14T02:05:41.239Z",
-        updated_at: "2014-02-14T02:05:41.239Z",
-        category_id: 13342,
+        airdate: '2006-07-24T12:00:00.000Z',
+        created_at: '2014-02-11T23:31:07.274Z',
+        updated_at: '2014-02-11T23:31:07.274Z',
+        category_id: 3603,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 13342,
-          title: "double-letter words",
-          created_at: "2014-02-14T02:05:39.828Z",
-          updated_at: "2014-02-14T02:05:39.828Z",
+          id: 3603,
+          title: 'college sports',
+          created_at: '2014-02-11T23:04:23.673Z',
+          updated_at: '2014-02-11T23:04:23.673Z',
           clues_count: 15
         }
       }
     ],
     [
       {
-        id: 108548,
-        answer: "Cameron",
-        question:
-          "Names that work for either a boy or a girl include Payton, Dylan, Skyler & this. like actress Diaz",
+        id: 81187,
+        answer: '<i>Angela\\\'s Ashes</i>',
+        question: 'This bestseller about growing up in the slums of Limerick won the Pulitzer in 1997',
         value: 200,
-        airdate: "2012-07-24T12:00:00.000Z",
-        created_at: "2014-02-14T02:38:59.700Z",
-        updated_at: "2014-02-14T02:38:59.700Z",
-        category_id: 14703,
+        airdate: '2006-12-18T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:52.266Z',
+        updated_at: '2014-02-11T23:39:52.266Z',
+        category_id: 10671,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 14703,
-          title: "baby names",
-          created_at: "2014-02-14T02:38:59.526Z",
-          updated_at: "2014-02-14T02:38:59.526Z",
-          clues_count: 10
+          id: 10671,
+          title: 'pulitzer-winning biographies & autobiographies',
+          created_at: '2014-02-11T23:39:52.113Z',
+          updated_at: '2014-02-11T23:39:52.113Z',
+          clues_count: 5
         }
       },
       {
-        id: 108554,
-        answer: "Faith and Hope",
-        question:
-          "Among the most popular twin names for girls are these 2 that form a trio with Charity",
+        id: 81193,
+        answer: '(Vladimir) Nabokov',
+        question: 'His wife Vera, not Lolita, was the subject of a 2000 prize-winning bio by Stacy Schiff',
         value: 400,
-        airdate: "2012-07-24T12:00:00.000Z",
-        created_at: "2014-02-14T02:38:59.894Z",
-        updated_at: "2014-02-14T02:38:59.894Z",
-        category_id: 14703,
+        airdate: '2006-12-18T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:52.435Z',
+        updated_at: '2014-02-11T23:39:52.435Z',
+        category_id: 10671,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 14703,
-          title: "baby names",
-          created_at: "2014-02-14T02:38:59.526Z",
-          updated_at: "2014-02-14T02:38:59.526Z",
-          clues_count: 10
+          id: 10671,
+          title: 'pulitzer-winning biographies & autobiographies',
+          created_at: '2014-02-11T23:39:52.113Z',
+          updated_at: '2014-02-11T23:39:52.113Z',
+          clues_count: 5
         }
       },
       {
-        id: 108560,
-        answer: "Brooklyn",
-        question:
-          "We're not sure why but this name of a New York City borough recently ranked among the top 10 girl's names in Arkansas",
+        id: 81199,
+        answer: '<i>The Spirit of St. Louis</i>',
+        question: 'Charles Lindbergh must have been flying high after winning the Pulitzer in 1954 for this memoir',
         value: 600,
-        airdate: "2012-07-24T12:00:00.000Z",
-        created_at: "2014-02-14T02:39:00.167Z",
-        updated_at: "2014-02-14T02:39:00.167Z",
-        category_id: 14703,
+        airdate: '2006-12-18T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:52.731Z',
+        updated_at: '2014-02-11T23:39:52.731Z',
+        category_id: 10671,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 14703,
-          title: "baby names",
-          created_at: "2014-02-14T02:38:59.526Z",
-          updated_at: "2014-02-14T02:38:59.526Z",
-          clues_count: 10
+          id: 10671,
+          title: 'pulitzer-winning biographies & autobiographies',
+          created_at: '2014-02-11T23:39:52.113Z',
+          updated_at: '2014-02-11T23:39:52.113Z',
+          clues_count: 5
         }
       },
       {
-        id: 108566,
-        answer: "Malia",
-        question:
-          'For a "first daughter" you might consider this name, a Hawaiian form of Mary',
+        id: 81205,
+        answer: '<i>A Thousand Days</i>',
+        question: 'Title length of time in Arthur Schlesinger Jr.\'s 1966 prize-winner subtitled "John F. Kennedy in the White House"',
         value: 800,
-        airdate: "2012-07-24T12:00:00.000Z",
-        created_at: "2014-02-14T02:39:00.358Z",
-        updated_at: "2014-02-14T02:39:00.358Z",
-        category_id: 14703,
+        airdate: '2006-12-18T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:52.992Z',
+        updated_at: '2014-02-11T23:39:52.992Z',
+        category_id: 10671,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 14703,
-          title: "baby names",
-          created_at: "2014-02-14T02:38:59.526Z",
-          updated_at: "2014-02-14T02:38:59.526Z",
-          clues_count: 10
+          id: 10671,
+          title: 'pulitzer-winning biographies & autobiographies',
+          created_at: '2014-02-11T23:39:52.113Z',
+          updated_at: '2014-02-11T23:39:52.113Z',
+          clues_count: 5
         }
       },
       {
-        id: 108572,
-        answer: "Jude",
-        question:
-          '"Hey" this 4-letter masculine name meaning one who praises God--you aren\'t so obscure anymore',
+        id: 81211,
+        answer: 'William James',
+        question: 'This psychologist & his author brother Henry were each the subjects of prize-winning bios; one in 1936, the other in 1963',
         value: 1000,
-        airdate: "2012-07-24T12:00:00.000Z",
-        created_at: "2014-02-14T02:39:00.560Z",
-        updated_at: "2014-02-14T02:39:00.560Z",
-        category_id: 14703,
+        airdate: '2006-12-18T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:53.244Z',
+        updated_at: '2014-02-11T23:39:53.244Z',
+        category_id: 10671,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 14703,
-          title: "baby names",
-          created_at: "2014-02-14T02:38:59.526Z",
-          updated_at: "2014-02-14T02:38:59.526Z",
-          clues_count: 10
+          id: 10671,
+          title: 'pulitzer-winning biographies & autobiographies',
+          created_at: '2014-02-11T23:39:52.113Z',
+          updated_at: '2014-02-11T23:39:52.113Z',
+          clues_count: 5
         }
       }
     ],
     [
       {
-        id: 3136,
-        answer: "napkin",
-        question: 'A "serviette"',
+        id: 9516,
+        answer: 'Willowy',
+        question: 'It means gracefully tall & slender, perhaps like a weeping tree',
         value: 200,
-        airdate: "1986-11-14T12:00:00.000Z",
-        created_at: "2014-02-11T22:48:49.049Z",
-        updated_at: "2014-02-11T22:48:49.049Z",
-        category_id: 469,
+        airdate: '1991-11-14T12:00:00.000Z',
+        created_at: '2014-02-11T22:52:12.059Z',
+        updated_at: '2014-02-11T22:52:12.059Z',
+        category_id: 1129,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 469,
-          title: "the queen's english",
-          created_at: "2014-02-11T22:48:48.900Z",
-          updated_at: "2014-02-11T22:48:48.900Z",
+          id: 1129,
+          title: 'adjectives',
+          created_at: '2014-02-11T22:52:11.853Z',
+          updated_at: '2014-02-11T22:52:11.853Z',
           clues_count: 40
         }
       },
       {
-        id: 3148,
-        answer: "nursing",
-        question:
-          'Someone who wants to be a "sister", but not a nun, would be interested in this profession',
+        id: 9528,
+        answer: 'Bellum',
+        question: 'Bellicose & belligerent are derived in part from this Latin word for "war"',
         value: 400,
-        airdate: "1986-11-14T12:00:00.000Z",
-        created_at: "2014-02-11T22:48:49.230Z",
-        updated_at: "2014-02-11T22:48:49.230Z",
-        category_id: 469,
+        airdate: '1991-11-14T12:00:00.000Z',
+        created_at: '2014-02-11T22:52:12.229Z',
+        updated_at: '2014-02-11T22:52:12.229Z',
+        category_id: 1129,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 469,
-          title: "the queen's english",
-          created_at: "2014-02-11T22:48:48.900Z",
-          updated_at: "2014-02-11T22:48:48.900Z",
+          id: 1129,
+          title: 'adjectives',
+          created_at: '2014-02-11T22:52:11.853Z',
+          updated_at: '2014-02-11T22:52:11.853Z',
           clues_count: 40
         }
       },
       {
-        id: 58282,
-        answer: "a bill",
-        question:
-          "British parlance for this would make the ex-senator Banknote Bradley",
+        id: 81201,
+        answer: 'serrated',
+        question: 'It describes notched, sawlike teeth, as on the blade of a bread knife',
         value: 600,
-        airdate: "2004-07-09T12:00:00.000Z",
-        created_at: "2014-02-11T23:22:25.330Z",
-        updated_at: "2014-02-11T23:22:25.330Z",
-        category_id: 469,
+        airdate: '2006-12-18T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:52.815Z',
+        updated_at: '2014-02-11T23:39:52.815Z',
+        category_id: 1129,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 469,
-          title: "the queen's english",
-          created_at: "2014-02-11T22:48:48.900Z",
-          updated_at: "2014-02-11T22:48:48.900Z",
+          id: 1129,
+          title: 'adjectives',
+          created_at: '2014-02-11T22:52:11.853Z',
+          updated_at: '2014-02-11T22:52:11.853Z',
           clues_count: 40
         }
       },
       {
-        id: 58288,
-        answer: "a cuff",
-        question:
-          "A turn-up on your trousers there, becomes one of these on your pants here",
+        id: 81207,
+        answer: 'native',
+        question: 'Belonging to the place where one was born, like the "son" in a Richard Wright title',
         value: 800,
-        airdate: "2004-07-09T12:00:00.000Z",
-        created_at: "2014-02-11T23:22:25.477Z",
-        updated_at: "2014-02-11T23:22:25.477Z",
-        category_id: 469,
+        airdate: '2006-12-18T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:53.076Z',
+        updated_at: '2014-02-11T23:39:53.076Z',
+        category_id: 1129,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 469,
-          title: "the queen's english",
-          created_at: "2014-02-11T22:48:48.900Z",
-          updated_at: "2014-02-11T22:48:48.900Z",
+          id: 1129,
+          title: 'adjectives',
+          created_at: '2014-02-11T22:52:11.853Z',
+          updated_at: '2014-02-11T22:52:11.853Z',
           clues_count: 40
         }
       },
       {
-        id: 69483,
-        answer: "a club (or a nightstick)",
-        question:
-          "If the Westminster Bobby pulls out his truncheon, be worried because it's one of these",
+        id: 81213,
+        answer: 'voracious',
+        question: 'From Latin for "devour", it precedes "readers" to describe those with an insatiable appetite for books',
         value: 1000,
-        airdate: "2004-09-07T12:00:00.000Z",
-        created_at: "2014-02-11T23:30:59.130Z",
-        updated_at: "2014-02-11T23:30:59.130Z",
-        category_id: 469,
+        airdate: '2006-12-18T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:53.301Z',
+        updated_at: '2014-02-11T23:39:53.301Z',
+        category_id: 1129,
         game_id: null,
         invalid_count: null,
         category: {
-          id: 469,
-          title: "the queen's english",
-          created_at: "2014-02-11T22:48:48.900Z",
-          updated_at: "2014-02-11T22:48:48.900Z",
+          id: 1129,
+          title: 'adjectives',
+          created_at: '2014-02-11T22:52:11.853Z',
+          updated_at: '2014-02-11T22:52:11.853Z',
           clues_count: 40
+        }
+      }
+    ],
+    [
+      {
+        id: 81214,
+        answer: 'a fire tower',
+        question: 'Once essential in hot, dry forest weather, this type of structure is less necessary in an age of aircraft & cell phones',
+        value: 200,
+        airdate: '2006-12-15T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:53.774Z',
+        updated_at: '2014-02-11T23:39:53.774Z',
+        category_id: 10673,
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: 10673,
+          title: 'structures',
+          created_at: '2014-02-11T23:39:53.688Z',
+          updated_at: '2014-02-11T23:39:53.688Z',
+          clues_count: 15
+        }
+      },
+      {
+        id: 81220,
+        answer: 'Mansion',
+        question: 'In names of fancy homes, there\'s Wayne Manor & Gracie this',
+        value: 400,
+        airdate: '2006-12-15T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:53.939Z',
+        updated_at: '2014-02-11T23:39:53.939Z',
+        category_id: 10673,
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: 10673,
+          title: 'structures',
+          created_at: '2014-02-11T23:39:53.688Z',
+          updated_at: '2014-02-11T23:39:53.688Z',
+          clues_count: 15
+        }
+      },
+      {
+        id: 81226,
+        answer: 'a guardhouse',
+        question: 'The booth from Checkpoint Charlie, shown here, is usually called by this 10-letter homey name',
+        value: 600,
+        airdate: '2006-12-15T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:54.110Z',
+        updated_at: '2014-02-11T23:39:54.110Z',
+        category_id: 10673,
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: 10673,
+          title: 'structures',
+          created_at: '2014-02-11T23:39:53.688Z',
+          updated_at: '2014-02-11T23:39:53.688Z',
+          clues_count: 15
+        }
+      },
+      {
+        id: 81232,
+        answer: 'a skyscraper',
+        question: 'Type of building that\'s the title of a 1981 book by New York Times architecture critic Paul Goldberger',
+        value: 800,
+        airdate: '2006-12-15T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:54.317Z',
+        updated_at: '2014-02-11T23:39:54.317Z',
+        category_id: 10673,
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: 10673,
+          title: 'structures',
+          created_at: '2014-02-11T23:39:53.688Z',
+          updated_at: '2014-02-11T23:39:53.688Z',
+          clues_count: 15
+        }
+      },
+      {
+        id: 81238,
+        answer: 'a hippodrome',
+        question: 'The model of this type of ancient structure partly from the Greek word for "horse", is seen here',
+        value: 1000,
+        airdate: '2006-12-15T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:54.505Z',
+        updated_at: '2014-02-11T23:39:54.505Z',
+        category_id: 10673,
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: 10673,
+          title: 'structures',
+          created_at: '2014-02-11T23:39:53.688Z',
+          updated_at: '2014-02-11T23:39:53.688Z',
+          clues_count: 15
+        }
+      }
+    ],
+    [
+      {
+        id: 81215,
+        answer: 'Dan',
+        question: 'Rather orMarino',
+        value: 200,
+        airdate: '2006-12-15T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:53.802Z',
+        updated_at: '2014-02-11T23:39:53.802Z',
+        category_id: 10674,
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: 10674,
+          title: '3-letter men',
+          created_at: '2014-02-11T23:39:53.701Z',
+          updated_at: '2014-02-11T23:39:53.701Z',
+          clues_count: 5
+        }
+      },
+      {
+        id: 81221,
+        answer: 'Bob',
+        question: 'Costas orHope',
+        value: 400,
+        airdate: '2006-12-15T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:53.965Z',
+        updated_at: '2014-02-11T23:39:53.965Z',
+        category_id: 10674,
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: 10674,
+          title: '3-letter men',
+          created_at: '2014-02-11T23:39:53.701Z',
+          updated_at: '2014-02-11T23:39:53.701Z',
+          clues_count: 5
+        }
+      },
+      {
+        id: 81227,
+        answer: 'Lou',
+        question: 'Rawls orGehrig',
+        value: 600,
+        airdate: '2006-12-15T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:54.140Z',
+        updated_at: '2014-02-11T23:39:54.140Z',
+        category_id: 10674,
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: 10674,
+          title: '3-letter men',
+          created_at: '2014-02-11T23:39:53.701Z',
+          updated_at: '2014-02-11T23:39:53.701Z',
+          clues_count: 5
+        }
+      },
+      {
+        id: 81233,
+        answer: 'Sam',
+        question: 'Shepard orDonaldson',
+        value: 800,
+        airdate: '2006-12-15T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:54.348Z',
+        updated_at: '2014-02-11T23:39:54.348Z',
+        category_id: 10674,
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: 10674,
+          title: '3-letter men',
+          created_at: '2014-02-11T23:39:53.701Z',
+          updated_at: '2014-02-11T23:39:53.701Z',
+          clues_count: 5
+        }
+      },
+      {
+        id: 81239,
+        answer: 'Ted',
+        question: 'Danson orTurner',
+        value: 1000,
+        airdate: '2006-12-15T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:54.536Z',
+        updated_at: '2014-02-11T23:39:54.536Z',
+        category_id: 10674,
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: 10674,
+          title: '3-letter men',
+          created_at: '2014-02-11T23:39:53.701Z',
+          updated_at: '2014-02-11T23:39:53.701Z',
+          clues_count: 5
+        }
+      }
+    ],
+    [
+      {
+        id: 81216,
+        answer: 'an alligator',
+        question: 'In 2006 the Riverbanks Zoo in S.C. exhibited a rare white (but not albino) one of these crocodilians',
+        value: 200,
+        airdate: '2006-12-15T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:53.830Z',
+        updated_at: '2014-02-11T23:39:53.830Z',
+        category_id: 10675,
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: 10675,
+          title: 'unusual animals',
+          created_at: '2014-02-11T23:39:53.714Z',
+          updated_at: '2014-02-11T23:39:53.714Z',
+          clues_count: 5
+        }
+      },
+      {
+        id: 81222,
+        answer: 'a bat',
+        question: 'The Kitti\'s hog-nosed species of this flying mammal is about the size of a bumblebee',
+        value: 400,
+        airdate: '2006-12-15T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:53.992Z',
+        updated_at: '2014-02-11T23:39:53.992Z',
+        category_id: 10675,
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: 10675,
+          title: 'unusual animals',
+          created_at: '2014-02-11T23:39:53.714Z',
+          updated_at: '2014-02-11T23:39:53.714Z',
+          clues_count: 5
+        }
+      },
+      {
+        id: 81228,
+        answer: 'a (wolf) spider',
+        question: 'Aaargh!  Pirata piraticus, one of these arachnids, has the startling ability to walk--& even run--on water',
+        value: 600,
+        airdate: '2006-12-15T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:54.197Z',
+        updated_at: '2014-02-11T23:39:54.197Z',
+        category_id: 10675,
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: 10675,
+          title: 'unusual animals',
+          created_at: '2014-02-11T23:39:53.714Z',
+          updated_at: '2014-02-11T23:39:53.714Z',
+          clues_count: 5
+        }
+      },
+      {
+        id: 81234,
+        answer: 'a squid',
+        question: 'In 2001 scientists found a new type of this 10-armed cephalopod; it has 2 fins that flap like elephant ears',
+        value: 800,
+        airdate: '2006-12-15T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:54.379Z',
+        updated_at: '2014-02-11T23:39:54.379Z',
+        category_id: 10675,
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: 10675,
+          title: 'unusual animals',
+          created_at: '2014-02-11T23:39:53.714Z',
+          updated_at: '2014-02-11T23:39:53.714Z',
+          clues_count: 5
+        }
+      },
+      {
+        id: 81240,
+        answer: 'a lemur',
+        question: '(Sarah of the Clue Crew delivers the clue from the Primate Center at Duke University.)  Among the few primates with blue eyes are humans & this type of animal',
+        value: 1000,
+        airdate: '2006-12-15T12:00:00.000Z',
+        created_at: '2014-02-11T23:39:54.567Z',
+        updated_at: '2014-02-11T23:39:54.567Z',
+        category_id: 10675,
+        game_id: null,
+        invalid_count: null,
+        category: {
+          id: 10675,
+          title: 'unusual animals',
+          created_at: '2014-02-11T23:39:53.714Z',
+          updated_at: '2014-02-11T23:39:53.714Z',
+          clues_count: 5
         }
       }
     ]
   ],
-  daily_doubles: [108566, 76437],
-  answered_questions: [],
-  winnings: 24000,
+  daily_doubles: [],
+  answered_questions: [
+    69659,
+    69653,
+    69647,
+    31374,
+    31362,
+    81211,
+    81213,
+    81238,
+    81239,
+    81240,
+    81234,
+    81228,
+    81214,
+    81215,
+    81216,
+    9516,
+    81187,
+    81193,
+    9528,
+    81220,
+    81221,
+    81222,
+    81227,
+    81233,
+    81226,
+    81232,
+    81207,
+    81205,
+    81201,
+    81199
+  ],
+  winnings: 19000,
   display_daily_double_question: false,
   display_daily_double_wager: false,
   true_daily_double: false,
-  final_jeopardy_question: {},
+  final_jeopardy_question: {
+    id: 109382,
+    answer: 'Eisenhower',
+    question: 'MacArthur reportedly said of him, "he\'ll make a fine president, he was the best clerk who ever served under me"',
+    value: 1000,
+    airdate: '2012-06-15T12:00:00.000Z',
+    created_at: '2014-02-14T02:39:43.291Z',
+    updated_at: '2014-02-14T02:39:43.291Z',
+    category_id: 14827,
+    game_id: null,
+    invalid_count: null,
+    category: {
+      id: 14827,
+      title: 'who said what about whom?',
+      created_at: '2014-02-14T02:39:41.872Z',
+      updated_at: '2014-02-14T02:39:41.872Z',
+      clues_count: 10
+    }
+  },
   display_final_jeopardy_question: false,
   display_final_jeopardy_wager: false,
   final_earnings: 0,
   loading_game_over: false,
   is_game_over: false,
   is_new_high_score: false,
-  high_scores: [],
   is_new_game: false
 };
 
@@ -1719,12 +1717,10 @@ export default function(state = initial_state, action) {
       };
     }
     case NEW_HIGH_SCORE: {
-      const { high_scores } = action;
       return {
         ...state,
         loading_game_over: false,
-        is_new_high_score: true,
-        high_scores
+        is_new_high_score: true
       };
     }
     case RESET_GAME: {
@@ -1751,7 +1747,6 @@ export default function(state = initial_state, action) {
         loading_game_over: false,
         is_game_over: false,
         is_new_high_score: false,
-        high_scores: [],
         is_new_game: true
       };
     }

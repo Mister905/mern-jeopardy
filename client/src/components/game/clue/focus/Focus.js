@@ -445,7 +445,7 @@ class Focus extends Component {
                           <i className="material-icons left icon-margin">
                             lightbulb_outline
                           </i>
-                          Reveal Answer
+                          <span className="reveal-answer">Reveal Answer</span>
                         </div>
                       </a>
                     </div>
@@ -469,8 +469,8 @@ class Focus extends Component {
                     </div>
                     <div className="row">
                       <div className="col m4 offset-m4">
-                        <div className="row determination-row">
-                          <div className="col m6 center-align">
+                        <div className="row mt-row">
+                          <div className="col m3 offset-m2 center-align">
                             <a
                               onClick={() =>
                                 this.answer_response(
@@ -478,12 +478,12 @@ class Focus extends Component {
                                   true
                                 )
                               }
-                              className="btn jeopardy-white jeopardy-red-text"
+                              className="btn btn-wide jeopardy-white jeopardy-red-text"
                             >
-                              <i className="material-icons">highlight_off</i>
+                              <i className="material-icons highlight_off">highlight_off</i>
                             </a>
                           </div>
-                          <div className="col m6 center-align">
+                          <div className="col m3 offset-m2 center-align">
                             <a
                               onClick={() =>
                                 this.answer_response(
@@ -491,9 +491,9 @@ class Focus extends Component {
                                   false
                                 )
                               }
-                              className="btn jeopardy-white jeopardy-green-text"
+                              className="btn btn-wide jeopardy-white jeopardy-green-text"
                             >
-                              <i className="material-icons">check</i>
+                              <i className="material-icons response-icon">check</i>
                             </a>
                           </div>
                         </div>
@@ -527,7 +527,7 @@ class Focus extends Component {
                           <i className="material-icons left icon-margin">
                             lightbulb_outline
                           </i>
-                          Reveal Answer
+                          <span className="reveal-answer">Reveal Answer</span>
                         </div>
                       </a>
                     </div>
@@ -551,7 +551,7 @@ class Focus extends Component {
                     </div>
                     <div className="row">
                       <div className="col m4 offset-m4">
-                        <div className="row determination-row">
+                        <div className="row mt-25">
                           <div className="col m6 center-align">
                             <a
                               onClick={() =>
@@ -559,7 +559,7 @@ class Focus extends Component {
                               }
                               className="btn jeopardy-white jeopardy-red-text"
                             >
-                              <i className="material-icons">highlight_off</i>
+                              <i className="material-icons response-icon">highlight_off</i>
                             </a>
                           </div>
                           <div className="col m6 center-align">
@@ -569,7 +569,7 @@ class Focus extends Component {
                               }
                               className="btn jeopardy-white jeopardy-green-text"
                             >
-                              <i className="material-icons">check</i>
+                              <i className="material-icons response-icon">check</i>
                             </a>
                           </div>
                         </div>

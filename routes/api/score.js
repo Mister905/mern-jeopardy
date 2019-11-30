@@ -26,13 +26,13 @@ router.post('/new-score', auth, async (req, res) => {
     }    
 });
 
-// @route POST api/score/get-high-scores
+// @route POST api/score/get-leaderboard
 // @desc Get Top 10 High Scores
 // @access Private
-router.get('/get-high-scores', auth, async (req, res) => {
+router.get('/get-leaderboard', auth, async (req, res) => {
     const sort = { score: -1 };
-    const high_scores = await Score.find().limit(10).sort(sort);
-    return res.json(high_scores);
+    const leaderboard = await Score.find().limit(10).sort(sort);
+    return res.json(leaderboard);
 });
 
 module.exports = router;

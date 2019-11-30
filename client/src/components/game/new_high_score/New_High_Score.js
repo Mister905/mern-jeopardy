@@ -2,12 +2,19 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { reset_game } from "../../../actions/game";
+import logo from "../../../assets/img/jeopardy_logo_profile.png";
+import Loader from "../../layout/loader/Loader";
 
 class New_High_Score extends Component {
   constructor(props) {
     super(props);
-    // document.body.classList.add('jeopardy-blue-dark');
+    document.body.classList.remove("jeopardy-blue-dark");
+    document.body.classList.add("jeopardy-gradient");
   }
+
+  componentWillUnmount = () => {
+    document.body.classList.remove("jeopardy-gradient");
+  };
 
   number_with_commas = x => {
     var parts = x.toString().split(".");
@@ -15,80 +22,120 @@ class New_High_Score extends Component {
     return parts.join(".");
   };
 
-  render_high_scores = () => {
-    const { high_scores } = this.props.game;
-
-    const output = high_scores.map((high_score, index) => (
-      <tr className="tr-high-score bold-text" key={high_score._id}>
-        <td>{index + 1}</td>
-        <td>{high_score.username}</td>
-        <td>{this.number_with_commas(high_score.score)}</td>
-      </tr>
-    ));
-
-    return output;
-  };
-
   handle_new_game = () => {
     this.props.reset_game();
   };
 
   render() {
+    const { loading_leaderboard, leaderboard } = this.props.leaderboard;
+
     return (
-      <div>
-        <div className="col m8 offset-m2 high-score-column">
-          <div className="row">
-            <div className="col m4 offset-m4 center-align">
-              <div className="high-score-heading jeopardy-white-text bold-text">
-                New High Score
+      <div className="container">
+        <div className="row mt-row">
+          <div className="card col m12 jeopardy-grey">
+            <div className="row mt-25">
+              <div className="col m4 offset-m4 center-align">
+                <img src={logo} className="responsive-img profile-logo" />
               </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col m8 offset-m2 jeopardy-white high-score-border">
-              <table className="highlight centered responsive-table high-score-table">
-                <thead>
-                  <tr className="tr-high-score bold-text">
-                    <th className="">Rank</th>
-                    <th className="">Player</th>
-                    <th className="">Score</th>
-                  </tr>
-                </thead>
-                <tbody>{this.render_high_scores()}</tbody>
-              </table>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col m10 offset-m1">
-              <div className="row">
-                <div className="col m6 center-align">
-                  <Link
-                    to="/dashboard"
-                    className="btn  hoverable jeopardy-blue-dark jeopardy-white-text btn-white-border"
-                  >
-                    <div className="row">
-                      <div className="col m3">
-                        <i className="material-icons ">home</i>
-                      </div>
-                      <div className="col m9">Home</div>
-                    </div>
-                  </Link>
-                </div>
-                <div className="col m6 center-align">
-                  <button
-                    onClick={this.handle_new_game}
-                    className="btn  hoverable jeopardy-blue-dark jeopardy-white-text btn-white-border"
-                  >
-                    <div className="row">
-                      <div className="col m3">
-                        <i className="material-icons ">attach_money</i>
-                      </div>
-                      <div className="col m9">New Game</div>
-                    </div>
-                  </button>
+            <div className="row">
+              <div className="col m4 offset-m4 center-align">
+                <div className="jeopardy-blue-dark-text leaderboard-heading bold-text">
+                  New High Score
                 </div>
               </div>
             </div>
+            {loading_leaderboard ? (
+              <Loader />
+            ) : (
+              <div>
+                <div className="row">
+                  <div className="col m6 offset-m3">
+                    <table>
+                      <thead>
+                        <tr className="tr-high-score bold-text jeopardy-blue-dark-text">
+                          <th className="center-align">Rank</th>
+                          <th className="center-align">Player</th>
+                          <th className="center-align">Score</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {leaderboard.map((leader, index) => (
+                          <tr key={index} className="bold-text">
+                            <td
+                              className={`center-align ${
+                                this.props.leaderboard.new_high_score_id ==
+                                leader.score_id
+                                  ? "jeopardy-orange-text"
+                                  : "jeopardy-blue-dark-text"
+                              }`}
+                            >
+                              {index + 1}
+                            </td>
+                            <td
+                              className={`center-align ${
+                                this.props.leaderboard.new_high_score_id ==
+                                leader.score_id
+                                  ? "jeopardy-orange-text"
+                                  : "jeopardy-blue-dark-text"
+                              }`}
+                            >
+                              <Link
+                                className={`center-align ${
+                                  this.props.leaderboard.new_high_score_id ==
+                                  leader.score_id
+                                    ? "jeopardy-orange-text"
+                                    : "jeopardy-blue-dark-text"
+                                }`}
+                                to={`leaderboard/profile/${leader.user_id}`}
+                              >
+                                {leader.name}
+                              </Link>
+                            </td>
+                            <td
+                              className={`center-align ${
+                                this.props.leaderboard.new_high_score_id ==
+                                leader.score_id
+                                  ? "jeopardy-orange-text"
+                                  : "jeopardy-blue-dark-text"
+                              }`}
+                            >
+                              {leader.score}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="row mt-25">
+                  <div className="col m6 offset-m3">
+                    <div className="row">
+                      <div className="col m4 offset-m1">
+                        <Link
+                          to="/dashboard"
+                          className="btn btn-large waves-effect waves-jeopardy-blue bold-text btn-custom btn-wide"
+                        >
+                          <i className="material-icons custom-icon">home</i>
+                          <span className="home-span">Home</span>
+                        </Link>
+                      </div>
+                      <div className="col m4 offset-m2">
+                        <button
+                          onClick={this.handle_new_game}
+                          className="btn btn-large waves-effect waves-jeopardy-blue bold-text btn-custom btn-wide"
+                        >
+                          <i className="material-icons custom-icon">
+                            attach_money
+                          </i>
+                          <span className="new-game-span">New Game</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -97,12 +144,10 @@ class New_High_Score extends Component {
 }
 
 const mapStateToProps = state => ({
-  game: state.game
+  game: state.game,
+  leaderboard: state.leaderboard
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    reset_game
-  }
-)(New_High_Score);
+export default connect(mapStateToProps, {
+  reset_game
+})(New_High_Score);
