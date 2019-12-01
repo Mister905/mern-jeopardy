@@ -159,22 +159,22 @@ class Final_Jeopardy extends Component {
           <div className="final-container">
             <div className="row">
               <div className="col m8 offset-m2 clue-col jeopardy-blue final-col">
-                <div className="row final-jeopardy-category-row">
-                  <div className="col m12 center-align">
+                <div className="row">
+                  <div className="col m6 offset-m3">
                     <img
                       src={FinalJeopardy}
                       className="final-jeopardy-img"
                       alt="Final Jeopardy"
                     />
-                    <div className="jeopardy-white-text bold-text mt-25 category-is">
-                      The category is...
-                    </div>
-                    <div className="jeopardy-white-text bold-text uppercase mt-25 category-output">
-                      {category.title}
-                    </div>
                   </div>
                 </div>
-                <div className="row continue-row">
+                <div className="row">
+                  <div className="col m12 center-align">The category is...</div>
+                </div>
+                <div className="row">
+                  <div className="col m12 center-align">{category.title}</div>
+                </div>
+                <div className="row">
                   <div className="col m6 offset-m3">
                     <button
                       onClick={this.display_wager_form}

@@ -14,10 +14,20 @@ router.post(
   [
     check("title", "Title is required")
       .not()
-      .isEmpty(),
+      .isEmpty()
+      .trim()
+      .escape(),
     check("company", "Company is required")
       .not()
-      .isEmpty(),
+      .isEmpty()
+      .trim()
+      .escape(),
+    check("location")
+      .trim()
+      .escape(),
+    check("description")
+      .trim()
+      .escape(),
     check("from_date", "From date is required")
       .not()
       .isEmpty()
@@ -70,10 +80,20 @@ router.put(
   [
     check("title", "Title is required")
       .not()
-      .isEmpty(),
+      .isEmpty()
+      .trim()
+      .escape(),
     check("company", "Company is required")
       .not()
-      .isEmpty(),
+      .isEmpty()
+      .trim()
+      .escape(),
+    check("location")
+      .trim()
+      .escape(),
+    check("description")
+      .trim()
+      .escape(),
     check("from_date", "From date is required")
       .not()
       .isEmpty()

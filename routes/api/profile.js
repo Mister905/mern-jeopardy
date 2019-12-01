@@ -92,7 +92,29 @@ router.get("/active", auth, async (req, res) => {
 // @access Private
 router.post(
   "/create",
-  [auth, upload.single("profile_image")],
+  [
+    auth,
+    [
+      check("biography", "Biography is required")
+        .not()
+        .isEmpty()
+        .trim()
+        .escape(),
+      check("linkedin")
+        .trim()
+        .escape(),
+      check("twitter")
+        .trim()
+        .escape(),
+      check("facebook")
+        .trim()
+        .escape(),
+      check("specialties")
+        .trim()
+        .escape()
+    ],
+    upload.single("profile_image")
+  ],
   async (req, res) => {
     const errors = validationResult(req);
 
@@ -102,42 +124,33 @@ router.post(
 
     const { biography, linkedin, twitter, facebook, specialties } = req.body;
 
-    // The sanitize function will strip out any keys that start with '$' in the input,
-    // so you can pass it to MongoDB without worrying about malicious users overwriting
-    // query selectors.
-    var biography_clean = sanitize(biography);
-    var linkedin_clean = sanitize(linkedin);
-    var twitter_clean = sanitize(twitter);
-    var facebook_clean = sanitize(facebook);
-    var specialties_clean = sanitize(specialties);
-
     // Build profile object
     const profile_build = {};
 
     profile_build.user = req.user.id;
 
-    profile_build.biography = biography_clean;
+    profile_build.biography = biography;
 
     if (linkedin) {
-      profile_build.linkedin = linkedin_clean;
+      profile_build.linkedin = linkedin;
     } else {
       profile_build.linkedin = "https://www.linkedin.com";
     }
 
     if (twitter) {
-      profile_build.twitter = twitter_clean;
+      profile_build.twitter = twitter;
     } else {
       profile_build.twitter = "https://www.twitter.com";
     }
 
     if (facebook) {
-      profile_build.facebook = facebook_clean;
+      profile_build.facebook = facebook;
     } else {
       profile_build.facebook = "https://www.facebook.com";
     }
 
     if (specialties) {
-      profile_build.specialties = specialties_clean
+      profile_build.specialties = specialties
         .split(",")
         .map(specialty => specialty.trim());
     }
@@ -165,7 +178,29 @@ router.post(
 // @access Private
 router.post(
   "/update",
-  [auth, upload.single("profile_image")],
+  [
+    auth,
+    [
+      check("biography", "Biography is required")
+        .not()
+        .isEmpty()
+        .trim()
+        .escape(),
+      check("linkedin")
+        .trim()
+        .escape(),
+      check("twitter")
+        .trim()
+        .escape(),
+      check("facebook")
+        .trim()
+        .escape(),
+      check("specialties")
+        .trim()
+        .escape()
+    ],
+    upload.single("profile_image")
+  ],
   async (req, res) => {
     const errors = validationResult(req);
 
@@ -175,24 +210,18 @@ router.post(
 
     const { biography, linkedin, twitter, facebook, specialties } = req.body;
 
-    var biography_clean = sanitize(biography);
-    var linkedin_clean = sanitize(linkedin);
-    var twitter_clean = sanitize(twitter);
-    var facebook_clean = sanitize(facebook);
-    var specialties_clean = sanitize(specialties);
-
     // Build profile object
     const profile_build = {};
 
     profile_build.user = req.user.id;
 
-    profile_build.biography = biography_clean;
+    profile_build.biography = biography;
 
-    if (linkedin) profile_build.linkedin = linkedin_clean;
+    if (linkedin) profile_build.linkedin = linkedin;
 
-    if (facebook) profile_build.facebook = facebook_clean;
+    if (facebook) profile_build.facebook = facebook;
 
-    if (twitter) profile_build.twitter = twitter_clean;
+    if (twitter) profile_build.twitter = twitter;
 
     if (specialties) {
       profile_build.specialties = specialties_clean

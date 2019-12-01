@@ -8,7 +8,7 @@ const auth = require("../../middleware/auth");
 // EXPRESS-VALIDATOR
 const { check, validationResult } = require("express-validator");
 const { body } = require("express-validator");
-var mongoSanitize = require('express-mongo-sanitize');
+const sanitize = require('mongo-sanitize');
 
 const User = require("../../models/User");
 const Statistics = require("../../models/Statistics");
@@ -48,10 +48,14 @@ router.post(
   [
     check("first_name", "First name is required")
       .not()
-      .isEmpty(),
+      .isEmpty()
+      .trim()
+      .escape(),
     check("last_name", "Last name is required")
       .not()
-      .isEmpty(),
+      .isEmpty()
+      .trim()
+      .escape(),
     check("email", "A valid email is required").isEmail(),
     check("password", "Password must contain 6 or more characters").isLength({
       min: 6
@@ -150,10 +154,10 @@ router.post(
 
     const { email, password } = req.body;
 
-    const email_clean = mongoSanitize(email);
+    var clean_email = await sanitize(email);
 
     try {
-      let user = await User.findOne({ email_clean });
+      let user = await User.findOne({ email: clean_email });
 
       if (!user) {
         return res.status(400).json({ errors: [{ msg: "Login Failed" }] });
@@ -183,6 +187,7 @@ router.post(
             }
           );
         } else {
+
           return res.status(400).json({ msg: "Login failed" });
         }
       });

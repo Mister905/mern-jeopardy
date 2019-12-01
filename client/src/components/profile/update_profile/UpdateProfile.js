@@ -45,7 +45,6 @@ class UpdateProfile extends Component {
       prevProps.experience.active_experience !=
       this.props.experience.active_experience
     ) {
-      // console.log('derp')
       const { active_experience } = this.props.experience;
       this.setState({
         experience: active_experience,
@@ -410,8 +409,6 @@ class UpdateProfile extends Component {
   render() {
     let { loading_active_profile } = this.props.profile;
     let { loading_active_experience } = this.props.experience;
-    console.log(loading_active_profile);
-    console.log(loading_active_experience);
     if (loading_active_profile || loading_active_experience) {
       return (
         <div className="container">

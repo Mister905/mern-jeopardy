@@ -557,7 +557,7 @@ class Focus extends Component {
                               onClick={() =>
                                 this.answer_response(incorrect_response)
                               }
-                              className="btn jeopardy-white jeopardy-red-text"
+                              className="btn btn-wide jeopardy-white jeopardy-red-text"
                             >
                               <i className="material-icons response-icon">highlight_off</i>
                             </a>
@@ -567,7 +567,7 @@ class Focus extends Component {
                               onClick={() =>
                                 this.answer_response(correct_response)
                               }
-                              className="btn jeopardy-white jeopardy-green-text"
+                              className="btn btn-wide jeopardy-white jeopardy-green-text"
                             >
                               <i className="material-icons response-icon">check</i>
                             </a>
