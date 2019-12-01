@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import CurrencyInput from "react-currency-input";
-import FinalJeopardy from "../../../assets/img/final_jeopardy_edit.png";
+import FinalJeopardy from "../../../assets/img/final_jeopardy.png";
 import {
   handle_final_jeopardy_wager,
   handle_all_in,
@@ -157,22 +157,26 @@ class Final_Jeopardy extends Component {
       <div>
         {display_final_jeopardy && (
           <div className="final-container">
-            <div className="row">
+            <div className="row mt-row">
               <div className="col m8 offset-m2 clue-col jeopardy-blue final-col">
-                <div className="row">
-                  <div className="col m6 offset-m3">
+                <div className="row mt-25">
+                  <div className="col m4 offset-m4">
                     <img
                       src={FinalJeopardy}
-                      className="final-jeopardy-img"
+                      className="final-jeopardy-img responsive-img"
                       alt="Final Jeopardy"
                     />
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col m12 center-align">The category is...</div>
+                  <div className="col m12 center-align">
+                    <div className="category-is jeopardy-white-text">The category is...</div>
+                  </div>
                 </div>
                 <div className="row">
-                  <div className="col m12 center-align">{category.title}</div>
+                  <div className="col m12 center-align">
+                    <div className="category-heading jeopardy-white-text">{category.title}</div> 
+                  </div>
                 </div>
                 <div className="row">
                   <div className="col m6 offset-m3">
@@ -190,7 +194,7 @@ class Final_Jeopardy extends Component {
         )}
         {display_final_jeopardy_wager_form && (
           <div className="final-container">
-            <div className="row">
+            <div className="row mt-row">
               <div className="col m8 offset-m2 jeopardy-grey">
                 <div className="row wager-row">
                   <div className="col m12">
@@ -263,7 +267,7 @@ class Final_Jeopardy extends Component {
         )}
         {display_final_jeopardy_question && (
           <div className="final-container">
-            <div className="row">
+            <div className="row mt-row">
               <div className="col m8 offset-m2 jeopardy-blue clue-col">
                 <div className="row clue-row">
                   <div className="col m12 center-align">

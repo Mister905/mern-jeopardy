@@ -478,9 +478,9 @@ class Focus extends Component {
                                   true
                                 )
                               }
-                              className="btn btn-wide jeopardy-white jeopardy-red-text"
+                              className="btn jeopardy-white jeopardy-red-text"
                             >
-                              <i className="material-icons highlight_off">highlight_off</i>
+                              <i className="material-icons">highlight_off</i>
                             </a>
                           </div>
                           <div className="col m3 offset-m2 center-align">
@@ -491,7 +491,7 @@ class Focus extends Component {
                                   false
                                 )
                               }
-                              className="btn btn-wide jeopardy-white jeopardy-green-text"
+                              className="btn jeopardy-white jeopardy-green-text"
                             >
                               <i className="material-icons response-icon">check</i>
                             </a>
@@ -552,7 +552,7 @@ class Focus extends Component {
                     <div className="row">
                       <div className="col m4 offset-m4">
                         <div className="row mt-25">
-                          <div className="col m6 center-align">
+                          <div className="col m3 offset-m2 center-align">
                             <a
                               onClick={() =>
                                 this.answer_response(incorrect_response)
@@ -562,7 +562,7 @@ class Focus extends Component {
                               <i className="material-icons response-icon">highlight_off</i>
                             </a>
                           </div>
-                          <div className="col m6 center-align">
+                          <div className="col m3 offset-m2 center-align">
                             <a
                               onClick={() =>
                                 this.answer_response(correct_response)

@@ -1,0 +1,16 @@
+.category-is {
+  font-size: 1.8em;
+}
+
+.category-heading {
+  font-size: 2em;
+  text-transform: capitalize;
+}
+
+#final_jeopardy_wager:focus {
+  border-bottom: 1px solid #031467 !important;
+}
+
+#final_jeopardy_wager:focus + label {
+  color: #031467 !important;
+}

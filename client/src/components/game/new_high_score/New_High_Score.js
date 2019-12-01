@@ -41,7 +41,7 @@ class New_High_Score extends Component {
             <div className="row">
               <div className="col m4 offset-m4 center-align">
                 <div className="jeopardy-blue-dark-text custom-heading bold-text">
-                  New High Score
+                  New Record
                 </div>
               </div>
             </div>
@@ -56,7 +56,7 @@ class New_High_Score extends Component {
                         <tr className="tr-high-score bold-text jeopardy-blue-dark-text">
                           <th className="center-align">Rank</th>
                           <th className="center-align">Player</th>
-                          <th className="center-align">Score</th>
+                          <th className="center-align">Earnings</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -100,7 +100,7 @@ class New_High_Score extends Component {
                                   : "jeopardy-blue-dark-text"
                               }`}
                             >
-                              {leader.score}
+                              ${this.number_with_commas(leader.score)}
                             </td>
                           </tr>
                         ))}

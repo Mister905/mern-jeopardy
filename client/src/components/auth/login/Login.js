@@ -9,6 +9,7 @@ import Loader from "../../layout/loader/Loader";
 export class Login extends Component {
   constructor(props) {
     super(props);
+    document.body.classList.remove("jeopardy-blue-dark");
     document.body.classList.add("jeopardy-gradient");
   }
 
