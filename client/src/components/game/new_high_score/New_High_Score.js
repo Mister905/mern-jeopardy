@@ -12,10 +12,6 @@ class New_High_Score extends Component {
     document.body.classList.add("jeopardy-gradient");
   }
 
-  componentWillUnmount = () => {
-    document.body.classList.remove("jeopardy-gradient");
-  };
-
   number_with_commas = x => {
     var parts = x.toString().split(".");
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
