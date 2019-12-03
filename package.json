@@ -24,6 +24,7 @@
     "express": "^4.17.1",
     "express-validator": "^6.3.0",
     "gridfs-stream": "^1.1.1",
+    "helmet": "^3.21.2",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongo-sanitize": "^1.0.1",
