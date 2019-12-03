@@ -16,12 +16,6 @@ class Leaderboard extends Component {
     this.props.clear_leaderboard();
   };
 
-  number_with_commas = x => {
-    var parts = x.toString().split(".");
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    return parts.join(".");
-  };
-
   render_leaderboard = () => {
     const { leaderboard } = this.props.leaderboard;
     return (
@@ -50,7 +44,7 @@ class Leaderboard extends Component {
                     </Link>
                   </td>
                   <td className="center-align jeopardy-blue-dark-text">
-                    ${this.number_with_commas(high_score.score)}
+                    {high_score.score}
                   </td>
                 </tr>
               ))}
