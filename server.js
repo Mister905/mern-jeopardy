@@ -4,7 +4,6 @@ const app = express();
 const cors = require('cors');
 const mongoose = require("mongoose");
 const path = require('path');
-const helmet = require('helmet')
 
 // MIDDLEWARE
 app.use(express.json({ extended: false }));
@@ -12,7 +11,6 @@ var corsOptions = {
     origin: 'http://localhost:3000'
 }
 app.use(cors(corsOptions));
-app.use(helmet());
 
 // DB Config
 const mongo_URI = config.get('mongo_URI')
