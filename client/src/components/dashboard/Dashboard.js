@@ -14,11 +14,10 @@ import logo from "../../assets/img/jeopardy_logo.png";
 class Dashboard extends Component {
   constructor(props) {
     super(props);
-    console.log('derp')
     document.body.classList.remove("jeopardy-grey");
     document.body.classList.remove("jeopardy-blue-dark");
     document.body.classList.add("jeopardy-gradient");
-    this.props.reset_game();
+    // this.props.reset_game();
     this.props.load_user();
   }
 
