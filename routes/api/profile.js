@@ -182,8 +182,6 @@ router.post(
     auth,
     [
       check("biography", "Biography is required")
-        .not()
-        .isEmpty()
         .trim()
         .escape(),
       check("linkedin")
@@ -224,7 +222,7 @@ router.post(
     if (twitter) profile_build.twitter = twitter;
 
     if (specialties) {
-      profile_build.specialties = specialties_clean
+      profile_build.specialties = specialties
         .split(",")
         .map(specialty => specialty.trim());
     }

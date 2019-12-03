@@ -168,6 +168,7 @@ class UpdateProfile extends Component {
                     <div className="custom-input-field">
                       <div className="input-field col m10 offset-m1">
                         <textarea
+                          
                           id="biography"
                           className="materialize-textarea"
                           value={this.state.biography}
