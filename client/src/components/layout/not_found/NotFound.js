@@ -30,21 +30,12 @@ class NotFound extends Component {
         </div>
         <div className="row">
           <div className="col m2 offset-m5 center-align">
-            {is_authenticated ? (
-              <Link
-                to="/dashboard"
-                className="btn waves-effect waves-jeopardy-blue bold-text btn-custom btn-wide"
-              >
-                <i className="material-icons custom-icon">home</i>Dashboard
-              </Link>
-            ) : (
-              <Link
-                to="/"
-                className="btn waves-effect waves-jeopardy-blue bold-text btn-custom btn-wide"
-              >
-                <i className="material-icons custom-icon">home</i>Back
-              </Link>
-            )}
+            <Link
+              to="/login"
+              className="btn waves-effect waves-jeopardy-blue bold-text btn-custom btn-wide"
+            >
+              <i className="material-icons custom-icon">home</i>Back
+            </Link>
           </div>
         </div>
       </div>

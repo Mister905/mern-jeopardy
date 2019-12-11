@@ -4,9 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Loader from "../layout/loader/Loader";
 import { load_user } from "../../actions/auth";
-import {
-  get_active_profile
-} from "../../actions/profile";
+import { get_active_profile } from "../../actions/profile";
 import { reset_game } from "../../actions/game";
 import mern_logo from "../../assets/img/mern_logo.png";
 import logo from "../../assets/img/jeopardy_logo.png";
@@ -14,7 +12,6 @@ import logo from "../../assets/img/jeopardy_logo.png";
 class Dashboard extends Component {
   constructor(props) {
     super(props);
-    console.log('derp')
     document.body.classList.remove("jeopardy-grey");
     document.body.classList.remove("jeopardy-blue-dark");
     document.body.classList.add("jeopardy-gradient");
@@ -56,7 +53,9 @@ class Dashboard extends Component {
               to="/account"
               className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom btn-dashboard"
             >
-              <i className="material-icons custom-icon">settings_applications</i>
+              <i className="material-icons custom-icon">
+                settings_applications
+              </i>
               Account
             </Link>
           </div>
@@ -86,7 +85,9 @@ class Dashboard extends Component {
               to="/account"
               className="btn btn-large waves-effect waves-jeopardy-blue hoverable bold-text btn-wide btn-custom btn-dashboard"
             >
-              <i className="material-icons custom-icon">settings_applications</i>
+              <i className="material-icons custom-icon">
+                settings_applications
+              </i>
               Account
             </Link>
           </div>
