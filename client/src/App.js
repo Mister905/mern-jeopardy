@@ -25,6 +25,7 @@ import Leaderboard from "./components/leaderboard/Leaderboard";
 import Account from "./components/account/Account";
 import Players from "./components/players/Players";
 import ViewProfile from "./components/profile/view_profile/ViewProfile";
+import NotFound from './components/layout/not_found/NotFound';
 
 // REDUX
 import { Provider } from "react-redux";
@@ -135,6 +136,7 @@ export class App extends Component {
                     path="/profile/:profile_id/stats/:user_id"
                     component={PlayerStats}
                   />
+                  <Route component={NotFound} />
                 </Switch>
               </div>
             </Router>
