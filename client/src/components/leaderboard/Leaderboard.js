@@ -67,7 +67,7 @@ class Leaderboard extends Component {
                   to="/dashboard"
                   className="btn btn-custom btn-text btn-back waves-effect waves-jeopardy-blue"
                 >
-                  <i className="material-icons  bold-text">arrow_back</i>
+                  <i className="material-icons bold-text">arrow_back</i>
                 </Link>
               </div>
               <div className="col m4 offset-m2 center-align">
