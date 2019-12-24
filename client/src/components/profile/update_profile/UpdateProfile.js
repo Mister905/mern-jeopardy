@@ -237,11 +237,7 @@ class UpdateProfile extends Component {
                           id="specialties"
                           type="text"
                           name="specialties"
-                          value={
-                            specialties.length > 0
-                              ? specialties.join(", ")
-                              : "N/A"
-                          }
+                          value={this.state.specialties}
                           onChange={this.on_change}
                         />
                         <label className="active" htmlFor="specialties">
