@@ -95,9 +95,7 @@ router.post(
   [
     auth,
     [
-      check("biography", "Biography is required")
-        .not()
-        .isEmpty()
+      check("biography")
         .trim()
         .escape(),
       check("linkedin")

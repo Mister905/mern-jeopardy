@@ -1,0 +1,40 @@
+{
+    is_game_active: false,
+    is_first_round: true,
+    is_second_round: false,
+    is_final_jeopardy: false,
+    loading_round: true,
+    first_round_categories: [],
+    first_round_questions: [
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+    ],
+    second_round_categories: [],
+    second_round_questions: [
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+    ],
+    daily_doubles: [],
+    answered_questions: [],
+    winnings: 0,
+    display_daily_double_question: false,
+    display_daily_double_wager: false,
+    true_daily_double: false,
+    final_jeopardy_question: {},
+    display_final_jeopardy_question: false,
+    display_final_jeopardy_wager: false,
+    final_earnings: 0,
+    loading_game_over: false,
+    is_game_over: false,
+    is_new_high_score: false,
+    high_scores: [],
+    is_new_game: true
+}

@@ -98,6 +98,8 @@ export const create_profile = (form_data, history) => async dispatch => {
   try {
     const { biography } = form_data;
 
+    console.log(biography);
+
     if (biography) {
       // File upload size validation
       if (form_data.profile_image) {
@@ -124,6 +126,7 @@ export const create_profile = (form_data, history) => async dispatch => {
 
       history.push("/dashboard");
     } else {
+      console.log('derp')
       dispatch(show_alert("Biography is a required field", "error"));
     }
   } catch (error) {

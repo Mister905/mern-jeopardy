@@ -312,7 +312,7 @@ class CreateExperience extends Component {
       <div>
         {!places_script_loading && this.output()}
         <Script
-          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKqURkbztzEtzzQXGxE7NVDoDmCbEXNmY&libraries=places"
+          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6wi4hS6dbdIuyb_IKmzXaNFHA6IeueqY&libraries=places"
           onLoad={this.handle_script_load}
         ></Script>
       </div>

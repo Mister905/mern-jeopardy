@@ -231,7 +231,7 @@ class ActiveProfile extends Component {
                             className="btn waves-effect waves-jeopardy-blue bold-text btn-custom btn-create-experience "
                             to="/create-experience"
                           >
-                            <i className="material-icons left bold-text">add</i>
+                            <i className="material-icons left bold-text create-experience-icon">add</i>
                             <span className="new-experience">Create</span>
                           </Link>
                         </div>
