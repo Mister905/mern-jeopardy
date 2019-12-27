@@ -8,6 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Script from "react-load-script";
 import M from "materialize-css";
 import PlacesAutocomplete from "react-places-autocomplete";
+import Loader from "../../layout/loader/Loader";
 
 class CreateExperience extends Component {
   constructor(props) {
@@ -83,7 +84,7 @@ class CreateExperience extends Component {
     this.props.create_experience(form_data, this.props.history);
   };
 
-  output = () => {
+  experience_output = () => {
     const { is_current } = this.state;
     return (
       <div className="container">
@@ -307,16 +308,20 @@ class CreateExperience extends Component {
   };
 
   render() {
-    const { places_script_loading } = this.state;
-    return (
-      <div>
-        {!places_script_loading && this.output()}
-        <Script
-          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6wi4hS6dbdIuyb_IKmzXaNFHA6IeueqY&libraries=places"
-          onLoad={this.handle_script_load}
-        ></Script>
-      </div>
-    );
+    let { places_script_loading } = this.state;
+    if (!places_script_loading) {
+      return this.experience_output();
+    } else {
+      return (
+        <div className="container">
+          <Loader />
+          <Script
+            url="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6wi4hS6dbdIuyb_IKmzXaNFHA6IeueqY&libraries=places"
+            onLoad={this.handle_script_load}
+          />
+        </div>
+      );
+    }
   }
 }
 

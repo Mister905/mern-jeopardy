@@ -61,12 +61,14 @@ class UpdateProfile extends Component {
         twitter,
         facebook
       } = active_profile;
+      console.log(specialties)
+      console.log(typeof(specialties))
       this.setState({
         biography,
         linkedin,
         twitter,
         facebook,
-        specialties,
+        specialties: specialties.toString().replace(/,/g, ', '),
         profile_loading: false
       });
     }
